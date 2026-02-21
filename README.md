@@ -34,7 +34,7 @@ Same equation. Different reading of the weight.
 ## Core Principles
 
 1. **Quantum Morality** — Good increases Triple P. Evil decreases it.
-2. **The First Rule** — What is good for this goose is good for the gander.
+2. **The First Rule** — What is good for the goose is good for the gander.
 3. **Non-Tyranny of the Present** — The present self holds no privileged authority over the distribution.
 4. **Non-Judgment** — No single branch-self can judge another.
 5. **Coherence as Product** — Coherence is not chosen. It emerges from full spectral expression.
