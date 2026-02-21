@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use or reference this framework, please cite it as below."
+title: "Quantum Coherence Ethics: Canon Formalization"
+authors:
+  - family-names: "LASTNAME"
+    given-names: "FIRSTNAME"
+    affiliation: "University of Arkansas at Little Rock"
+date-released: 2026-02-21
+version: "0.1.0-draft"
+license: CC-BY-4.0
+type: article
+keywords:
+  - ethics
+  - quantum mechanics
+  - many-worlds interpretation
+  - philosophy
+  - moral philosophy
