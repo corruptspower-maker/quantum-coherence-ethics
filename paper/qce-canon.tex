@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\title{\textbf{Quantum Coherence Ethics}\\[4pt] Canon Formalization}
+\author{Power Corrupts}
+\date{Draft --- February 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\textit{A beam of white light enters the prism as a singularity.\\
+The spectrum that emerges is what the light really looks like.}
+\end{center}
+
+\section{Foundations}
+
+Quantum Coherence Ethics (QCE) is an ethical framework grounded in the many-worlds interpretation of quantum mechanics. It holds that:
+
+\begin{enumerate}[label=(\roman*)]
+\item A person is a \textbf{distributed being}---a single entity refracted across every branch of the wave function that shares its point of origin (DNA, spacetime coordinates, causal insertion).
+\item The distributed being persists across branches in the way white light persists across the wavelengths of its spectrum: every wavelength \textit{is} the light.
+\item Ethical weight arises not from freedom of choice---which is not required---but from the structural fact that present actions shape the statistical character of one's future distribution.
+\item It looks like Copenhagen from the inside. It is Everett from the outside.
+\end{enumerate}
+
+\section{The Triple P}
+
+For any future branch $\omega$, three quantities characterize the quality of existence within it:
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Symbol} & \textbf{Name} & \textbf{Measures} \\
+\midrule
+$P(\omega)$ & Probability & Lived existence as agent \\
+$\Sigma(\omega)$ & Possibility & Scope of existence; degrees of freedom \\
+$\Lambda(\omega)$ & Potential & Scale of existence; capacity to act \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+\textbf{Good} is that which increases Triple P across one's future distribution.\\
+\textbf{Evil} is that which decreases it.
+
+\subsection{Branch Weight}
+
+Each future branch $\omega$ carries a branch weight $w(\omega\mid a)$: the share of the wave function's amplitude that flows into $\omega$ given present action $a$. This is the Born measure---an ontological quantity describing the structure of reality.
+
+\textbf{Note.} The branch weight $w$ and the probability $P$ are both probabilities. They are different substances:
+\begin{itemize}
+\item $w(\omega\mid a)$ is \textit{ontological}---how much of reality flows into the branch.
+\item $P(\omega)$ is \textit{epistemological}---an assessment of lived agentive presence within the branch.
+\end{itemize}
+
+\subsection{The Canon Equation}
+
+Let $\Omega(a)$ denote the set of future branches reachable from present action $a$. Then:
+\begin{equation}
+\boxed{\;QCE(a)\;=\;\sum_{\omega\,\in\,\Omega(a)} w(\omega\mid a)\;\Big[\;P(\omega)\;\cdot\;\big(\,\Sigma(\omega)+\Lambda(\omega)\,\big)\,\Big]\;}
+\end{equation}
+
+\subsection{Dual Reading}
+
+The canon equation admits two readings, corresponding to the inside and outside views of the same reality.
+
+\paragraph{Copenhagen (inside view).}
+The weights are Born probabilities summing to 1. The equation gives the expected Triple P from action $a$ as experienced from within a single branch:
+\begin{equation}
+QCE_{\textsc{c}}(a)\;=\;\mathbb{E}_{\,\omega}\Big[\,P(\omega)\cdot\big(\Sigma(\omega)+\Lambda(\omega)\big)\,\Big],\qquad \sum_{\omega}\,w(\omega\mid a)\;=\;1
+\end{equation}
+
+\paragraph{Everett (outside view).}
+The weights are branch measures that grow with the branching structure over time. The sum is not constrained to 1. The equation gives the total Triple P across the full distributed being.
+\begin{equation}
+QCE_{\textsc{e}}(a)\;=\;\sum_{\omega\,\in\,\Omega(a)}\mu(\omega\mid a)\;\Big[\,P(\omega)\cdot\big(\Sigma(\omega)+\Lambda(\omega)\big)\,\Big],\qquad \sum_{\omega}\,\mu(\omega\mid a)\;\;\text{unbounded}
+\end{equation}
+
+Same equation. Different reading of the weight. Copenhagen from the inside; Everett from the outside.
+
+\section{Action Selection}
+
+\paragraph{Theoretical (Argmax).}
+The theoretically optimal action maximizes $QCE$:
+\begin{equation}
+\boxed{\;a^{*}\;=\;\arg\max_{a}\;QCE(a)\;}
+\end{equation}
+
+\paragraph{Practical (Softmax).}
+In practice, exact optimization is neither required nor desirable. A softmax distribution over actions is sufficient:
+\begin{equation}
+\boxed{\;\pi(a)\;=\;\frac{\exp\!\big(\beta\cdot QCE(a)\big)}{\displaystyle\sum_{a'}\exp\!\big(\beta\cdot QCE(a')\big)}\;}
+\end{equation}
+where $\beta>0$ is a temperature parameter. As $\beta\to\infty$, softmax collapses to argmax. As $\beta\to 0$, all actions become equiprobable.
+
+\section{Principles}
+
+\begin{enumerate}[label=\Roman*.]
+\item \textbf{Quantum Morality.} Good is increasing Triple P across one's future distribution. Evil is decreasing it.
+\item \textbf{The First Rule.} What is good for this goose is good for the gander.
+\item \textbf{Non-Tyranny of the Present.} The present self holds no privileged authority over the distribution.
+\item \textbf{Non-Judgment.} No single branch-self can judge another.
+\item \textbf{Coherence as Product.} Coherence is not chosen. It is the emergent result of increasing Triple P without increasing constraints.
+\item \textbf{The Multiplicative Function.} Branching multiplies the effects of present actions.
+\item \textbf{The Structural Precondition.} QCE does not derive ought from is. It identifies Triple P as the structural ground of any ethical discourse.
+\end{enumerate}
+
+\section{Glossary}
+
+\begin{tabular}{lp{10cm}}
+\toprule
+\textbf{Term} & \textbf{Definition} \\
+\midrule
+Distributed being & A single entity refracted across all branches sharing its origin. \\
+Triple P & Probability, Possibility, Potential. \\
+Branch weight ($w$) & Born measure. Ontological probability. \\
+Probability ($P$) & Epistemological probability---lived agentive presence. \\
+Possibility ($\Sigma$) & Scope. Degrees of freedom, open paths. \\
+Potential ($\Lambda$) & Scale. Capacity, resources, power to act. \\
+Agency & The distributed collective of agentive processes constituting a person. \\
+Coherence & The emergent state of full spectral expression across branches. \\
+Tyranny of the present & Any act foreclosing possibilities for the distributed being. \\
+\bottomrule
+\end{tabular}
+
+\vfill
+\begin{center}
+\textit{The spectrum is most coherent when no wavelength is suppressed.}
+
+\medskip
+\textit{You are not making me more me by cutting away what I could possibly be.\\
+By defining me you are delimiting me.}
+\end{center}
+
+\end{document}
