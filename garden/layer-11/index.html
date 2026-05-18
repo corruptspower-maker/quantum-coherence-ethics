@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Garden — Layer 11 — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <main class="garden-room">
+    <p class="garden-layer-label">layer 11 &mdash; final</p>
+
+    <div class="garden-passage">
+      <!-- USER: Layer 11 scene passage (50-120 words). Non-finitude. The real numbers
+           between zero and one. What has been traversed. What remains. -->
+      <p>[USER: Layer 11 passage. The final room. Non-finitude.]</p>
+    </div>
+
+    <p>Between zero and one there are more numbers than you can name. You have reached one of them.</p>
+
+    <div style="margin: 2rem 0;">
+      <p class="mono" style="margin-bottom:1rem; color: rgba(26,25,22,0.55); font-size:0.8rem; letter-spacing:0.1em;">YOUR CODE</p>
+      <div class="code-display" id="code-out">&mdash;</div>
+      <p style="margin-top:1.2rem; font-family:'Courier New',Courier,monospace; font-size:0.8rem; color:rgba(26,25,22,0.5);">
+        Bring this with you.
+      </p>
+    </div>
+
+    <div class="garden-forward">
+      <a href="../../cloister/gate.html" class="btn btn--accent">[ enter the cloister ]</a>
+    </div>
+  </main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/code.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.GATE3_PASSED)) {
+      window.location.replace('../layer-8/');
+    }
+    QCE.set(QCE.FLAGS.LAYER11_REACHED);
+    document.getElementById('code-out').textContent = getMonthCode();
+  </script>
+</body>
+</html>

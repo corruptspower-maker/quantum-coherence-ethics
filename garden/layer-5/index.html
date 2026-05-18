@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Garden — Layer 5 — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <main class="garden-room">
+    <p class="garden-layer-label">layer 5 &mdash; gate 2</p>
+
+    <div class="garden-passage">
+      <!-- USER: Layer 5 scene passage (50-120 words). The Canon Equation appears here. -->
+      <p>[USER: Layer 5 passage. The equation is present. Something is being asked.]</p>
+    </div>
+
+    <div class="canon-equation">
+      <!-- USER: Insert the Canon Equation from the QCE formalization. -->
+      w(&omega;|a) = [USER: Canon Equation]
+    </div>
+
+    <div class="garden-forward">
+      <p class="gate-question">What does w(&omega;|a) describe?</p>
+      <div class="gate-input-wrap">
+        <input type="text" id="gate2-input" placeholder="your answer" autocomplete="off">
+        <button id="gate2-submit">[ submit ]</button>
+        <p class="gate-error" id="gate2-error" style="display:none;">Not quite. Look again.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/puzzle.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.GATE1_PASSED)) {
+      window.location.replace('../');
+    }
+
+    document.getElementById('gate2-submit').addEventListener('click', function () {
+      var val = document.getElementById('gate2-input').value;
+      if (checkGate2(val)) {
+        QCE.set(QCE.FLAGS.GATE2_PASSED);
+        window.location.href = '../layer-6/';
+      } else {
+        document.getElementById('gate2-error').style.display = 'block';
+        window.location.href = '../wrong/?from=5';
+      }
+    });
+
+    document.getElementById('gate2-input').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('gate2-submit').click();
+    });
+  </script>
+</body>
+</html>

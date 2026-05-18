@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680">
+
+  <!-- Parchment background -->
+  <rect width="600" height="680" fill="#c09040"/>
+
+  <!-- ══ TREE ══ -->
+  <!-- Trunk -->
+  <line x1="300" y1="566" x2="300" y2="430" stroke="#5c1212" stroke-width="12" stroke-linecap="round"/>
+  <!-- Left main branch -->
+  <line x1="300" y1="460" x2="155" y2="310" stroke="#5c1212" stroke-width="8" stroke-linecap="round"/>
+  <!-- Right main branch -->
+  <line x1="300" y1="460" x2="445" y2="310" stroke="#5c1212" stroke-width="8" stroke-linecap="round"/>
+  <!-- Sub-branch to A (lower-left) -->
+  <line x1="168" y1="336" x2="82" y2="420" stroke="#5c1212" stroke-width="6" stroke-linecap="round"/>
+  <!-- Sub-branch to B (upper-left) -->
+  <line x1="155" y1="318" x2="90" y2="200" stroke="#5c1212" stroke-width="6" stroke-linecap="round"/>
+  <!-- Sub-branch to C (upper-right) -->
+  <line x1="445" y1="318" x2="510" y2="200" stroke="#5c1212" stroke-width="6" stroke-linecap="round"/>
+  <!-- Sub-branch to D (lower-right) -->
+  <line x1="432" y1="336" x2="518" y2="420" stroke="#5c1212" stroke-width="6" stroke-linecap="round"/>
+
+
+  <!-- "not Derek" margin annotation -->
+  <line x1="388" y1="568" x2="334" y2="578" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 334 578 l 6 -5 l -2 7" fill="#1a1a2e"/>
+  <text x="392" y="558" font-family="'Comic Sans MS', cursive" font-size="18" fill="#1a1a2e" transform="rotate(-4, 392, 558)">&#x2190; not Derek</text>
+
+  <!-- ══ BABY (root — all four traits) ══ -->
+  <!-- Head -->
+  <circle cx="300" cy="596" r="30" fill="none" stroke="#5c1212" stroke-width="5"/>
+  <!-- Left eye -->
+  <circle cx="289" cy="589" r="3" fill="#5c1212"/>
+  <!-- Right eye -->
+  <circle cx="311" cy="589" r="3" fill="#5c1212"/>
+  <!-- MONOCLE on right eye — big obvious ring + chain -->
+  <circle cx="311" cy="589" r="11" fill="none" stroke="#5c1212" stroke-width="3"/>
+  <line x1="322" y1="596" x2="328" y2="604" stroke="#5c1212" stroke-width="2.5"/>
+  <!-- SCOWL — exaggerated downward curve -->
+  <path d="M 288 607 Q 300 598 312 607" fill="none" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <!-- CIGARETTE — long stick out the left -->
+  <line x1="288" y1="605" x2="262" y2="600" stroke="#5c1212" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="258" cy="599" r="3.5" fill="#5c1212"/>
+  <!-- 3 HAIRS — tall spiky lines -->
+  <line x1="289" y1="566" x2="284" y2="549" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <line x1="300" y1="566" x2="300" y2="548" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <line x1="311" y1="566" x2="316" y2="549" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <!-- Body + arms + legs -->
+  <line x1="300" y1="626" x2="300" y2="658" stroke="#5c1212" stroke-width="5" stroke-linecap="round"/>
+  <line x1="300" y1="636" x2="280" y2="652" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <line x1="300" y1="636" x2="320" y2="652" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <line x1="300" y1="658" x2="287" y2="675" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <line x1="300" y1="658" x2="313" y2="675" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+
+
+  <!-- ══ FIGURE A — MONOCLE only (lower-left) ══ -->
+  <circle cx="82" cy="388" r="26" fill="none" stroke="#5c1212" stroke-width="4.5"/>
+  <circle cx="73" cy="381" r="2.5" fill="#5c1212"/>
+  <circle cx="91" cy="381" r="2.5" fill="#5c1212"/>
+  <!-- Big monocle ring -->
+  <circle cx="91" cy="381" r="12" fill="none" stroke="#5c1212" stroke-width="3"/>
+  <line x1="103" y1="388" x2="108" y2="396" stroke="#5c1212" stroke-width="2.5"/>
+  <!-- Flat mouth -->
+  <line x1="74" y1="395" x2="90" y2="395" stroke="#5c1212" stroke-width="3" stroke-linecap="round"/>
+  <!-- Body -->
+  <line x1="82" y1="414" x2="82" y2="440" stroke="#5c1212" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="82" y1="422" x2="65" y2="436" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="82" y1="422" x2="99" y2="436" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="82" y1="440" x2="71" y2="455" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="82" y1="440" x2="93" y2="455" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Label -->
+  <text x="44" y="372" font-family="Georgia,serif" font-size="30" font-style="italic" font-weight="bold" fill="#5c1212">A</text>
+
+
+  <!-- ══ FIGURE B — SCOWL only (upper-left) ══ -->
+  <circle cx="90" cy="170" r="26" fill="none" stroke="#5c1212" stroke-width="4.5"/>
+  <circle cx="81" cy="163" r="2.5" fill="#5c1212"/>
+  <circle cx="99" cy="163" r="2.5" fill="#5c1212"/>
+  <!-- Big exaggerated scowl -->
+  <path d="M 78 180 Q 90 168 102 180" fill="none" stroke="#5c1212" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Body -->
+  <line x1="90" y1="196" x2="90" y2="222" stroke="#5c1212" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="90" y1="204" x2="73" y2="218" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="90" y1="204" x2="107" y2="218" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="90" y1="222" x2="79" y2="237" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="90" y1="222" x2="101" y2="237" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Label -->
+  <text x="50" y="154" font-family="Georgia,serif" font-size="30" font-style="italic" font-weight="bold" fill="#5c1212">B</text>
+
+
+  <!-- ══ FIGURE C — 3 HAIRS only (upper-right) ══ -->
+  <circle cx="510" cy="170" r="26" fill="none" stroke="#5c1212" stroke-width="4.5"/>
+  <circle cx="501" cy="163" r="2.5" fill="#5c1212"/>
+  <circle cx="519" cy="163" r="2.5" fill="#5c1212"/>
+  <!-- Flat mouth -->
+  <line x1="502" y1="176" x2="518" y2="176" stroke="#5c1212" stroke-width="3" stroke-linecap="round"/>
+  <!-- 3 tall spiky hairs -->
+  <line x1="500" y1="144" x2="494" y2="125" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <line x1="510" y1="144" x2="510" y2="122" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <line x1="520" y1="144" x2="526" y2="125" stroke="#5c1212" stroke-width="4" stroke-linecap="round"/>
+  <!-- Body -->
+  <line x1="510" y1="196" x2="510" y2="222" stroke="#5c1212" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="510" y1="204" x2="493" y2="218" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="510" y1="204" x2="527" y2="218" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="510" y1="222" x2="499" y2="237" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="510" y1="222" x2="521" y2="237" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Label -->
+  <text x="530" y="154" font-family="Georgia,serif" font-size="30" font-style="italic" font-weight="bold" fill="#5c1212">C</text>
+
+
+  <!-- ══ FIGURE D — CIGARETTE only (lower-right) ══ -->
+  <circle cx="518" cy="388" r="26" fill="none" stroke="#5c1212" stroke-width="4.5"/>
+  <circle cx="509" cy="381" r="2.5" fill="#5c1212"/>
+  <circle cx="527" cy="381" r="2.5" fill="#5c1212"/>
+  <!-- Flat mouth + long cigarette -->
+  <line x1="510" y1="393" x2="526" y2="393" stroke="#5c1212" stroke-width="3" stroke-linecap="round"/>
+  <line x1="510" y1="393" x2="482" y2="387" stroke="#5c1212" stroke-width="5.5" stroke-linecap="round"/>
+  <circle cx="477" cy="386" r="4" fill="#5c1212"/>
+  <!-- Body -->
+  <line x1="518" y1="414" x2="518" y2="440" stroke="#5c1212" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="518" y1="422" x2="501" y2="436" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="518" y1="422" x2="535" y2="436" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="518" y1="440" x2="507" y2="455" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="518" y1="440" x2="529" y2="455" stroke="#5c1212" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Label -->
+  <text x="538" y="372" font-family="Georgia,serif" font-size="30" font-style="italic" font-weight="bold" fill="#5c1212">D</text>
+
+</svg>

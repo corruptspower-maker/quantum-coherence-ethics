@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Ground Beneath the Ought — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    /* Each layer fades in with a staggered delay */
+    .ground-layer { opacity: 0; }
+  </style>
+</head>
+<body>
+  <main>
+
+    <div class="ground-title fade-in-slow">
+      <h1>The Ground Beneath the Ought</h1>
+      <p class="found">You've found it.</p>
+    </div>
+
+    <!-- Layers rendered sequentially in JS after page fades in -->
+    <div id="layers"></div>
+
+  </main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
+    // Enforce: spine must have been clicked, not direct-nav'd
+    if (!QCE.has(QCE.FLAGS.GROUND_OPENED)) {
+      window.location.replace('../');
+    }
+
+    var layers = [
+      {
+        n: 1,
+        // USER: Scene passage for Layer 1 (50-120 words).
+        text: '[USER: Layer 1 passage — a scene grounding the QCE inquiry. What is the question being asked? Set the room.]'
+      },
+      {
+        n: 2,
+        text: '[USER: Layer 2 passage — a scene. The first branching. What does it mean that every action forks the world?]'
+      },
+      {
+        n: 3,
+        text: '[USER: Layer 3 passage — a scene. The nature of the observer. Who is watching? What changes when they watch?]'
+      },
+      {
+        n: 4,
+        text: '[USER: Layer 4 passage — a scene. Identity begins to soften. Parfit enters. The self as process, not substance.]'
+      },
+      {
+        n: 5,
+        // Canon Equation appears here
+        text: '[USER: Layer 5 passage — a scene. The equation arrives. What does it mean to assign weight to a world?]',
+        equation: true
+      },
+      {
+        n: 6,
+        text: '[USER: Layer 6 passage — a scene. The ethical stakes clarify. If all branches are real, what is owed across them?]'
+      },
+      {
+        n: 7,
+        text: '[USER: Layer 7 passage — a scene. The ought rises from the is. Not deduced — discovered, like a horizon.]'
+      },
+      {
+        n: 8,
+        // Garden door appears here
+        text: '[USER: Layer 8 passage — a scene. Something is being asked of you now. Not just read. Entered.]',
+        gardenDoor: true
+      },
+      {
+        n: 9,
+        text: '[USER: Layer 9 passage — a scene. The weight of this. The responsibility implied by continuation.]'
+      },
+      {
+        n: 10,
+        text: '[USER: Layer 10 passage — a scene. The penultimate room. Almost through. What has changed?]'
+      },
+      {
+        n: 11,
+        text: '[USER: Layer 11 passage — a scene. The last layer of The Book. What remains when the book closes?]'
+      }
+    ];
+
+    function buildLayer(layer, delay) {
+      var div = document.createElement('div');
+      div.className = 'ground-layer';
+      div.style.animationDelay = delay + 'ms';
+
+      var label = document.createElement('p');
+      label.className = 'ground-layer__label';
+      label.textContent = 'layer ' + layer.n;
+      div.appendChild(label);
+
+      var hr = document.createElement('hr');
+      div.appendChild(hr);
+
+      var p = document.createElement('p');
+      p.textContent = layer.text;
+      div.appendChild(p);
+
+      if (layer.equation) {
+        var eq = document.createElement('div');
+        eq.className = 'canon-equation';
+        // USER: Replace this with the actual Canon Equation from the QCE formalization.
+        eq.innerHTML =
+          'w(&omega;|a) = [USER: the Canon Equation from the QCE formalization DOI]<br>' +
+          '<br>' +
+          'w(&omega;|a) &mdash; the weight assigned to world &omega; given action a.';
+        div.appendChild(eq);
+      }
+
+      if (layer.gardenDoor) {
+        var door = document.createElement('div');
+        door.className = 'garden-door';
+        var prompt = document.createElement('p');
+        prompt.style.fontFamily = "'Courier New', Courier, monospace";
+        prompt.style.fontSize = '0.88rem';
+        prompt.style.marginBottom = '1.5rem';
+        prompt.textContent = 'Continue into the Garden?';
+        var btn = document.createElement('a');
+        btn.href = '../../garden/';
+        btn.className = 'btn btn--accent';
+        btn.textContent = '[ enter the garden ]';
+        btn.addEventListener('click', function () {
+          QCE.set(QCE.FLAGS.GARDEN_ENTERED);
+        });
+        door.appendChild(prompt);
+        door.appendChild(btn);
+        div.appendChild(door);
+      }
+
+      return div;
+    }
+
+    // Wait for the title to finish its fade-in (2s delay + 600ms), then reveal layers
+    var container = document.getElementById('layers');
+    var BASE_DELAY = 2800;
+    var STAGGER = 500;
+
+    layers.forEach(function (layer, i) {
+      var delay = BASE_DELAY + i * STAGGER;
+      var el = buildLayer(layer, delay);
+      el.style.animation = 'fadein 600ms ease ' + delay + 'ms forwards';
+      container.appendChild(el);
+    });
+  </script>
+</body>
+</html>

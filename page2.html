@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>quantum-coherence-ethics.org</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; overflow: hidden; }
+
+    .scene {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      /* Background approach gives cleaner control over crop position than img+transform.
+         size 138% zooms past the frame borders on all four sides.
+         position center 62% shifts the view down so you see ground, not just sky. */
+      background-image: url('images/qce_site_Front.webp');
+      background-size: 138%;
+      background-position: center 62%;
+      background-repeat: no-repeat;
+    }
+
+    /* Transparent hotspot over the door — center-left of the painting */
+    .door {
+      position: absolute;
+      left: 40%;
+      top: 30%;
+      width: 10%;
+      height: 44%;
+      cursor: pointer;
+      /* Uncomment to debug:
+         background: rgba(255, 0, 0, 0.3); */
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <a class="door" href="room.html" aria-label="Enter through the door"></a>
+  </div>
+</body>
+</html>

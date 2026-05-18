@@ -1,0 +1,514 @@
+/* quantum-coherence-ethics.org
+   One file. Three colors. No apologies.
+   Terry Davis compact: if you can't read it in an afternoon, something went wrong. */
+
+:root {
+  --page:   #f5f2eb;
+  --ink:    #1a1916;
+  --accent: #534AB7;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--page);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  min-height: 100vh;
+}
+
+/* --- Typography --- */
+
+h1 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  margin: 2.5rem 0 1rem;
+}
+
+p {
+  margin-bottom: 1.4rem;
+}
+
+em {
+  font-style: italic;
+}
+
+/* Monospace: UI, labels, system text. The Terry Davis nod. */
+.mono, code, input, button, .system {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(26, 25, 22, 0.15);
+  margin: 3rem 0;
+}
+
+/* --- Links --- */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 600ms ease;
+}
+
+a:hover {
+  opacity: 0.65;
+}
+
+/* --- Fade-in animation --- */
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadein 600ms ease forwards;
+}
+
+/* Delayed fade for the ground.html reveal */
+.fade-in-slow {
+  animation: fadein 600ms ease 2000ms both;
+}
+
+/* --- Page-level entrance --- */
+
+body {
+  animation: fadein 600ms ease forwards;
+}
+
+/* --- The Atrium --- */
+
+.atrium {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 3rem;
+}
+
+.atrium__scene {
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+.atrium__door {
+  display: inline-block;
+  color: var(--accent);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: opacity 600ms ease;
+}
+
+.atrium__door:hover {
+  opacity: 0.65;
+}
+
+.atrium__sig {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: rgba(26, 25, 22, 0.45);
+  letter-spacing: 0.1em;
+}
+
+/* --- The Library / Bookshelf --- */
+
+.library-room {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-end;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(26, 25, 22, 0.15);
+}
+
+/* A single book spine */
+.spine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  cursor: pointer;
+  padding: 1rem 0.4rem;
+  min-height: 160px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 600ms ease;
+  position: relative;
+  border-left: 2px solid rgba(26, 25, 22, 0.12);
+  user-select: none;
+}
+
+.spine:hover {
+  color: var(--accent);
+}
+
+.spine__title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.spine__author {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.68rem;
+  opacity: 0.6;
+  margin-top: 0.5rem;
+}
+
+/* The worn spine — no visual difference from the others.
+   The only tell is the hover text. That is the point. */
+
+/* Tooltip-style hover description */
+.spine[data-desc]:hover::after {
+  content: attr(data-desc);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  writing-mode: horizontal-tb;
+  background: var(--ink);
+  color: var(--page);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.72rem;
+  padding: 0.4rem 0.7rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadein 300ms ease 150ms forwards;
+  z-index: 10;
+}
+
+/* The chair / table book */
+.library-corner {
+  font-style: italic;
+  color: rgba(26, 25, 22, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+.library-corner a {
+  font-style: normal;
+}
+
+/* --- Book pages --- */
+
+.book-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.book-page__meta {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.78rem;
+  color: rgba(26, 25, 22, 0.5);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.book-page__works {
+  list-style: none;
+  padding: 0;
+}
+
+.book-page__works li {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82rem;
+  margin-bottom: 0.4rem;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.book-page__works li::before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.book-page__lineage {
+  color: var(--accent);
+  font-style: italic;
+  font-size: 1rem;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.2rem;
+  margin-top: 1rem;
+}
+
+.book-page__back {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82rem;
+  margin-top: 2rem;
+}
+
+/* --- ground.html — The Book --- */
+
+.ground-title {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+
+.ground-title h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.ground-title .found {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  color: rgba(26, 25, 22, 0.55);
+  letter-spacing: 0.1em;
+}
+
+.ground-layer {
+  margin: 3rem 0;
+  opacity: 0;
+  animation: fadein 600ms ease forwards;
+}
+
+.ground-layer__label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.72rem;
+  color: rgba(26, 25, 22, 0.4);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.canon-equation {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  background: rgba(26, 25, 22, 0.04);
+  border-left: 2px solid var(--accent);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  line-height: 2.2;
+}
+
+.garden-door {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 2rem;
+  border-top: 1px solid rgba(26, 25, 22, 0.12);
+}
+
+/* --- Garden layers --- */
+
+.garden-room {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  min-height: 70vh;
+  justify-content: center;
+}
+
+.garden-layer-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.72rem;
+  color: rgba(26, 25, 22, 0.35);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.garden-passage {
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+.garden-forward {
+  margin-top: 1.5rem;
+}
+
+/* --- Gate puzzles --- */
+
+.gate-question {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+
+.gate-input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+input[type="text"] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(26, 25, 22, 0.35);
+  padding: 0.5rem 0;
+  color: var(--ink);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 600ms ease;
+  width: 100%;
+}
+
+input[type="text"]:focus {
+  border-bottom-color: var(--accent);
+}
+
+input[type="text"]::placeholder {
+  color: rgba(26, 25, 22, 0.3);
+}
+
+/* --- Buttons --- */
+
+button, .btn {
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  padding: 0.55rem 1.2rem;
+  cursor: pointer;
+  transition: background 600ms ease, color 600ms ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+button:hover, .btn:hover {
+  background: var(--ink);
+  color: var(--page);
+}
+
+.btn--accent {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn--accent:hover {
+  background: var(--accent);
+  color: var(--page);
+}
+
+/* --- Error / feedback messages --- */
+
+.gate-error {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82rem;
+  color: var(--ink);
+  opacity: 0.6;
+  animation: fadein 600ms ease forwards;
+}
+
+/* --- Code display (layer-11) --- */
+
+.code-display {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.4rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid rgba(83, 74, 183, 0.3);
+  display: inline-block;
+}
+
+/* --- Cloister gate --- */
+
+.cloister-gate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  gap: 2rem;
+  text-align: center;
+}
+
+.cloister-gate input[type="text"] {
+  text-align: center;
+  letter-spacing: 0.3em;
+  font-size: 1.1rem;
+  width: 260px;
+}
+
+/* --- Cloister inner sanctum --- */
+
+.sanctum {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.wall-quote {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 2;
+  border-left: 2px solid rgba(26, 25, 22, 0.18);
+  padding-left: 1.5rem;
+  color: rgba(26, 25, 22, 0.8);
+}
+
+.wall-quote cite {
+  display: block;
+  font-style: normal;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: rgba(26, 25, 22, 0.45);
+  margin-top: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+.mailing-section {
+  border-top: 1px solid rgba(26, 25, 22, 0.12);
+  padding-top: 2.5rem;
+}
+
+/* --- Wrong room --- */
+
+.wrong-room {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 70vh;
+  gap: 2rem;
+}
+
+.wrong-countdown {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: rgba(26, 25, 22, 0.4);
+  letter-spacing: 0.08em;
+}

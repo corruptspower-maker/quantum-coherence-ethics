@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Hugh Everett III — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    .portrait-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding-top: 3rem;
+    }
+
+    .portrait-frame {
+      border: 8px solid #8a6a2a;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35), inset 0 0 0 3px #c4a050;
+      max-width: 340px;
+      width: 100%;
+      background: #1a1612;
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Drop your portrait image in images/ as everett-portrait.jpg
+       and swap the placeholder out for:
+       <img src="images/everett-portrait.jpg" ...> */
+    .portrait-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: rgba(200, 170, 100, 0.4);
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .portrait-nameplate {
+      text-align: center;
+      max-width: 340px;
+    }
+
+    .portrait-nameplate h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .portrait-nameplate .dates {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: rgba(26, 25, 22, 0.5);
+      letter-spacing: 0.1em;
+    }
+
+    .portrait-text {
+      max-width: 560px;
+      font-size: 1rem;
+    }
+
+    .back {
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="portrait-page">
+
+    <div class="portrait-frame">
+      <img src="images/everett-portrait.png" style="width:100%;height:100%;object-fit:cover;" alt="Hugh Everett III">
+    </div>
+
+    <div class="portrait-nameplate">
+      <h1>Hugh Everett III</h1>
+      <p class="dates">b. 1641, Braunschweig &nbsp;·&nbsp; d. 1718, London</p>
+    </div>
+
+    <div class="portrait-text">
+      <p>
+        Natural philosopher, theologian of the branch, fellow of the Royal Society.
+        Correspondence with Newton, 1687. Fell out with him over the question of collapse.
+        Newton insisted the wave function chose. Everett insisted it did not.
+        Newton was wrong.
+      </p>
+      <p>
+        His treatise <em>De Universo Ramificante</em> (1693) was read aloud at court
+        and dismissed as heresy by three separate bishops. The King kept a copy
+        under his pillow. So did the bishops.
+      </p>
+      <p>
+        He died, as all branch-selves die: in one branch only.
+        The others continued without ceremony.
+      </p>
+    </div>
+
+    <a class="back" href="room.html">&larr; back to the library</a>
+
+  </main>
+
+  <script src="assets/js/gate.js"></script>
+  <script>
+    QCE.require(QCE.FLAGS.LIBRARY_ENTERED, '/');
+  </script>
+</body>
+</html>
