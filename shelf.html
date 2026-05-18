@@ -56,18 +56,9 @@
 
     .spine:hover { color: #fff; }
 
-    .spine__title {
-      font-family: 'EB Garamond', Georgia, serif;
-      font-size: clamp(0.45rem, 0.75vw, 0.82rem);
-      letter-spacing: 0.04em;
-      line-height: 1.2;
-    }
-
+    .spine__title,
     .spine__author {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: clamp(0.38rem, 0.55vw, 0.65rem);
-      opacity: 0.65;
-      margin-top: 0.5em;
+      opacity: 0;
     }
 
     /* The Ground Beneath the Ought — same look, no announcement */
@@ -88,133 +79,44 @@
   </style>
 </head>
 <body>
-  <div class="shelf-wrap">
-    <img class="shelf-img" src="images/bookshelf-titled.png" alt="The bookshelf">
+  <!-- SVG image map: coordinates match the Python spine-painter exactly -->
+  <svg viewBox="0 0 5344 3008" style="width:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
+    <image href="images/bookshelf-titled.png" width="5344" height="3008"/>
 
-    <!-- Shelf 1 -->
-    <div class="shelf-row shelf-row--1">
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Bruno+infinite+universe" target="_blank" rel="noopener">
-        <span class="spine__title">On the Infinite Universe and Worlds</span>
-        <span class="spine__author">Bruno</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Epictetus+Enchiridion" target="_blank" rel="noopener">
-        <span class="spine__title">Enchiridion</span>
-        <span class="spine__author">Epictetus</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Hume+Treatise+Human+Nature" target="_blank" rel="noopener">
-        <span class="spine__title">A Treatise of Human Nature</span>
-        <span class="spine__author">Hume</span>
-      </a>
-      <a class="spine" href="https://www.amazon.com/s?k=Rand+Virtue+of+Selfishness" target="_blank" rel="noopener">
-        <span class="spine__title">The Virtue of Selfishness</span>
-        <span class="spine__author">Rand</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Attar+Conference+Birds" target="_blank" rel="noopener">
-        <span class="spine__title">Conference of the Birds</span>
-        <span class="spine__author">Attar</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Hobbes+Leviathan" target="_blank" rel="noopener">
-        <span class="spine__title">Leviathan</span>
-        <span class="spine__author">Hobbes</span>
-      </a>
-      <a class="spine" href="https://www.amazon.com/s?k=Whitehead+Process+and+Reality" target="_blank" rel="noopener">
-        <span class="spine__title">Process and Reality</span>
-        <span class="spine__author">Whitehead</span>
-      </a>
-      <a class="spine" href="https://www.amazon.com/s?k=Wilson+Divided+by+Infinity" target="_blank" rel="noopener">
-        <span class="spine__title">Divided by Infinity</span>
-        <span class="spine__author">Wilson</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Coleridge+Biographia+Literaria" target="_blank" rel="noopener">
-        <span class="spine__title">Biographia Literaria</span>
-        <span class="spine__author">Coleridge</span>
-      </a>
-    </div>
+    <!-- Shelf 1 (y 110–740) -->
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Bruno+infinite+universe" target="_blank"><rect x="216" y="110" width="375" height="630" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Epictetus+Enchiridion" target="_blank"><rect x="708" y="110" width="375" height="630" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Hume+Treatise+Human+Nature" target="_blank"><rect x="1200" y="110" width="375" height="630" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.amazon.com/s?k=Rand+Virtue+of+Selfishness" target="_blank"><rect x="1692" y="110" width="375" height="630" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Attar+Conference+Birds" target="_blank"><rect x="2185" y="110" width="375" height="630" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Hobbes+Leviathan" target="_blank"><rect x="2677" y="110" width="375" height="630" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.amazon.com/s?k=Whitehead+Process+and+Reality" target="_blank"><rect x="3169" y="110" width="375" height="630" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.amazon.com/s?k=Wilson+Divided+by+Infinity" target="_blank"><rect x="3661" y="110" width="375" height="630" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Coleridge+Biographia+Literaria" target="_blank"><rect x="4153" y="110" width="375" height="630" fill="transparent" cursor="pointer"/></a>
 
-    <!-- Shelf 2 -->
-    <div class="shelf-row shelf-row--2">
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Aristotle+Nicomachean+Ethics" target="_blank" rel="noopener">
-        <span class="spine__title">Nicomachean Ethics</span>
-        <span class="spine__author">Aristotle</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Nietzsche+Genealogy+Morality" target="_blank" rel="noopener">
-        <span class="spine__title">Genealogy of Morality</span>
-        <span class="spine__author">Nietzsche</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Spinoza+Ethics" target="_blank" rel="noopener">
-        <span class="spine__title">Ethics</span>
-        <span class="spine__author">Spinoza</span>
-      </a>
-      <a class="spine" href="https://www.amazon.com/s?k=Borges+Ficciones" target="_blank" rel="noopener">
-        <span class="spine__title">Ficciones</span>
-        <span class="spine__author">Borges</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Marcus+Aurelius+Meditations" target="_blank" rel="noopener">
-        <span class="spine__title">Meditations</span>
-        <span class="spine__author">Marcus Aurelius</span>
-      </a>
-      <a class="spine" href="https://www.amazon.com/s?k=Parfit+Reasons+and+Persons" target="_blank" rel="noopener">
-        <span class="spine__title">Reasons and Persons</span>
-        <span class="spine__author">Parfit</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Rumi+Masnavi" target="_blank" rel="noopener">
-        <span class="spine__title">Masnavi</span>
-        <span class="spine__author">Rumi</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Hegel+Phenomenology+Spirit" target="_blank" rel="noopener">
-        <span class="spine__title">Phenomenology of Spirit</span>
-        <span class="spine__author">Hegel</span>
-      </a>
-      <a class="spine" href="https://www.amazon.com/s?k=Wittgenstein+Philosophical+Investigations" target="_blank" rel="noopener">
-        <span class="spine__title">Philosophical Investigations</span>
-        <span class="spine__author">Wittgenstein</span>
-      </a>
-      <a class="spine" href="https://www.amazon.com/s?k=Danielewski+House+of+Leaves" target="_blank" rel="noopener">
-        <span class="spine__title">House of Leaves</span>
-        <span class="spine__author">Danielewski</span>
-      </a>
-    </div>
+    <!-- Shelf 2 (y 960–1720) -->
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Aristotle+Nicomachean+Ethics" target="_blank"><rect x="227" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Nietzsche+Genealogy+Morality" target="_blank"><rect x="670" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Spinoza+Ethics" target="_blank"><rect x="1113" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.amazon.com/s?k=Borges+Ficciones" target="_blank"><rect x="1556" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Marcus+Aurelius+Meditations" target="_blank"><rect x="1999" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.amazon.com/s?k=Parfit+Reasons+and+Persons" target="_blank"><rect x="2442" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Rumi+Masnavi" target="_blank"><rect x="2885" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Hegel+Phenomenology+Spirit" target="_blank"><rect x="3328" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.amazon.com/s?k=Wittgenstein+Philosophical+Investigations" target="_blank"><rect x="3771" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.amazon.com/s?k=Danielewski+House+of+Leaves" target="_blank"><rect x="4214" y="960" width="338" height="760" fill="transparent" cursor="pointer"/></a>
 
-    <!-- Shelf 3 -->
-    <div class="shelf-row shelf-row--3">
-      <a class="spine" href="https://www.amazon.com/s?k=Calvino+Invisible+Cities" target="_blank" rel="noopener">
-        <span class="spine__title">Invisible Cities</span>
-        <span class="spine__author">Calvino</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=William+James+Principles+Psychology" target="_blank" rel="noopener">
-        <span class="spine__title">Principles of Psychology</span>
-        <span class="spine__author">James</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Russell+Analysis+of+Mind" target="_blank" rel="noopener">
-        <span class="spine__title">The Analysis of Mind</span>
-        <span class="spine__author">Russell</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Hafez+Divan" target="_blank" rel="noopener">
-        <span class="spine__title">Divan</span>
-        <span class="spine__author">Hafez</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Everett+Relative+State+Formulation" target="_blank" rel="noopener">
-        <span class="spine__title">Relative State Formulation</span>
-        <span class="spine__author">Everett</span>
-      </a>
-      <a class="spine" href="https://www.amazon.com/s?k=Deutsch+Fabric+of+Reality" target="_blank" rel="noopener">
-        <span class="spine__title">The Fabric of Reality</span>
-        <span class="spine__author">Deutsch</span>
-      </a>
-      <a class="spine" href="https://www.gutenberg.org/ebooks/search/?query=Wordsworth+The+Prelude" target="_blank" rel="noopener">
-        <span class="spine__title">The Prelude</span>
-        <span class="spine__author">Wordsworth</span>
-      </a>
-      <a class="spine" href="https://www.amazon.com/s?k=Serafini+Codex+Seraphinianus" target="_blank" rel="noopener">
-        <span class="spine__title">Codex Seraphinianus</span>
-        <span class="spine__author">Serafini</span>
-      </a>
-      <a class="spine spine--ground" href="treatise.html">
-        <span class="spine__title">The Ground Beneath the Ought</span>
-        <span class="spine__author">Power Corrupts &amp; Bereal, Esq.</span>
-      </a>
-    </div>
-  </div>
+    <!-- Shelf 3 (y 1950–2650) -->
+    <a href="https://www.amazon.com/s?k=Calvino+Invisible+Cities" target="_blank"><rect x="239" y="1950" width="293" height="700" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=William+James+Principles+Psychology" target="_blank"><rect x="616" y="1950" width="293" height="700" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Russell+Analysis+of+Mind" target="_blank"><rect x="992" y="1950" width="293" height="700" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Hafez+Divan" target="_blank"><rect x="1369" y="1950" width="293" height="700" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Everett+Relative+State+Formulation" target="_blank"><rect x="1746" y="1950" width="293" height="700" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.amazon.com/s?k=Deutsch+Fabric+of+Reality" target="_blank"><rect x="2122" y="1950" width="293" height="700" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=Wordsworth+The+Prelude" target="_blank"><rect x="2499" y="1950" width="293" height="700" fill="transparent" cursor="pointer"/></a>
+    <a href="https://www.amazon.com/s?k=Serafini+Codex+Seraphinianus" target="_blank"><rect x="2876" y="1950" width="293" height="700" fill="transparent" cursor="pointer"/></a>
+    <a href="assets/ground-beneath-the-ought.pdf" target="_blank"><rect x="3252" y="1950" width="293" height="700" fill="transparent" cursor="pointer"/></a>
+  </svg>
 
   <a class="back-link" href="room.html">&larr; back</a>
 
