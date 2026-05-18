@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Garden — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <main class="wrong-room">
+    <p>This path does not continue here.</p>
+
+    <a href="#" id="back-link" class="btn">[ back to the gate ]</a>
+
+    <p class="wrong-countdown" id="countdown"></p>
+  </main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script>
+    // Read which gate we came from via query string: ?from=5 or ?from=8
+    var params = new URLSearchParams(window.location.search);
+    var from = params.get('from') === '8' ? '8' : '5';
+    var backPath = '../layer-' + from + '/';
+
+    document.getElementById('back-link').setAttribute('href', backPath);
+
+    // 8-second auto-redirect back to the last gate
+    var seconds = 8;
+    var countEl = document.getElementById('countdown');
+    countEl.textContent = 'returning in ' + seconds + 's';
+
+    var timer = setInterval(function () {
+      seconds--;
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.replace(backPath);
+      } else {
+        countEl.textContent = 'returning in ' + seconds + 's';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

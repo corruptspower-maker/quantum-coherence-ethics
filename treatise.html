@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Ground Beneath the Ought — QCE Illuminated</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap');
+
+  :root {
+    --purple-50: #EEEDFE; --purple-200: #AFA9EC; --purple-600: #534AB7; --purple-800: #3C3489; --purple-900: #26215C;
+    --teal-50: #E1F5EE; --teal-200: #5DCAA5; --teal-600: #0F6E56; --teal-800: #085041; --teal-900: #04342C;
+    --coral-50: #FAECE7; --coral-200: #F0997B; --coral-600: #993C1D;
+    --blue-50: #E6F1FB; --blue-200: #85B7EB; --blue-600: #185FA5; --blue-800: #0C447C;
+    --amber-50: #FAEEDA; --amber-200: #EF9F27; --amber-600: #854F0B;
+    --green-50: #EAF3DE; --green-200: #97C459; --green-600: #3B6D11;
+    --pink-50: #FBEAF0; --pink-200: #ED93B1; --pink-600: #993556;
+    --gray-100: #D3D1C7; --gray-400: #888780; --gray-600: #5F5E5A; --gray-800: #444441;
+    --ink: #1a1916;
+    --muted: #5F5E5A;
+    --page: #fdfcf8;
+    --rule: #D3D1C7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--ink);
+    background: var(--page);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 48px 100px;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3em;
+    color: var(--ink);
+  }
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple-600);
+    margin: 3rem 0 0.6rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--rule);
+  }
+  h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 1.8rem 0 0.5rem;
+    color: var(--ink);
+  }
+  p { margin-bottom: 1.1em; }
+
+  .byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.2em;
+  }
+  .epigraph {
+    font-style: italic;
+    color: var(--muted);
+    margin: 2.5rem 0 2.5rem 2rem;
+    border-left: 2px solid var(--purple-200);
+    padding-left: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+  .epigraph cite {
+    display: block;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    margin-top: 0.5em;
+    letter-spacing: 0.04em;
+  }
+
+  .layer-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    display: block;
+    margin-bottom: 0.4em;
+  }
+
+  .equation {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    text-align: center;
+    padding: 1.2rem 2rem;
+    background: var(--purple-50);
+    border: 0.5px solid var(--purple-200);
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    color: var(--purple-900);
+    letter-spacing: 0.03em;
+  }
+
+  .principle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 1.5rem 0;
+  }
+  .principle {
+    padding: 1rem 1.1rem;
+    border-radius: 8px;
+    border: 0.5px solid;
+  }
+  .principle .p-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.3em;
+  }
+  .principle p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--ink);
+  }
+  .p-purple { background: var(--purple-50); border-color: var(--purple-200); }
+  .p-purple .p-label { color: var(--purple-600); }
+  .p-teal   { background: var(--teal-50);   border-color: var(--teal-200);   }
+  .p-teal   .p-label { color: var(--teal-600); }
+  .p-coral  { background: var(--coral-50);  border-color: var(--coral-200);  }
+  .p-coral  .p-label { color: var(--coral-600); }
+  .p-blue   { background: var(--blue-50);   border-color: var(--blue-200);   }
+  .p-blue   .p-label { color: var(--blue-600); }
+  .p-green  { background: var(--green-50);  border-color: var(--green-200);  }
+  .p-green  .p-label { color: var(--green-600); }
+  .p-amber  { background: var(--amber-50);  border-color: var(--amber-200);  }
+  .p-amber  .p-label { color: var(--amber-600); }
+  .p-gray   { background: #F1EFE8;          border-color: var(--gray-100);   }
+  .p-gray   .p-label { color: var(--gray-600); }
+  .p-pink   { background: var(--pink-50);   border-color: var(--pink-200);   }
+  .p-pink   .p-label { color: var(--pink-600); }
+
+  .dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 1.5rem 0;
+  }
+  .dual-card {
+    padding: 1rem 1.1rem;
+    border-radius: 8px;
+    border: 0.5px solid;
+  }
+  .dc-blue   { background: var(--blue-50); border-color: var(--blue-200); }
+  .dc-amber  { background: var(--amber-50); border-color: var(--amber-200); }
+  .dual-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4em;
+  }
+  .dc-blue h4 { color: var(--blue-600); }
+  .dc-amber h4 { color: var(--amber-600); }
+  .dual-card p { font-size: 0.95rem; line-height: 1.5; margin: 0; }
+
+  .asymptote-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 1.5rem 0;
+  }
+  .asy-card {
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    border: 0.5px solid;
+  }
+  .asy-coral { background: var(--coral-50); border-color: var(--coral-200); }
+  .asy-teal  { background: var(--teal-50);  border-color: var(--teal-200);  }
+  .asy-card h4 { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4em; }
+  .asy-coral h4 { color: var(--coral-600); }
+  .asy-teal h4  { color: var(--teal-600);  }
+  .asy-card p { font-size: 0.95rem; line-height: 1.5; margin: 0; }
+
+  .closing-box {
+    background: var(--teal-50);
+    border: 0.5px solid var(--teal-200);
+    border-radius: 12px;
+    padding: 2rem 2.2rem;
+    margin: 2.5rem 0;
+  }
+  .closing-box h3 {
+    color: var(--teal-800);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  .closing-box .lived-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .lived-cell {
+    background: rgba(8,80,65,0.1);
+    border-radius: 6px;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--teal-900);
+  }
+  .final-verse {
+    text-align: center;
+    font-style: italic;
+    color: var(--teal-600);
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 0.5px solid var(--teal-200);
+  }
+
+  hr { border: none; border-top: 0.5px solid var(--rule); margin: 3rem 0; }
+
+  /* ── SVG DIAGRAM ── */
+  .diagram-wrap {
+    margin: 2.5rem -20px;
+    background: var(--page);
+    border: 0.5px solid var(--rule);
+    border-radius: 12px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .diagram-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* The SVG uses colors directly — no CSS vars needed in the SVG itself */
+  .qce-svg text { font-family: 'Inter', sans-serif; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { padding: 40px 32px; font-size: 16px; }
+    .diagram-wrap { page-break-inside: avoid; }
+    h2 { page-break-before: auto; }
+    .principle-grid, .dual-grid, .asymptote-grid { page-break-inside: avoid; }
+    .closing-box { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<p class="byline">Power Corrupts &amp; Bereal, Esq. — Draft 2026</p>
+<h1>The Ground Beneath the&nbsp;Ought</h1>
+<p class="byline" style="margin-top:0.4em;">Quantum Coherence Ethics — All Eleven Layers, Illuminated</p>
+
+<div class="epigraph">
+  Light strikes the prism. Nothing was added.
+  <cite>— QCE, epigraph</cite>
+</div>
+
+<!-- ══════════════ DIAGRAM ══════════════ -->
+<div class="diagram-wrap">
+<svg class="qce-svg" width="100%" viewBox="0 0 680 1980" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <linearGradient id="prism" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#7F77DD" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#1D9E75" stop-opacity="0.08"/>
+  </linearGradient>
+</defs>
+
+<!-- header -->
+<rect x="40" y="20" width="600" height="72" rx="14" fill="url(#prism)" stroke="#7F77DD" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="18" font-weight="500" x="340" y="52" text-anchor="middle" fill="#3C3489" dominant-baseline="central">The Ground Beneath the Ought</text>
+<text font-family="Inter,sans-serif" font-size="12" x="340" y="76" text-anchor="middle" fill="#534AB7">Quantum Coherence Ethics — all eleven layers</text>
+
+<!-- spine -->
+<line x1="340" y1="92" x2="340" y2="1950" stroke="#D3D1C7" stroke-width="0.5" stroke-dasharray="3 5"/>
+
+<!-- layer labels style: font-size=11, fill=#888780, font-family=Inter -->
+
+<!-- L1 -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="124" text-anchor="middle" fill="#888780">LAYER 1 — the conditional physics</text>
+<rect x="160" y="132" width="360" height="58" rx="10" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="14" font-weight="500" x="340" y="155" text-anchor="middle" fill="#26215C" dominant-baseline="central">The wave function never collapses</text>
+<text font-family="Inter,sans-serif" font-size="12" x="340" y="177" text-anchor="middle" fill="#534AB7" dominant-baseline="central">Everett 1957 — all branches are equally real</text>
+<line x1="340" y1="190" x2="340" y2="214" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L2 -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="228" text-anchor="middle" fill="#888780">LAYER 2 — the distributed being</text>
+<rect x="100" y="236" width="480" height="70" rx="10" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="14" font-weight="500" x="340" y="258" text-anchor="middle" fill="#04342C" dominant-baseline="central">You are not a single trajectory</text>
+<text font-family="Inter,sans-serif" font-size="12" x="340" y="278" text-anchor="middle" fill="#0F6E56" dominant-baseline="central">You are one entity instantiated across every branch</text>
+<text font-family="Inter,sans-serif" font-size="12" x="340" y="294" text-anchor="middle" fill="#0F6E56" dominant-baseline="central">sharing your causal origin — same DNA, same spacetime</text>
+
+<!-- prism illustration -->
+<polygon points="340,326 280,364 400,364" fill="none" stroke="#534AB7" stroke-width="0.8"/>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="322" text-anchor="middle" fill="#534AB7">you enter here</text>
+<line x1="300" y1="364" x2="250" y2="384" stroke="#3B8BD4" stroke-width="1.5"/>
+<line x1="320" y1="364" x2="305" y2="392" stroke="#1D9E75" stroke-width="1.5"/>
+<line x1="340" y1="364" x2="340" y2="396" stroke="#EF9F27" stroke-width="1.5"/>
+<line x1="360" y1="364" x2="374" y2="388" stroke="#D85A30" stroke-width="1.5"/>
+<line x1="380" y1="364" x2="418" y2="382" stroke="#D4537E" stroke-width="1.5"/>
+<text font-family="Inter,sans-serif" font-size="11" x="234" y="392" text-anchor="end" fill="#185FA5">branch</text>
+<text font-family="Inter,sans-serif" font-size="11" x="428" y="390" text-anchor="start" fill="#993556">branch</text>
+<line x1="340" y1="404" x2="340" y2="424" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L3 -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="438" text-anchor="middle" fill="#888780">LAYER 3 — dual perspective (Foundation 4)</text>
+<rect x="60" y="446" width="248" height="60" rx="10" fill="#E6F1FB" stroke="#85B7EB" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="14" font-weight="500" x="184" y="466" text-anchor="middle" fill="#042C53" dominant-baseline="central">Copenhagen — inside</text>
+<text font-family="Inter,sans-serif" font-size="12" x="184" y="487" text-anchor="middle" fill="#185FA5" dominant-baseline="central">One world. One outcome. Real.</text>
+<rect x="372" y="446" width="248" height="60" rx="10" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="14" font-weight="500" x="496" y="466" text-anchor="middle" fill="#412402" dominant-baseline="central">Everett — outside</text>
+<text font-family="Inter,sans-serif" font-size="12" x="496" y="487" text-anchor="middle" fill="#854F0B" dominant-baseline="central">All branches. All real. All you.</text>
+<text font-family="Inter,sans-serif" font-size="14" x="340" y="479" text-anchor="middle" fill="#5F5E5A">=</text>
+<line x1="340" y1="506" x2="340" y2="528" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L4 -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="542" text-anchor="middle" fill="#888780">LAYER 4 — Triple P (the structural preconditions)</text>
+<rect x="60" y="550" width="168" height="74" rx="10" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="144" y="574" text-anchor="middle" fill="#4A1B0C" dominant-baseline="central">P — Probability</text>
+<text font-family="Inter,sans-serif" font-size="11" x="144" y="595" text-anchor="middle" fill="#993C1D" dominant-baseline="central">Survival in this branch</text>
+<text font-family="Inter,sans-serif" font-size="11" x="144" y="612" text-anchor="middle" fill="#993C1D" dominant-baseline="central">P ∈ [0, 1]</text>
+<rect x="256" y="550" width="168" height="74" rx="10" fill="#EAF3DE" stroke="#97C459" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="340" y="574" text-anchor="middle" fill="#173404" dominant-baseline="central">Σ — Possibility</text>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="595" text-anchor="middle" fill="#3B6D11" dominant-baseline="central">Scope, open paths</text>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="612" text-anchor="middle" fill="#3B6D11" dominant-baseline="central">degrees of freedom</text>
+<rect x="452" y="550" width="168" height="74" rx="10" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="536" y="574" text-anchor="middle" fill="#26215C" dominant-baseline="central">Λ — Potential</text>
+<text font-family="Inter,sans-serif" font-size="11" x="536" y="595" text-anchor="middle" fill="#534AB7" dominant-baseline="central">Capacity, knowledge</text>
+<text font-family="Inter,sans-serif" font-size="11" x="536" y="612" text-anchor="middle" fill="#534AB7" dominant-baseline="central">power to act</text>
+<text font-family="Inter,sans-serif" font-size="13" x="340" y="642" text-anchor="middle" fill="#5F5E5A">Q(ω) = P(ω) · [ Σ(ω) + Λ(ω) ]</text>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="658" text-anchor="middle" fill="#888780">The floor below which "good" and "evil" lose their referent</text>
+<line x1="340" y1="666" x2="340" y2="686" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L5 -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="700" text-anchor="middle" fill="#888780">LAYER 5 — the QCE equation (descriptive, not prescriptive)</text>
+<rect x="100" y="708" width="480" height="64" rx="10" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="14" font-weight="500" x="340" y="730" text-anchor="middle" fill="#2C2C2A" dominant-baseline="central">QCE(a) = Σ w(ω|a) · P(ω) · [Σ(ω) + Λ(ω)]</text>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="756" text-anchor="middle" fill="#5F5E5A" dominant-baseline="central">Branch-weighted quality of existence across all downstream selves</text>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="782" text-anchor="middle" fill="#888780">Not an optimization target. A description of what is at stake.</text>
+<line x1="340" y1="790" x2="340" y2="812" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L6 -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="826" text-anchor="middle" fill="#888780">LAYER 6 — the ancestral structure (Foundation 5)</text>
+<rect x="100" y="834" width="480" height="70" rx="10" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="14" font-weight="500" x="340" y="856" text-anchor="middle" fill="#04342C" dominant-baseline="central">You do not choose your branch</text>
+<text font-family="Inter,sans-serif" font-size="12" x="340" y="876" text-anchor="middle" fill="#0F6E56" dominant-baseline="central">You shape the inherited conditions every downstream self receives</text>
+<text font-family="Inter,sans-serif" font-size="12" x="340" y="893" text-anchor="middle" fill="#0F6E56" dominant-baseline="central">The present self is the ancestor of all branch-selves that follow</text>
+<line x1="340" y1="904" x2="340" y2="928" stroke="#5F5E5A" stroke-width="0.8"/>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="926" text-anchor="middle" fill="#888780">your present action</text>
+<line x1="340" y1="928" x2="252" y2="958" stroke="#1D9E75" stroke-width="0.8"/>
+<line x1="340" y1="928" x2="340" y2="958" stroke="#1D9E75" stroke-width="0.8"/>
+<line x1="340" y1="928" x2="428" y2="958" stroke="#1D9E75" stroke-width="0.8"/>
+<circle cx="252" cy="961" r="5" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.8"/>
+<circle cx="340" cy="961" r="5" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.8"/>
+<circle cx="428" cy="961" r="5" fill="#9FE1CB" stroke="#1D9E75" stroke-width="0.8"/>
+<text font-family="Inter,sans-serif" font-size="11" x="180" y="972" text-anchor="middle" fill="#0F6E56">branch-self A</text>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="978" text-anchor="middle" fill="#0F6E56">branch-self B</text>
+<text font-family="Inter,sans-serif" font-size="11" x="500" y="972" text-anchor="middle" fill="#0F6E56">branch-self C</text>
+<line x1="340" y1="988" x2="340" y2="1010" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L7 -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="1024" text-anchor="middle" fill="#888780">LAYER 7 — identity: not dissolved, distributed</text>
+<rect x="60" y="1032" width="240" height="72" rx="10" fill="#E6F1FB" stroke="#85B7EB" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="180" y="1052" text-anchor="middle" fill="#042C53" dominant-baseline="central">Parfit's move</text>
+<text font-family="Inter,sans-serif" font-size="11" x="180" y="1072" text-anchor="middle" fill="#185FA5" dominant-baseline="central">Identity fails under branching.</text>
+<text font-family="Inter,sans-serif" font-size="11" x="180" y="1089" text-anchor="middle" fill="#185FA5" dominant-baseline="central">Dissolve it. Use Relation R.</text>
+<rect x="380" y="1032" width="240" height="72" rx="10" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="500" y="1052" text-anchor="middle" fill="#412402" dominant-baseline="central">QCE's move</text>
+<text font-family="Inter,sans-serif" font-size="11" x="500" y="1072" text-anchor="middle" fill="#854F0B" dominant-baseline="central">Identity branches with the physics.</text>
+<text font-family="Inter,sans-serif" font-size="11" x="500" y="1089" text-anchor="middle" fill="#854F0B" dominant-baseline="central">Every wavelength is the light.</text>
+<text font-family="Inter,sans-serif" font-size="14" x="340" y="1068" text-anchor="middle" fill="#888780">vs.</text>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="1122" text-anchor="middle" fill="#888780">Wittgenstein: stop looking for a private inner identity-fact.</text>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="1138" text-anchor="middle" fill="#888780">Identity is a practice — causal origin + wave function structure.</text>
+<line x1="340" y1="1146" x2="340" y2="1168" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L8 principles -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="1182" text-anchor="middle" fill="#888780">LAYER 8 — the eight principles</text>
+<rect x="60" y="1190" width="248" height="48" rx="8" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="184" y="1208" text-anchor="middle" fill="#26215C" dominant-baseline="central">P1 Quantum morality</text>
+<text font-family="Inter,sans-serif" font-size="11" x="184" y="1226" text-anchor="middle" fill="#534AB7" dominant-baseline="central">Good = increasing Triple P</text>
+<rect x="372" y="1190" width="248" height="48" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="496" y="1208" text-anchor="middle" fill="#04342C" dominant-baseline="central">P2 The first rule</text>
+<text font-family="Inter,sans-serif" font-size="11" x="496" y="1226" text-anchor="middle" fill="#0F6E56" dominant-baseline="central">What harms others harms you</text>
+<rect x="60" y="1248" width="248" height="48" rx="8" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="184" y="1266" text-anchor="middle" fill="#4A1B0C" dominant-baseline="central">P3 Non-tyranny</text>
+<text font-family="Inter,sans-serif" font-size="11" x="184" y="1284" text-anchor="middle" fill="#993C1D" dominant-baseline="central">Present can't foreclose future</text>
+<rect x="372" y="1248" width="248" height="48" rx="8" fill="#E6F1FB" stroke="#85B7EB" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="496" y="1266" text-anchor="middle" fill="#042C53" dominant-baseline="central">P4 Non-judgment</text>
+<text font-family="Inter,sans-serif" font-size="11" x="496" y="1284" text-anchor="middle" fill="#185FA5" dominant-baseline="central">No branch sees the full spectrum</text>
+<rect x="60" y="1306" width="248" height="48" rx="8" fill="#EAF3DE" stroke="#97C459" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="184" y="1324" text-anchor="middle" fill="#173404" dominant-baseline="central">P5 Coherence as product</text>
+<text font-family="Inter,sans-serif" font-size="11" x="184" y="1342" text-anchor="middle" fill="#3B6D11" dominant-baseline="central">Emerges from full expression</text>
+<rect x="372" y="1306" width="248" height="48" rx="8" fill="#FAEEDA" stroke="#EF9F27" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="496" y="1324" text-anchor="middle" fill="#412402" dominant-baseline="central">P6 Multiplicative function</text>
+<text font-family="Inter,sans-serif" font-size="11" x="496" y="1342" text-anchor="middle" fill="#854F0B" dominant-baseline="central">Branching compounds investment</text>
+<rect x="60" y="1364" width="248" height="48" rx="8" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="184" y="1382" text-anchor="middle" fill="#2C2C2A" dominant-baseline="central">P7 Structural precondition</text>
+<text font-family="Inter,sans-serif" font-size="11" x="184" y="1400" text-anchor="middle" fill="#5F5E5A" dominant-baseline="central">No is→ought. Floor identified.</text>
+<rect x="372" y="1364" width="248" height="48" rx="8" fill="#FBEAF0" stroke="#ED93B1" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="496" y="1382" text-anchor="middle" fill="#4B1528" dominant-baseline="central">P8 The quantum turn</text>
+<text font-family="Inter,sans-serif" font-size="11" x="496" y="1400" text-anchor="middle" fill="#993556" dominant-baseline="central">Ethics native to the real physics</text>
+<line x1="340" y1="1412" x2="340" y2="1434" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L9 asymptotes -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="1448" text-anchor="middle" fill="#888780">LAYER 9 — the two asymptotes</text>
+<rect x="60" y="1456" width="240" height="64" rx="10" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="180" y="1476" text-anchor="middle" fill="#4A1B0C" dominant-baseline="central">Entropic asymptote</text>
+<text font-family="Inter,sans-serif" font-size="11" x="180" y="1496" text-anchor="middle" fill="#993C1D" dominant-baseline="central">Survival without flourishing</text>
+<text font-family="Inter,sans-serif" font-size="11" x="180" y="1512" text-anchor="middle" fill="#993C1D" dominant-baseline="central">Wilson's horror story</text>
+<rect x="380" y="1456" width="240" height="64" rx="10" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="500" y="1476" text-anchor="middle" fill="#04342C" dominant-baseline="central">Eudaimonic asymptote</text>
+<text font-family="Inter,sans-serif" font-size="11" x="500" y="1496" text-anchor="middle" fill="#0F6E56" dominant-baseline="central">Compounding flourishing</text>
+<text font-family="Inter,sans-serif" font-size="11" x="500" y="1512" text-anchor="middle" fill="#0F6E56" dominant-baseline="central">Aristotle + Everett</text>
+<line x1="300" y1="1488" x2="380" y2="1488" stroke="#888780" stroke-width="0.8"/>
+<text font-family="Inter,sans-serif" font-size="14" x="340" y="1484" text-anchor="middle" fill="#5F5E5A">→</text>
+<line x1="340" y1="1520" x2="340" y2="1542" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L10 corrections -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="1556" text-anchor="middle" fill="#888780">LAYER 10 — two structural corrections</text>
+<rect x="60" y="1564" width="240" height="64" rx="10" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="180" y="1584" text-anchor="middle" fill="#26215C" dominant-baseline="central">Non-mortality</text>
+<text font-family="Inter,sans-serif" font-size="11" x="180" y="1604" text-anchor="middle" fill="#534AB7" dominant-baseline="central">This branch-self is not</text>
+<text font-family="Inter,sans-serif" font-size="11" x="180" y="1620" text-anchor="middle" fill="#534AB7" dominant-baseline="central">your only instance</text>
+<rect x="380" y="1564" width="240" height="64" rx="10" fill="#E6F1FB" stroke="#85B7EB" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="13" font-weight="500" x="500" y="1584" text-anchor="middle" fill="#042C53" dominant-baseline="central">Non-finitude</text>
+<text font-family="Inter,sans-serif" font-size="11" x="500" y="1604" text-anchor="middle" fill="#185FA5" dominant-baseline="central">Bounded but inexhaustible</text>
+<text font-family="Inter,sans-serif" font-size="11" x="500" y="1620" text-anchor="middle" fill="#185FA5" dominant-baseline="central">like ℝ between 0 and 1</text>
+<line x1="340" y1="1628" x2="340" y2="1650" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- L11 living it -->
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="1664" text-anchor="middle" fill="#888780">LAYER 11 — how a human actually inhabits this</text>
+<rect x="40" y="1672" width="600" height="264" rx="14" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.8"/>
+<text font-family="Inter,sans-serif" font-size="14" font-weight="500" x="340" y="1700" text-anchor="middle" fill="#04342C" dominant-baseline="central">The prism, from the inside</text>
+<rect x="68" y="1718" width="260" height="50" rx="7" fill="#04342C" fill-opacity="0.12"/>
+<text font-family="Inter,sans-serif" font-size="11" x="78" y="1738" fill="#04342C">Every habit is an ancestral gift.</text>
+<text font-family="Inter,sans-serif" font-size="11" x="78" y="1756" fill="#04342C">You are planting, not choosing.</text>
+<rect x="352" y="1718" width="260" height="50" rx="7" fill="#04342C" fill-opacity="0.12"/>
+<text font-family="Inter,sans-serif" font-size="11" x="362" y="1738" fill="#04342C">Harm to others is already in</text>
+<text font-family="Inter,sans-serif" font-size="11" x="362" y="1756" fill="#04342C">your own distribution.</text>
+<rect x="68" y="1778" width="260" height="50" rx="7" fill="#04342C" fill-opacity="0.12"/>
+<text font-family="Inter,sans-serif" font-size="11" x="78" y="1798" fill="#04342C">Death ends a branch-self,</text>
+<text font-family="Inter,sans-serif" font-size="11" x="78" y="1816" fill="#04342C">not the distributed being.</text>
+<rect x="352" y="1778" width="260" height="50" rx="7" fill="#04342C" fill-opacity="0.12"/>
+<text font-family="Inter,sans-serif" font-size="11" x="362" y="1798" fill="#04342C">No branch can judge another.</text>
+<text font-family="Inter,sans-serif" font-size="11" x="362" y="1816" fill="#04342C">You cannot see the full spectrum.</text>
+<rect x="68" y="1838" width="544" height="36" rx="7" fill="#04342C" fill-opacity="0.1"/>
+<text font-family="Inter,sans-serif" font-size="12" x="340" y="1862" text-anchor="middle" fill="#04342C">The question is not who you are. It is what you are leaving</text>
+<text font-family="Inter,sans-serif" font-size="12" x="340" y="1900" text-anchor="middle" fill="#0F6E56">in the frequencies you will never inhabit.</text>
+
+<!-- closing rule -->
+<line x1="100" y1="1938" x2="580" y2="1938" stroke="#D3D1C7" stroke-width="0.5"/>
+<text font-family="Inter,sans-serif" font-size="11" x="340" y="1960" text-anchor="middle" fill="#888780">Non-finitude is your inheritance. On a long enough timeline, your is becomes your ought.</text>
+</svg>
+<p class="diagram-caption">Fig. 1 — QCE: all eleven layers, from physics through lived experience</p>
+</div>
+
+<!-- ══════════════ BODY TEXT ══════════════ -->
+
+<h2>Layer 1 — The Physics</h2>
+<span class="layer-label">The conditional</span>
+<p>The entire structure rests on one premise: Hugh Everett III was right. The wave function never collapses. Every quantum event that can occur does occur, in its own branch of a continuously branching reality. All branches are equally real. The argument is conditional throughout — <em>if</em> Everett is correct, then what follows. But the conditional carries more weight than it might appear. If he is right, then every prior ethical framework was built on an incomplete description of what a person is. Incomplete descriptions produce incomplete ethics, however carefully reasoned.</p>
+
+<div class="equation">If the branches are real → a person is not what any prior ethical framework assumed.</div>
+
+<h2>Layer 2 — The Distributed Being</h2>
+<span class="layer-label">Foundation 1 &amp; 2</span>
+<p>You are not a person moving through time making choices toward a single future. You are a distributed being — one entity instantiated across every branch of the wave function that shares your causal origin. Same DNA. Same spacetime insertion. The branches are not hypothetical futures. They are as real as this one. You are the white beam. The spectrum is already in you before the prism touches it.</p>
+<p>Every wavelength is the light. No branch-self is more fully the distributed being than any other. Foundation 2 — Spectral Identity — states it: the distributed being persists across branches the way light persists across its spectrum. The prism does not create the spectrum. It makes it legible.</p>
+
+<h2>Layer 3 — The Dual Perspective</h2>
+<span class="layer-label">Foundation 4</span>
+<div class="dual-grid">
+  <div class="dual-card dc-blue">
+    <h4>Copenhagen — inside</h4>
+    <p>From inside any branch, it looks like Copenhagen: one world, one outcome, one self. This is not an illusion. It is exactly what experience inside a branch is. Real, complete, valid.</p>
+  </div>
+  <div class="dual-card dc-amber">
+    <h4>Everett — outside</h4>
+    <p>From outside the branch, it is Everett: all branches real, all equally you. The same physics, read at a different scale. Both are true simultaneously without contradiction.</p>
+  </div>
+</div>
+
+<h2>Layer 4 — Triple P</h2>
+<span class="layer-label">The structural preconditions of ethical discourse</span>
+<p>Before ethics can have a subject, the subject must exist, have ways of existing, and have capacity within existing. Triple P is not a proposed value system — it is the floor below which the words <em>good</em> and <em>evil</em> lose their referent entirely.</p>
+
+<div class="equation">Q(ω) = P(ω) · [ Σ(ω) + Λ(ω) ]</div>
+
+<p><strong>Probability P(ω)</strong> — survival in the branch. The gate. Without it, nothing else has a subject. <strong>Possibility Σ(ω)</strong> — scope, degrees of freedom, open paths, ways existence can be lived. <strong>Potential Λ(ω)</strong> — capacity, resources, health, knowledge, power to act. Probability gates both: without survival, neither scope nor capacity has anyone inside it.</p>
+<p>This is Principle 7's content — QCE does not derive <em>ought</em> from <em>is.</em> It identifies Triple P as the structural minimum below which <em>ought</em> loses its subject. Hume's guillotine is intact. The is/ought gap is not crossed. The floor is identified, not mandated.</p>
+
+<h2>Layer 5 — The Canon Equation</h2>
+<span class="layer-label">Descriptive, not prescriptive</span>
+<div class="equation">QCE(a) = Σ<sub>ω∈Ω(a)</sub> w(ω|a) · P(ω) · [Σ(ω) + Λ(ω)]</div>
+<p>Branch-weighted quality of existence across the full downstream distribution resulting from a present action. The weights w(ω|a) are Born measures — ontological quantities describing how much reality flows into each branch given action a. This equation is a description of what is at stake. It is not a utility function to maximize, not a decision procedure, not a prescription. It is the landscape. What you build on it is yours.</p>
+
+<h2>Layer 6 — The Ancestral Structure</h2>
+<span class="layer-label">Foundation 5</span>
+<p>The present self does not choose its branch. The branches are determined by the unitary evolution of the wave function, not by will. What the present self does is shape the <em>inherited conditions</em> that every downstream branch-self receives — the resources, the open paths, the starting position. You are not deciding which future to inhabit. You are planting conditions in ground that is already branching in every direction simultaneously.</p>
+<p>The ethical question is not which branch to choose. It is what to leave for those who follow. You are their ancestor. Every present action propagates into the inherited conditions of beings who certainly exist.</p>
+
+<h2>Layer 7 — Identity: Not Dissolved, Distributed</h2>
+<span class="layer-label">The engagement with Parfit</span>
+<p><em>Reasons and Persons</em> is one of the most rigorously argued works in twentieth-century philosophy. Parfit correctly identified that classical singular identity cannot survive branching without arbitrariness. In fission cases, neither resulting person is determinately the original. The concept fails. His conclusion: dissolve identity. Replace it with Relation R — psychological connectedness and continuity with the right kind of cause.</p>
+<p>QCE draws the opposite conclusion from the same observation. When scientific ontology expands, concepts expand with it. The discovery that the universe is vastly larger than the solar system did not make "the universe" incoherent. Identity does not dissolve under MWI. It distributes. The cartel enforcer in another branch is the same distributed being who made every decision that branch required — because when the wave function branched, it did not produce two people. It produced one distributed being, expressed in two branches. To say "that's not me" is to say the light is not the same light because the wavelengths separated.</p>
+<p>Wittgenstein contributes two moves. First, the private language argument dissolves the demand for a private inner identity-fact that Parfit's position implicitly requires. Second, QCE builds on the cleared ground: what makes all branch-selves instances of the same distributed being is not shared memory, not convergent psychology — it is shared causal origin and wave function structure. That criterion is structural, not private. Written into the physics of what a person actually is.</p>
+
+<h2>Layer 8 — The Eight Principles</h2>
+<span class="layer-label">What follows from the physics</span>
+
+<div class="principle-grid">
+  <div class="principle p-purple">
+    <span class="p-label">P1 — Quantum morality</span>
+    <p>Good is increasing Triple P across the distribution. Evil is decreasing it. This is not a moral commandment. It is what "good" and "evil" must mean at minimum, or they mean nothing.</p>
+  </div>
+  <div class="principle p-teal">
+    <span class="p-label">P2 — The first rule</span>
+    <p>What is good for this goose is good for the gander. Harm to others is structural diminishment of your own distribution — damaged relationships, narrowed trust, reduced scope and scale propagate into every downstream branch the moment the action is taken.</p>
+  </div>
+  <div class="principle p-coral">
+    <span class="p-label">P3 — Non-tyranny of the present</span>
+    <p>The present self holds no privileged authority over the distribution. To foreclose possibilities for future selves — to optimize for one narrow outcome — is tyranny over your own distributed being. You are not doing yourself a favor by cutting away what you could possibly be.</p>
+  </div>
+  <div class="principle p-blue">
+    <span class="p-label">P4 — Non-judgment</span>
+    <p>No branch-self possesses sufficient information to render legitimate judgment on another. The only coherent vantage point is the complete distributed being — the full spectrum at the end of the waveform. Within any single branch, that depth is structurally unavailable.</p>
+  </div>
+  <div class="principle p-green">
+    <span class="p-label">P5 — Coherence as product</span>
+    <p>Coherence is not chosen. It is the emergent result of increasing Triple P without increasing constraints. When every branch-self has maximum resources to be fully itself, the distributed being is coherent — not through uniformity, but through full expression of every wavelength.</p>
+  </div>
+  <div class="principle p-amber">
+    <span class="p-label">P6 — The multiplicative function</span>
+    <p>Branching multiplies the effects of present actions. Long-term structural investments — habits, relationships, knowledge — propagate across exponentially many downstream branches. The further into the future an action reaches, the greater its multiplicative return.</p>
+  </div>
+  <div class="principle p-gray">
+    <span class="p-label">P7 — The structural precondition</span>
+    <p>QCE does not derive ought from is. It identifies Triple P as the structural ground of any ethical discourse. Without probability, possibility, and potential, there is nothing for ethics to be about. The framework identifies the floor; the normative building is yours to construct.</p>
+  </div>
+  <div class="principle p-pink">
+    <span class="p-label">P8 — The quantum turn</span>
+    <p>Previous ethical systems were Newtonian — built for a single trajectory through a single world. Under MWI, the foundation that prior ethics had to postulate (freedom, the future self's reality) is given structurally. QCE is the ethics native to the physics we actually inhabit.</p>
+  </div>
+</div>
+
+<h2>Layer 9 — The Two Asymptotes</h2>
+<span class="layer-label">The eudaimonic answer to Wilson's horror</span>
+<p>Robert Charles Wilson's "Divided by Infinity" presents quantum immortality as horror: consciousness persisting across branches of diminishing probability, diminishing possibility, diminishing potential — surviving, barely, in increasingly degraded conditions approaching the minimum viable branch. That is the entropic asymptote. It is the null hypothesis. It is what branching becomes without Triple P investment.</p>
+
+<div class="asymptote-grid">
+  <div class="asy-card asy-coral">
+    <h4>Entropic asymptote</h4>
+    <p>Survival without flourishing. Consciousness persisting in increasingly degraded branches. Divided by infinity. Wilson's horror. The fate of the distributed being that makes no ancestral investment.</p>
+  </div>
+  <div class="asy-card asy-teal">
+    <h4>Eudaimonic asymptote</h4>
+    <p>Because branching is multiplicative, consistent Triple P investment compounds across exponentially many downstream branches. Not divided by infinity — multiplied by it. Aristotle's eudaimonia, given the physics that shows how deep it goes.</p>
+  </div>
+</div>
+
+<p>The QCE equation is the structural distance between them. The present self is not a passive particle diluted across branches. It is an ancestor planting conditions in every branch simultaneously — conditions that compound forward through the distribution.</p>
+
+<h2>Layer 10 — Two Structural Corrections</h2>
+<span class="layer-label">Non-mortality &amp; non-finitude</span>
+<p><strong>Non-mortality</strong> is not immortality. When a branch-self ends, the distributed being is not exhausted. The distributed being continues in every branch where it continues. The present branch-self is not the whole of what the distributed being is, any more than a single cell is the whole of the organism it belongs to. The terror of death does not disappear as an experience. But it loses its metaphysical justification. You were never only this branch.</p>
+<p><strong>Non-finitude</strong> is a structural claim, not a size claim. The distributed being is non-finite in the sense of the real numbers between zero and one: bounded, but containing infinitely many points — because between any two points, however close, there are infinitely many others. The non-finitude is in the structure. This is the ground of Principle 3: the present self cannot foreclose the distributed being, because the distribution is not the kind of thing that can be foreclosed by any finite action.</p>
+
+<h2>Layer 11 — How a Human Actually Inhabits This</h2>
+<span class="layer-label">The prism, from the inside</span>
+
+<div class="closing-box">
+  <h3>What it feels like to live here</h3>
+  <div class="lived-item">
+    <div class="lived-cell">Every habit you build is a gift to beings who will exist whether you intend them or not. You are not trying to become something. You are planting conditions in ground that is already branching.</div>
+    <div class="lived-cell">Harm to others is not a moral failure you might get away with in some branches. It is already in your distribution the moment the action occurs. Both branches — the one where you got away with it and the one where you didn't — are you.</div>
+  </div>
+  <div class="lived-item">
+    <div class="lived-cell">The person you were at seventeen is not a stranger. They are the distributed being in an earlier configuration. The inheritance they left you is what you are working with. The inheritance you leave your downstream selves is what you are building now.</div>
+    <div class="lived-cell">Death ends a branch-self. The terror is real inside this branch. But the terror rests on the belief that you are only this branch. You are not. Non-mortality doesn't take the grief away — it correctly describes what is actually lost and what isn't.</div>
+  </div>
+  <div class="lived-item">
+    <div class="lived-cell">You cannot judge another person from inside a single branch — not because judgment is wrong as a sentiment, but because no branch-self has enough of the wave function in view to make the judgment coherent. You see one wavelength. The full spectrum is not available here.</div>
+    <div class="lived-cell">The Thrasymachus problem — why shouldn't the perfectly unjust person who appears just simply win? — has waited two and a half thousand years for an answer that doesn't depend on contingency. Under MWI, there is no branch in which a harmful action occurred and all its consequences failed to occur somewhere in your distribution. That is the answer.</div>
+  </div>
+  <div class="final-verse">
+    The question is not who you are.<br/>
+    The question is what you are leaving<br/>
+    in the frequencies you will never inhabit.<br/><br/>
+    <span style="font-style:normal;font-size:0.85rem;color:var(--teal-600);">Non-finitude is your inheritance. On a long enough timeline, your is becomes your ought.</span>
+  </div>
+</div>
+
+<hr/>
+
+<p style="font-family:'Inter',sans-serif;font-size:0.8rem;color:var(--muted);text-align:center;line-height:1.7;">
+  Power Corrupts &amp; Bereal, Esq. — Draft 2026<br/>
+  QCE Canon Formalization DOI: https://doi.org/10.5281/zenodo.18848191<br/>
+  <em>Print this page to PDF from your browser: File → Print → Save as PDF</em>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Garden — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <main class="garden-room">
+    <p class="garden-layer-label">the garden &mdash; gate 1</p>
+
+    <div class="garden-passage">
+      <!-- USER: Entry passage for the garden (50-120 words). A scene.
+           The reader has just stepped through the door from ground.html.
+           What is this place? What kind of attention is required here? -->
+      <p>[USER: Garden entry passage.]</p>
+    </div>
+
+    <div class="garden-forward">
+      <p class="gate-question">Do you understand that there is no going back to before you read this?</p>
+      <button id="yes-btn">[ yes ]</button>
+    </div>
+  </main>
+
+  <script src="../assets/js/gate.js"></script>
+  <script>
+    // Require the garden entry flag (set when user clicked the garden door in ground.html)
+    if (!QCE.has(QCE.FLAGS.GARDEN_ENTERED)) {
+      window.location.replace('/');
+    }
+
+    document.getElementById('yes-btn').addEventListener('click', function () {
+      QCE.set(QCE.FLAGS.GATE1_PASSED);
+      window.location.href = 'layer-1/';
+    });
+  </script>
+</body>
+</html>

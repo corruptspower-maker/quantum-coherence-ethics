@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Cloister — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <main class="cloister-gate">
+    <input type="text" id="code-input" placeholder="_ _ _ _ _ _ _ _"
+           maxlength="8" autocomplete="off" autocapitalize="characters" spellcheck="false">
+    <button id="enter-btn">[ enter ]</button>
+    <p class="gate-error" id="gate-error" style="display:none;">Not this one.</p>
+  </main>
+
+  <script src="../assets/js/gate.js"></script>
+  <script src="../assets/js/code.js"></script>
+  <script>
+    // Require layer-11 to have been reached before the gate is accessible
+    if (!QCE.has(QCE.FLAGS.LAYER11_REACHED)) {
+      window.location.replace('/');
+    }
+
+    document.getElementById('enter-btn').addEventListener('click', function () {
+      var val = document.getElementById('code-input').value;
+      if (validateCode(val)) {
+        QCE.set(QCE.FLAGS.CLOISTER_CODE_OK);
+        window.location.href = 'index.html';
+      } else {
+        var err = document.getElementById('gate-error');
+        err.style.display = 'block';
+        err.style.animation = 'none';
+        // Restart animation for re-entry
+        void err.offsetWidth;
+        err.style.animation = '';
+      }
+    });
+
+    document.getElementById('code-input').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('enter-btn').click();
+    });
+  </script>
+</body>
+</html>

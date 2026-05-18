@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Desk — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; overflow: hidden; }
+
+    /* ── Desk scene ── */
+    .scene {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .desk-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Clickable area over the open book — center of the desk image */
+    .book-hotspot {
+      position: absolute;
+      left: 33%;
+      top: 38%;
+      width: 28%;
+      height: 38%;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='24' font-size='24'%3E%E2%9C%92%3C/text%3E%3C/svg%3E") 4 28, pointer;
+      /* Uncomment to debug:
+         background: rgba(255, 255, 0, 0.25); */
+    }
+
+    /* QCE Primal Elements — closed book, left side */
+    .hotspot--primer {
+      position: absolute;
+      left: 3%;
+      top: 30%;
+      width: 30%;
+      height: 52%;
+      cursor: pointer;
+      /* Uncomment to debug:
+         background: rgba(0, 255, 0, 0.25); */
+    }
+
+    /* ── Puzzle overlay ── */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      align-items: center;
+      justify-content: center;
+      animation: fadein 400ms ease forwards;
+      z-index: 10;
+    }
+
+    .overlay.open { display: flex; }
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Parchment book panel */
+    .book-panel {
+      background: #f5f0e0;
+      border: 1px solid #c8b98a;
+      max-width: 520px;
+      width: 90vw;
+      padding: 2.5rem 2.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+      animation: risein 400ms ease forwards;
+    }
+
+    @keyframes risein {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Baby image placeholder — swap src for a real image when ready */
+    .baby-img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .baby-placeholder {
+      width: 100%;
+      height: 140px;
+      background: #e8e0cc;
+      border: 1px dashed #b0a070;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: #8a7a50;
+      letter-spacing: 0.08em;
+    }
+
+    .question {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.1rem;
+      color: #1a1810;
+      line-height: 1.6;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      cursor: pointer;
+    }
+
+    .option input[type="radio"] {
+      accent-color: #534AB7;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .option-label {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      color: #2a2616;
+      cursor: pointer;
+      line-height: 1.4;
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+      background: transparent;
+      border: 1px solid #1a1810;
+      color: #1a1810;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      padding: 0.5rem 1.2rem;
+      cursor: pointer;
+      transition: background 300ms ease, color 300ms ease;
+    }
+
+    .submit-btn:hover {
+      background: #1a1810;
+      color: #f5f0e0;
+    }
+
+    /* ── Wrong answer state: cottage fills screen ── */
+    .wrong-screen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #000;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+      cursor: pointer;
+      animation: fadein 600ms ease forwards;
+    }
+
+    .wrong-screen.open { display: flex; }
+
+    .wrong-screen img {
+      max-height: 90vh;
+      max-width: 90vw;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Desk scene -->
+  <div class="scene">
+    <img class="desk-img" src="images/Script_desk.png" alt="">
+    <div class="book-hotspot" id="book-hotspot" role="button" tabindex="0"
+         aria-label="Open the book"></div>
+    <a class="hotspot hotspot--primer" href="treatise.html"
+       aria-label="QCE Primal Elements"></a>
+  </div>
+
+  <!-- Puzzle overlay -->
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true">
+    <div class="book-panel">
+
+      <img class="baby-img" src="images/baby-puzzle.svg" alt="">
+
+      <p class="question">The figure at the root is a baby. Which of its descendants does it experience life as?</p>
+
+      <a href="treatise.html" target="_blank" rel="noopener"
+         style="font-family:'Courier New',monospace;font-size:0.75rem;color:#6a5a30;text-decoration:none;letter-spacing:0.06em;">
+        [ consult the text &rarr; ]
+      </a>
+
+      <div class="options">
+        <label class="option">
+          <input type="checkbox" name="answer" value="a">
+          <span class="option-label">A</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="answer" value="b">
+          <span class="option-label">B</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="answer" value="c">
+          <span class="option-label">C</span>
+        </label>
+        <label class="option">
+          <input type="checkbox" name="answer" value="d">
+          <span class="option-label">D</span>
+        </label>
+      </div>
+
+      <button class="submit-btn" id="submit-btn">[ submit ]</button>
+    </div>
+  </div>
+
+  <!-- Wrong answer: cottage fills screen, click returns to start -->
+  <div class="wrong-screen" id="wrong-screen" role="button" tabindex="0"
+       aria-label="Click to return to the beginning">
+    <img src="images/qce_site_Front.webp" alt="">
+  </div>
+
+  <script src="assets/js/gate.js"></script>
+  <script>
+    QCE.require(QCE.FLAGS.LIBRARY_ENTERED, '/');
+
+    // Correct answer: all four must be checked.
+    // They are all the baby — every branch-self carries one trait of the root.
+
+    var hotspot   = document.getElementById('book-hotspot');
+    var overlay   = document.getElementById('overlay');
+    var submitBtn = document.getElementById('submit-btn');
+    var wrongScr  = document.getElementById('wrong-screen');
+
+    function openOverlay() {
+      overlay.classList.add('open');
+    }
+
+    hotspot.addEventListener('click', openOverlay);
+    hotspot.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') openOverlay();
+    });
+
+    submitBtn.addEventListener('click', function () {
+      var checked = document.querySelectorAll('input[name="answer"]:checked');
+      if (checked.length === 0) return;
+
+      overlay.classList.remove('open');
+
+      if (checked.length === 4) {
+        // All four selected — correct
+        QCE.set(QCE.FLAGS.GARDEN_ENTERED);
+        window.location.href = 'garden/';
+      } else {
+        // Partial or single selection — wrong
+        wrongScr.classList.add('open');
+      }
+    });
+
+    wrongScr.addEventListener('click', function () {
+      window.location.href = 'index.html';
+    });
+    wrongScr.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

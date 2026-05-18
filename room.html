@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Library — QCE</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; overflow: hidden; }
+
+    .scene {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .room {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hotspot {
+      position: absolute;
+      cursor: pointer;
+      /* Uncomment to debug:
+         background: rgba(255, 0, 0, 0.25); */
+    }
+
+    /* Bookshelf: right half of the image */
+    .hotspot--shelf {
+      right: 2%;
+      top: 5%;
+      width: 42%;
+      height: 88%;
+    }
+
+    /* Desk with the open book: lower-left area */
+    .hotspot--desk {
+      left: 3%;
+      top: 52%;
+      width: 38%;
+      height: 42%;
+    }
+
+    /* Portrait on the left wall */
+    .hotspot--portrait {
+      left: 0%;
+      top: 8%;
+      width: 14%;
+      height: 52%;
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <img class="room" src="images/Scriptorium.webp" alt="">
+    <a class="hotspot hotspot--shelf" href="shelf.html" aria-label="The bookshelf"></a>
+    <a class="hotspot hotspot--desk" href="desk.html" aria-label="The desk"></a>
+    <a class="hotspot hotspot--portrait" href="everett.html" aria-label="The portrait"></a>
+  </div>
+
+  <script src="assets/js/gate.js"></script>
+  <script>
+    QCE.set(QCE.FLAGS.LIBRARY_ENTERED);
+  </script>
+</body>
+</html>

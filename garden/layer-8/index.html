@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Garden — Layer 8 — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <main class="garden-room">
+    <p class="garden-layer-label">layer 8 &mdash; gate 3</p>
+
+    <div class="garden-passage">
+      <!-- USER: Layer 8 scene passage (50-120 words). Parfit. Identity. -->
+      <p>[USER: Layer 8 passage. Parfit dissolved identity. What remains?]</p>
+    </div>
+
+    <div class="garden-forward">
+      <p class="gate-question">Parfit dissolved identity. What did he dissolve that was never there?</p>
+      <div class="gate-input-wrap">
+        <input type="text" id="gate3-input" placeholder="your answer" autocomplete="off">
+        <button id="gate3-submit">[ submit ]</button>
+        <p class="gate-error" id="gate3-error" style="display:none;">Not quite. Look again.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/puzzle.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.GATE2_PASSED)) {
+      window.location.replace('../layer-5/');
+    }
+
+    document.getElementById('gate3-submit').addEventListener('click', function () {
+      var val = document.getElementById('gate3-input').value;
+      if (checkGate3(val)) {
+        QCE.set(QCE.FLAGS.GATE3_PASSED);
+        window.location.href = '../layer-9/';
+      } else {
+        document.getElementById('gate3-error').style.display = 'block';
+        window.location.href = '../wrong/?from=8';
+      }
+    });
+
+    document.getElementById('gate3-input').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('gate3-submit').click();
+    });
+  </script>
+</body>
+</html>
