@@ -1,0 +1,25 @@
+book: hume-treatise
+title: A Treatise of Human Nature
+author: David Hume
+gutenberg_id: 4705
+
+annotations:
+
+  - id: hume-001
+    part: "Book III"
+    section: "Part I, Section I — Moral Distinctions Not Deriv'd from Reason"
+    passage: "In every system of morality, which I have hitherto met with"
+    passage_end: "expressions of an ought, or an ought not"
+    gbo_ref: "GBO 6.1"
+    label: "preconditions before norm claim"
+    connections_entry: gbo-6-1-is-ought
+    notes: >
+      The is/ought gap as Hume states it: no system of descriptive
+      premises can produce a normative conclusion without an unacknowledged
+      step. QCE closes this not by smuggling in a hidden premise but by
+      grounding the canonical threshold in the ontological structure of
+      branching reality itself. Suffering IS the invariant across branches.
+      From that invariant — not from preference, not from convention —
+      the threshold emerges. The ought is not derived from the is.
+      The ought IS the is, seen from the inside of a branching universe
+      that contains observers who can suffer.
