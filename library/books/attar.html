@@ -4,36 +4,213 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Attar — QCE Library</title>
+  <title>The Conference of the Birds — QCE Library</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #1a1916;
+      background: #fdfcf8;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid #d3d1c7;
+      padding-bottom: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    header .author {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: #888780;
+      letter-spacing: 0.08em;
+    }
+
+    .annotation-block {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 0.5px solid #e0ddd4;
+    }
+
+    .section-label {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: #888780;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    blockquote.passage {
+      font-style: italic;
+      color: #2a2820;
+      padding-left: 1.2rem;
+      border-left: 3px solid #d3d1c7;
+      line-height: 1.8;
+    }
+
+    .margin-note {
+      padding-left: 1.5rem;
+      border-left: 2px solid #534AB7;
+    }
+
+    .note-label {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: #534AB7;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .note-text {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #3a3830;
+      margin-bottom: 0.8rem;
+    }
+
+    .gbo-ref {
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      color: #888780;
+      letter-spacing: 0.06em;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #d3d1c7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: #534AB7;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .annotation-block {
+        grid-template-columns: 1fr;
+      }
+      .margin-note {
+        border-left: none;
+        border-top: 2px solid #534AB7;
+        padding-left: 0;
+        padding-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main class="book-page">
-    <p class="book-page__meta">Farid ud-Din Attar</p>
-    <h1>Conference of the Birds</h1>
+  <div class="page">
+    <header>
+      <h1>The Conference of the Birds</h1>
+      <p class="author">Farid ud-Din Attar</p>
+    </header>
 
-    <ul class="book-page__works">
-      <li>The Conference of the Birds (Mantiq ut-Tayr, c. 1177)</li>
-      <li>The Book of God (Ilahi-Nama)</li>
-    </ul>
+    
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Introduction</p>
+        <blockquote class="passage">Soy ya una sombra; pero, yo sombra, me rio aun de los que para afrentarme pusieron sobre mi cabeza la ceniza de mis monumentos y la de los hijos que perdí en la hoguera. ¿Quién podrá quitarme ese horizonte azul, mi cielo de oro? ¿quién mis colinas cubiertas de naranjos, mis paseos ocultos bajo las copas de los álamos? Esta esclava es aun reina á pesar de sus contrarios.</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">shade persists with beauty</p>
+        <p class="note-text">The city speaks as a shadow of its former glory, yet asserts its continued existence across time and ruin. This resembles QCE's distributed being: the present is not the whole, but one branch of a larger identity. The suffering of loss is real, but the underlying 'being'—like the light across wavelengths—remains, unextinguished by the decay of any single instantiation.</p>
+        <p class="gbo-ref">GBO 2.2</p>
+      </aside>
+    </div>
 
-    <!-- USER: Short paragraph connecting Attar to QCE. -->
-    <p>[Author's note: why Attar belongs here — connection to QCE.]</p>
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Introduction</p>
+        <blockquote class="passage">Desfallecieron mis creencias, entronizóse en mi espíritu la duda, y vagó por mis labios la blasfemia. Cuanto mas pretendí sondar el origen de las cosas, tanto mas se entenebreció mi alma, tanto mas fui impío. Cobré tedio á la sociedad, cobré tedio al mundo; me encerré en un egoismo fatal de que hoy mas que nunca me avergüenzo. Parecióme todo un juego de azar, y miré con indiferencia mi propio destino y el destino de los pueblos.</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">doubt and the is/ought gap</p>
+        <p class="note-text">The traveler describes the collapse of moral and metaphysical certainty after seeking ultimate origins. This mirrors the is/ought gap that QCE identifies: without a floor below which ethics loses referent, reason alone leads to nihilism. The indifference and egoism are the entropic asymptote—survival without flourishing—that QCE warns against when Triple P is neglected.</p>
+        <p class="gbo-ref">GBO 4.1</p>
+      </aside>
+    </div>
 
-    <p class="book-page__lineage">
-      <!-- USER: One adapted lineage sentence. -->
-      "[Lineage quote — adapted from the QCE canon.]"
-    </p>
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Introduction</p>
+        <blockquote class="passage">He vuelto á inclinar la cabeza á meditar: ¡ay! y he sentido una amargura inmensa al observar que no eran los sentidos sino la imaginacion lo que habia puesto entre mi cuerpo y la naturaleza ese velo de la historia y la poesía. He recogido mi alma y escuchado en silencio. No he oido mas que el rumor del insecto sobre la yerba, el del tiempo entre las grietas de los torreones medio caidos, el de la brisa entre los escombros, el del agua sobre las guijas que cubren el fondo de su cauce.</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">silence beneath the veil</p>
+        <p class="note-text">The traveler peels away narrative and finds only raw physical process—sounds of decay, time, and water. This echoes QCE's structural precondition: beneath moral language lies the bare fact of existence and suffering. The silence is the floor where 'ought' has no referent. The passage illustrates the distinction between the constructed story (branch-specific) and the ontological reality of the distributed being.</p>
+        <p class="gbo-ref">GBO 7.2</p>
+      </aside>
+    </div>
 
-    <p class="book-page__back"><a href="../">&larr; back to the shelf</a></p>
-  </main>
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Section after Introduction (Córdoba chapter)</p>
+        <blockquote class="passage">Terrible, terrible fue su suerte: ¡ay! ¡y no hubo quien la vengara! Tú, Córdoba, te anonadaste y no hiciste mas que verter un llanto inútil. ¿Cómo no te alzaste y heriste la frente del malvado? ¿cómo no hallaste en medio de tu furor armas con que reducir á polvo á los impíos que abrieron con mano airada tu palpitante seno? Esperaste en Dios y venciste: confiaste tu venganza en la Providencia y la Providencia te la dió cumplida.</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">suffering and ancestral inheritance</p>
+        <p class="note-text">The city's passive suffering and the call for vengeance reflect the QCE principle that harm to others is already in your distribution. The 'llanto inútil' and deferred vengeance show that present inaction shapes the inherited conditions of all future branch-selves. The traveler's moral outrage underscores the canonical threshold: without structural intervention, suffering compounds across branches.</p>
+        <p class="gbo-ref">GBO 6.1</p>
+      </aside>
+    </div>
+
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Córdoba chapter (early part)</p>
+        <blockquote class="passage">El espectáculo que á nuestros ojos se presentaba no podia ser mas bello. Alzábanse acá y acullá de entre techos desiguales torres mas ó menos imponentes cuya negra silhueta se destacaba sobre los montes inmediatos ó sobre el azul del cielo. Brillaban á un lado las aguas del Guadalquivir; estendíanse al otro las faldas de Sierra Morena... Ostentaba alli sus ricos dones la naturaleza; aqui sus ricas galas, el arte; y brotaba de todas partes una armonía indefinible que hablaba al corazon, dejaba cautiva el alma y suspensos los sentidos.</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">dual perspective in beauty</p>
+        <p class="note-text">This description of simultaneous natural and artistic beauty evokes the dual perspective of QCE: from inside a branch, the scene is a single, coherent experience (Copenhagen); from outside, it is one expression of a distributed reality (Everett). The 'armonía indefinible' hints at the emergent coherence (Principle 5) that arises not from uniformity but from the full expression of all elements—like the spectrum of the distributed being.</p>
+        <p class="gbo-ref">GBO 3.1</p>
+      </aside>
+    </div>
+
+
+    <footer>
+      <a href="../../shelf.html">&larr; back to the shelf</a>
+      <a href="https://www.gutenberg.org/ebooks/37590" target="_blank" rel="noopener">Read the full text on Project Gutenberg &rarr;</a>
+    </footer>
+  </div>
 
   <script src="../../assets/js/gate.js"></script>
   <script>
-    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace("/");
+    QCE.require(QCE.FLAGS.LIBRARY_ENTERED, '/');
   </script>
 </body>
 </html>

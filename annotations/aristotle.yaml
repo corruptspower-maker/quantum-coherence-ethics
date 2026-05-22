@@ -1,0 +1,55 @@
+book: aristotle
+title: Nicomachean Ethics
+author: Aristotle
+gutenberg_id: 8438
+annotations:
+- id: aristotle-001
+  section: Book I, Chapter 7
+  passage: If then the work of Man is a working of the soul in accordance with reason, or at least not independently of reason,
+    and we say that the work of any given subject, and of that subject good of its kind, are the same in kind… then the Good
+    of Man comes to be 'a working of the Soul in the way of Excellence'…
+  gbo_ref: GBO 2.1
+  label: The ergon of the distributed being
+  notes: 'Aristotle defines the human good as an activity (energeia) of the soul in accordance with virtue. This resonates
+    with QCE''s view that the distributed being''s good lies in actual working across branches, not a static state. Both reject
+    a merely potential good: the good is what the being does.'
+- id: aristotle-002
+  section: Book I, Chapter 8
+  passage: 'Still it is quite plain that it does require the addition of external goods, as we have said: because without
+    appliances it is impossible, or at all events not easy, to do noble actions… he is not at all capable of Happiness who
+    is very ugly, or is ill-born, or solitary and childless…'
+  gbo_ref: GBO 4
+  label: External goods as Triple P floor
+  notes: Aristotle acknowledges that happiness depends on external conditions—friends, wealth, good birth. This parallels
+    QCE's Triple P (Probability, Possibility, Potential) as the structural floor below which ethical discourse loses its subject.
+    Both recognize that without sufficient resources, the pursuit of the good becomes structurally impossible.
+- id: aristotle-003
+  section: Book I, Chapter 7
+  passage: 'And of this nature Happiness is mostly thought to be, for this we choose always for its own sake, and never with
+    a view to anything further: whereas honour, pleasure, intellect, in fact every excellence we choose for their own sakes,
+    it is true… but we choose them also with a view to happiness… but no man chooses happiness with a view to them, nor in
+    fact with a view to any other thing whatsoever.'
+  gbo_ref: GBO 5
+  label: Happiness as final and self-sufficient
+  notes: Aristotle's characterization of happiness as final and self-sufficient mirrors QCE's description of the canonical
+    equation as a landscape of what is at stake, not a means to something beyond. QCE does not treat Triple P as a utility
+    to be optimized; it is the descriptive horizon. Both reject instrumentalizing the ultimate good.
+- id: aristotle-004
+  section: Book I, Chapter 8
+  passage: For the state or habit may possibly exist in a subject without effecting any good, as, for instance, in him who
+    is asleep, or in any other way inactive; but the working cannot so, for it will of necessity act, and act well.
+  gbo_ref: GBO 7
+  label: Actuality over mere potentiality
+  notes: 'Aristotle distinguishes between having a virtue (state/habit) and actively exercising it (working). This aligns
+    with QCE''s distributed identity: the distributed being is not a mere potential across branches but is actually instantiated
+    in every branch. The ethical focus is on the actual working (the Triple P realized), not dormant capacity.'
+- id: aristotle-005
+  section: Book I, Chapter 8
+  passage: 'Their life too is in itself pleasant: for the feeling of pleasure is a mental sensation, and that is to each pleasant
+    of which he is said to be fond… a man is not a good man at all who feels no pleasure in noble actions…'
+  gbo_ref: GBO 9
+  label: Pleasure as concomitant of flourishing
+  notes: 'Aristotle argues that virtuous activity is intrinsically pleasant, and that a good person takes pleasure in noble
+    acts. This anticipates QCE''s eudaimonic asymptote, where flourishing is not merely survival but includes qualitative
+    richness. Both reject a purely ascetic or hedonic calculus: pleasure is a natural sign of proper functioning, not the
+    end itself.'
