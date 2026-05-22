@@ -4,37 +4,213 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Aristotle — QCE Library</title>
+  <title>Nicomachean Ethics — QCE Library</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #1a1916;
+      background: #fdfcf8;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid #d3d1c7;
+      padding-bottom: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    header .author {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: #888780;
+      letter-spacing: 0.08em;
+    }
+
+    .annotation-block {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 0.5px solid #e0ddd4;
+    }
+
+    .section-label {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: #888780;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    blockquote.passage {
+      font-style: italic;
+      color: #2a2820;
+      padding-left: 1.2rem;
+      border-left: 3px solid #d3d1c7;
+      line-height: 1.8;
+    }
+
+    .margin-note {
+      padding-left: 1.5rem;
+      border-left: 2px solid #534AB7;
+    }
+
+    .note-label {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: #534AB7;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .note-text {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #3a3830;
+      margin-bottom: 0.8rem;
+    }
+
+    .gbo-ref {
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      color: #888780;
+      letter-spacing: 0.06em;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #d3d1c7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: #534AB7;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .annotation-block {
+        grid-template-columns: 1fr;
+      }
+      .margin-note {
+        border-left: none;
+        border-top: 2px solid #534AB7;
+        padding-left: 0;
+        padding-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main class="book-page">
-    <p class="book-page__meta">Aristotle</p>
-    <h1>Nicomachean Ethics</h1>
+  <div class="page">
+    <header>
+      <h1>Nicomachean Ethics</h1>
+      <p class="author">Aristotle</p>
+    </header>
 
-    <ul class="book-page__works">
-      <li>Nicomachean Ethics (c. 340 BCE)</li>
-      <li>Politics (c. 350 BCE)</li>
-      <li>Metaphysics (c. 350 BCE)</li>
-    </ul>
+    
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Book I, Chapter 7</p>
+        <blockquote class="passage">If then the work of Man is a working of the soul in accordance with reason, or at least not independently of reason, and we say that the work of any given subject, and of that subject good of its kind, are the same in kind… then the Good of Man comes to be 'a working of the Soul in the way of Excellence'…</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">The ergon of the distributed being</p>
+        <p class="note-text">Aristotle defines the human good as an activity (energeia) of the soul in accordance with virtue. This resonates with QCE's view that the distributed being's good lies in actual working across branches, not a static state. Both reject a merely potential good: the good is what the being does.</p>
+        <p class="gbo-ref">GBO 2.1</p>
+      </aside>
+    </div>
 
-    <!-- USER: Short paragraph connecting Aristotle to QCE. -->
-    <p>[Author's note: why Aristotle belongs here — connection to QCE.]</p>
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Book I, Chapter 8</p>
+        <blockquote class="passage">Still it is quite plain that it does require the addition of external goods, as we have said: because without appliances it is impossible, or at all events not easy, to do noble actions… he is not at all capable of Happiness who is very ugly, or is ill-born, or solitary and childless…</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">External goods as Triple P floor</p>
+        <p class="note-text">Aristotle acknowledges that happiness depends on external conditions—friends, wealth, good birth. This parallels QCE's Triple P (Probability, Possibility, Potential) as the structural floor below which ethical discourse loses its subject. Both recognize that without sufficient resources, the pursuit of the good becomes structurally impossible.</p>
+        <p class="gbo-ref">GBO 4</p>
+      </aside>
+    </div>
 
-    <p class="book-page__lineage">
-      <!-- USER: One adapted lineage sentence. -->
-      "[Lineage quote — adapted from the QCE canon.]"
-    </p>
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Book I, Chapter 7</p>
+        <blockquote class="passage">And of this nature Happiness is mostly thought to be, for this we choose always for its own sake, and never with a view to anything further: whereas honour, pleasure, intellect, in fact every excellence we choose for their own sakes, it is true… but we choose them also with a view to happiness… but no man chooses happiness with a view to them, nor in fact with a view to any other thing whatsoever.</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">Happiness as final and self-sufficient</p>
+        <p class="note-text">Aristotle's characterization of happiness as final and self-sufficient mirrors QCE's description of the canonical equation as a landscape of what is at stake, not a means to something beyond. QCE does not treat Triple P as a utility to be optimized; it is the descriptive horizon. Both reject instrumentalizing the ultimate good.</p>
+        <p class="gbo-ref">GBO 5</p>
+      </aside>
+    </div>
 
-    <p class="book-page__back"><a href="../">&larr; back to the shelf</a></p>
-  </main>
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Book I, Chapter 8</p>
+        <blockquote class="passage">For the state or habit may possibly exist in a subject without effecting any good, as, for instance, in him who is asleep, or in any other way inactive; but the working cannot so, for it will of necessity act, and act well.</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">Actuality over mere potentiality</p>
+        <p class="note-text">Aristotle distinguishes between having a virtue (state/habit) and actively exercising it (working). This aligns with QCE's distributed identity: the distributed being is not a mere potential across branches but is actually instantiated in every branch. The ethical focus is on the actual working (the Triple P realized), not dormant capacity.</p>
+        <p class="gbo-ref">GBO 7</p>
+      </aside>
+    </div>
+
+    <div class="annotation-block">
+      <div class="passage-wrap">
+        <p class="section-label">Book I, Chapter 8</p>
+        <blockquote class="passage">Their life too is in itself pleasant: for the feeling of pleasure is a mental sensation, and that is to each pleasant of which he is said to be fond… a man is not a good man at all who feels no pleasure in noble actions…</blockquote>
+      </div>
+      <aside class="margin-note">
+        <p class="note-label">Pleasure as concomitant of flourishing</p>
+        <p class="note-text">Aristotle argues that virtuous activity is intrinsically pleasant, and that a good person takes pleasure in noble acts. This anticipates QCE's eudaimonic asymptote, where flourishing is not merely survival but includes qualitative richness. Both reject a purely ascetic or hedonic calculus: pleasure is a natural sign of proper functioning, not the end itself.</p>
+        <p class="gbo-ref">GBO 9</p>
+      </aside>
+    </div>
+
+
+    <footer>
+      <a href="../../shelf.html">&larr; back to the shelf</a>
+      <a href="https://www.gutenberg.org/ebooks/8438" target="_blank" rel="noopener">Read the full text on Project Gutenberg &rarr;</a>
+    </footer>
+  </div>
 
   <script src="../../assets/js/gate.js"></script>
   <script>
-    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace("/");
+    QCE.require(QCE.FLAGS.LIBRARY_ENTERED, '/');
   </script>
 </body>
 </html>

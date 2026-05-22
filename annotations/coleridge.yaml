@@ -1,0 +1,64 @@
+book: coleridge
+title: Biographia Literaria
+author: Samuel Taylor Coleridge
+gutenberg_id: 6081
+annotations:
+- id: coleridge-001
+  section: Chapter I
+  passage: I had bewildered myself in metaphysics, and in theological controversy. Nothing else pleased me. History, and particular
+    facts, lost all interest in my mind. ... Of providence, fore-knowledge, will, and fate, Fixed fate, free will, fore-knowledge
+    absolute, And found no end in wandering mazes lost.
+  gbo_ref: GBO 1.1
+  label: free will mazes lost
+  notes: Coleridge's despair over the tension between free will and deterministic fate mirrors the classical philosophical
+    problem that QCE resolves through branching reality. In MWI, every possible choice is realized, so the 'wandering mazes'
+    are not lost—they are all real branches of the distributed being. This passage illustrates the cognitive need for a framework
+    that accommodates multiple trajectories without contradiction.
+- id: coleridge-002
+  section: Chapter II
+  passage: The men of the greatest genius, as far as we can judge from their own works or from the accounts of their contemporaries,
+    appear to have been of calm and tranquil temper in all that related to themselves. In the inward assurance of permanent
+    fame, they seem to have been either indifferent or resigned with regard to immediate reputation.
+  gbo_ref: GBO 10.1
+  label: calm assurance beyond branch
+  notes: 'This calmness mirrors the QCE principle of non-mortality: the distributed being''s identity is not exhausted by
+    any single branch-self. The ''inward assurance of permanent fame'' corresponds to awareness of the full spectrum of one''s
+    existence across branches, reducing anxiety over immediate outcomes. Such equanimity is a practical consequence of inhabiting
+    the non-finite perspective.'
+- id: coleridge-003
+  section: Chapter II
+  passage: The sanity of the mind is between superstition with fanaticism on the one hand, and enthusiasm with indifference
+    and a diseased slowness to action on the other. For the conceptions of the mind may be so vivid and adequate, as to preclude
+    that impulse to the realizing of them, which is strongest and most restless in those, who possess more than mere talent...
+    the latter must impress their preconceptions on the world without.
+  gbo_ref: GBO 4.1
+  label: vivid conceptions and action
+  notes: 'Coleridge distinguishes between those whose inner conceptions are so vivid they need no external realization and
+    those who must shape the outer world. QCE resonates with the latter: the present self is an ancestor who shapes inherited
+    conditions across all branches. The ''impulse to realize'' aligns with the Triple P dimensions—probability, possibility,
+    potential—as structural preconditions for ethical action. The mind''s conception is a wave function of possible outcomes;
+    action selects the conditions that propagate.'
+- id: coleridge-004
+  section: Chapter I
+  passage: My earliest poems were marked by an ease and simplicity, which I have studied, perhaps with inferior success, to
+    impress on my later compositions. ... I must be permitted to add, that, even at the early period of my juvenile poems,
+    I saw and admitted the superiority of an austerer and more natural style, with an insight not less clear, than I at present
+    possess.
+  gbo_ref: GBO 6.1
+  label: poetic self across time
+  notes: 'Coleridge reflects on the continuity of his artistic identity across different phases of his life, akin to the distributed
+    being''s persistence across branches. The early self''s judgments remain present in the later self, just as present actions
+    become ancestral gifts for downstream selves. This illustrates the ancestral structure: each self inherits and modifies
+    conditions that shape subsequent expressions of the same distributed being.'
+- id: coleridge-005
+  section: Chapter I
+  passage: I had used the narration chiefly for the purpose of giving a continuity to the work, in part for the sake of the
+    miscellaneous reflections suggested to me by particular events, but still more as introductory to a statement of my principles
+    in Politics, Religion, and Philosophy, and an application of the rules, deduced from philosophical principles, to poetry
+    and criticism.
+  gbo_ref: GBO 8.5
+  label: continuity and principles
+  notes: Coleridge explicitly links narrative continuity with philosophical principles, mirroring QCE's claim that ethical
+    and aesthetic coherence emerges from structural foundations, not arbitrary dictates. The 'rules deduced from philosophical
+    principles' echo the QCE principles (P1–P8) as emergent from the physics of branching reality. The drive to apply principles
+    systematically reflects the QCE equation as a description of what is at stake across the distribution.

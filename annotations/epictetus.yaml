@@ -1,0 +1,50 @@
+book: epictetus
+title: Enchiridion
+author: Epictetus
+gutenberg_id: 45109
+annotations:
+- id: ench-001
+  section: I
+  passage: There are things which are within our power, and there are things which are beyond our power. Within our power
+    are opinion, aim, desire, aversion, and, in one word, whatever affairs are our own. Beyond our power are body, property,
+    reputation, office, and, in one word, whatever are not properly our own affairs.
+  gbo_ref: GBO 2.2
+  label: Dichotomy of control
+  notes: This foundational Stoic distinction mirrors QCE's identification of Triple P (Probability, Possibility, Potential)
+    as structural preconditions. Epictetus places survival-related externals (body, property) outside our power, while QCE
+    treats Probability (P) as a gate that is largely not chosen. Both recognize a boundary between what the self can shape
+    and what is given, but QCE extends this to the distributed being across branches.
+- id: ench-002
+  section: V
+  passage: Men are disturbed not by things, but by the views which they take of things. Thus death is nothing terrible, else
+    it would have appeared so to Socrates. But the terror consists in our notion of death, that it is terrible.
+  gbo_ref: GBO 2.3
+  label: Suffering as judgment
+  notes: 'Epictetus argues suffering arises from subjective judgment rather than objective events. QCE challenges this by
+    asserting that suffering is an ontological fact: the loss of a branch-self is real harm within that branch, and harm to
+    others is structurally embedded in your own distribution (P2). The tension between Stoic cognitive therapy and QCE''s
+    realism about branching harm is central to the is/ought question.'
+- id: ench-003
+  section: XI
+  passage: Never say of anything, 'I have lost it,' but, 'I have restored it.' Has your child died? It is restored. Has your
+    wife died? She is restored. Has your estate been taken away? That likewise is restored. 'But it was a bad man who took
+    it.' What is it to you by whose hands he who gave it has demanded it again? While he permits you to possess it, hold it
+    as something not your own, as do travelers at an inn.
+  gbo_ref: GBO 2.4
+  label: Restoration not loss
+  notes: 'This passage resonates with QCE''s concept of non-mortality: death ends a branch-self but not the distributed being.
+    The Stoic discipline of treating possessions and loved ones as borrowed aligns with QCE''s view that the present self
+    is not the sole instance of the distributed being. Both discourage attachment to a single branch outcome, though QCE grounds
+    this in the physics of branching rather than divine will.'
+- id: ench-004
+  section: LI
+  passage: The first and most necessary topic in philosophy is the practical application of principles, as, We ought not to
+    lie; the second is that of demonstrations as, Why it is that we ought not to lie; the third, that which gives strength
+    and logical connection to the other two, as, Why this is a demonstration. ... But we do just the contrary. For we spend
+    all our time on the third point and employ all our diligence about that, and entirely neglect the first.
+  gbo_ref: GBO 2.5
+  label: Priority of practice over theory
+  notes: Epictetus prioritizes practical application (the 'first topic') over meta-logical demonstration. QCE similarly refuses
+    to derive ought from is (P7) and instead identifies the structural floor (Triple P) while leaving normative construction
+    to individual action. Both frameworks emphasize that ethics is primarily about what you do with the given structure, not
+    about proving the structure itself – a parallel to QCE's 'the normative building is yours to construct'.

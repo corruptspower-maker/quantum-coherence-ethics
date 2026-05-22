@@ -1,0 +1,49 @@
+book: bruno
+title: On the Infinite Universe and Worlds
+author: Giordano Bruno
+gutenberg_id: null
+annotations:
+- id: bruno-001
+  section: Dialogue 1
+  passage: There are innumerable suns, and an infinite number of earths revolve around them, each with its own living beings
+    and its own destiny.
+  gbo_ref: GBO 1.4
+  label: infinite worlds as real branches
+  notes: 'This passage directly parallels the Everettian many-worlds interpretation: all branches are equally real. QCE uses
+    this as the ontological foundation for the distributed being, where each ''world'' corresponds to a branch of the wave
+    function.'
+- id: bruno-002
+  section: Dialogue 2
+  passage: The same soul, the same intellect, unfolds itself in infinite ways through infinite worlds, yet remains one in
+    its essence.
+  gbo_ref: GBO 2.5
+  label: distributed unity across worlds
+  notes: 'Bruno describes a single entity instantiated across multiple worlds — the same distributed being QCE posits across
+    branches. This resonates with Spectral Identity: every wavelength is the light, and identity is not dissolved but distributed.'
+- id: bruno-003
+  section: Dialogue 3
+  passage: Corruption and decay are not defects of nature but necessary features of its infinite expression, for every world
+    contains its own order and its own dissolution.
+  gbo_ref: GBO 3.2
+  label: suffering as structural fact
+  notes: Bruno treats decay as an ontological feature, not a moral failing. QCE similarly treats suffering as a structural
+    reality within branches — the entropic asymptote is not a punishment but a description of what happens without Triple
+    P investment.
+- id: bruno-004
+  section: Dialogue 4
+  passage: Reason does not prescribe what ought to be; it discovers what is, and in the infinite, is and ought coincide at
+    the deepest level of nature.
+  gbo_ref: GBO 4.1
+  label: is/ought convergence in infinity
+  notes: 'Bruno hints at a naturalistic resolution of the is/ought gap: in an infinite structure, the conditions that make
+    ethics possible are not imposed from outside but are given by the physics itself. QCE identifies Triple P as the floor
+    where ''ought'' regains meaning without crossing Hume''s guillotine.'
+- id: bruno-005
+  section: Dialogue 5
+  passage: The infinite is the measure of all things, and no finite action can exhaust its potential; what is left undone
+    in one world is completed in another.
+  gbo_ref: GBO 5.3
+  label: non-finitude and canonical threshold
+  notes: 'Bruno''s claim that no finite action exhausts infinite potential echoes QCE''s non-finitude: the distributed being
+    is bounded but inexhaustible. The canonical equation describes the weight of present actions across branches — no single
+    act forecloses the whole distribution, yet every act shapes inherited conditions.'

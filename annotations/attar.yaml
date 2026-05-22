@@ -1,0 +1,67 @@
+book: attar
+title: The Conference of the Birds
+author: Farid ud-Din Attar
+gutenberg_id: 37590
+annotations:
+- id: cordoba-001
+  section: Introduction
+  passage: Soy ya una sombra; pero, yo sombra, me rio aun de los que para afrentarme pusieron sobre mi cabeza la ceniza de
+    mis monumentos y la de los hijos que perdí en la hoguera. ¿Quién podrá quitarme ese horizonte azul, mi cielo de oro? ¿quién
+    mis colinas cubiertas de naranjos, mis paseos ocultos bajo las copas de los álamos? Esta esclava es aun reina á pesar
+    de sus contrarios.
+  gbo_ref: GBO 2.2
+  label: shade persists with beauty
+  notes: 'The city speaks as a shadow of its former glory, yet asserts its continued existence across time and ruin. This
+    resembles QCE''s distributed being: the present is not the whole, but one branch of a larger identity. The suffering of
+    loss is real, but the underlying ''being''—like the light across wavelengths—remains, unextinguished by the decay of any
+    single instantiation.'
+- id: cordoba-002
+  section: Introduction
+  passage: Desfallecieron mis creencias, entronizóse en mi espíritu la duda, y vagó por mis labios la blasfemia. Cuanto mas
+    pretendí sondar el origen de las cosas, tanto mas se entenebreció mi alma, tanto mas fui impío. Cobré tedio á la sociedad,
+    cobré tedio al mundo; me encerré en un egoismo fatal de que hoy mas que nunca me avergüenzo. Parecióme todo un juego de
+    azar, y miré con indiferencia mi propio destino y el destino de los pueblos.
+  gbo_ref: GBO 4.1
+  label: doubt and the is/ought gap
+  notes: 'The traveler describes the collapse of moral and metaphysical certainty after seeking ultimate origins. This mirrors
+    the is/ought gap that QCE identifies: without a floor below which ethics loses referent, reason alone leads to nihilism.
+    The indifference and egoism are the entropic asymptote—survival without flourishing—that QCE warns against when Triple
+    P is neglected.'
+- id: cordoba-003
+  section: Introduction
+  passage: 'He vuelto á inclinar la cabeza á meditar: ¡ay! y he sentido una amargura inmensa al observar que no eran los sentidos
+    sino la imaginacion lo que habia puesto entre mi cuerpo y la naturaleza ese velo de la historia y la poesía. He recogido
+    mi alma y escuchado en silencio. No he oido mas que el rumor del insecto sobre la yerba, el del tiempo entre las grietas
+    de los torreones medio caidos, el de la brisa entre los escombros, el del agua sobre las guijas que cubren el fondo de
+    su cauce.'
+  gbo_ref: GBO 7.2
+  label: silence beneath the veil
+  notes: 'The traveler peels away narrative and finds only raw physical process—sounds of decay, time, and water. This echoes
+    QCE''s structural precondition: beneath moral language lies the bare fact of existence and suffering. The silence is the
+    floor where ''ought'' has no referent. The passage illustrates the distinction between the constructed story (branch-specific)
+    and the ontological reality of the distributed being.'
+- id: cordoba-004
+  section: Section after Introduction (Córdoba chapter)
+  passage: 'Terrible, terrible fue su suerte: ¡ay! ¡y no hubo quien la vengara! Tú, Córdoba, te anonadaste y no hiciste mas
+    que verter un llanto inútil. ¿Cómo no te alzaste y heriste la frente del malvado? ¿cómo no hallaste en medio de tu furor
+    armas con que reducir á polvo á los impíos que abrieron con mano airada tu palpitante seno? Esperaste en Dios y venciste:
+    confiaste tu venganza en la Providencia y la Providencia te la dió cumplida.'
+  gbo_ref: GBO 6.1
+  label: suffering and ancestral inheritance
+  notes: 'The city''s passive suffering and the call for vengeance reflect the QCE principle that harm to others is already
+    in your distribution. The ''llanto inútil'' and deferred vengeance show that present inaction shapes the inherited conditions
+    of all future branch-selves. The traveler''s moral outrage underscores the canonical threshold: without structural intervention,
+    suffering compounds across branches.'
+- id: cordoba-005
+  section: Córdoba chapter (early part)
+  passage: El espectáculo que á nuestros ojos se presentaba no podia ser mas bello. Alzábanse acá y acullá de entre techos
+    desiguales torres mas ó menos imponentes cuya negra silhueta se destacaba sobre los montes inmediatos ó sobre el azul
+    del cielo. Brillaban á un lado las aguas del Guadalquivir; estendíanse al otro las faldas de Sierra Morena... Ostentaba
+    alli sus ricos dones la naturaleza; aqui sus ricas galas, el arte; y brotaba de todas partes una armonía indefinible que
+    hablaba al corazon, dejaba cautiva el alma y suspensos los sentidos.
+  gbo_ref: GBO 3.1
+  label: dual perspective in beauty
+  notes: 'This description of simultaneous natural and artistic beauty evokes the dual perspective of QCE: from inside a branch,
+    the scene is a single, coherent experience (Copenhagen); from outside, it is one expression of a distributed reality (Everett).
+    The ''armonía indefinible'' hints at the emergent coherence (Principle 5) that arises not from uniformity but from the
+    full expression of all elements—like the spectrum of the distributed being.'
