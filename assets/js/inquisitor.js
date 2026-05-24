@@ -1,10 +1,12 @@
 /* inquisitor.js — Grand Inquisitor gate logic for The Ought Beneath the Branches.
-   Manages iteration state, calls Claude API, returns verdict. */
+   Manages iteration state, calls the worker endpoint, returns verdict.
+   Set window.QCE_WORKER_URL before this script loads to point at your
+   Cloudflare Worker. */
 
 var INQUISITOR = (function () {
   var MAX_ITER  = 8;
   var MODEL     = 'claude-haiku-4-5-20251001';
-  var API_URL   = 'https://api.anthropic.com/v1/messages';
+  var API_URL   = window.QCE_WORKER_URL || '';
 
   var PRESSURES = [
     'Read it again carefully.',
@@ -26,14 +28,6 @@ var INQUISITOR = (function () {
   }
 
   function resetIter() { setIter(0); }
-
-  function getApiKey() {
-    return localStorage.getItem('qce_api_key') || '';
-  }
-
-  function setApiKey(key) {
-    try { localStorage.setItem('qce_api_key', key.trim()); } catch(e) {}
-  }
 
   function buildSystemPrompt(levelConfig, iter) {
     var pressure = PRESSURES[Math.min(iter - 1, PRESSURES.length - 1)];
@@ -61,12 +55,7 @@ var INQUISITOR = (function () {
   }
 
   async function submit(levelConfig, responseText) {
-    var apiKey = getApiKey();
-    if (!apiKey) {
-      apiKey = prompt('Enter your Anthropic API key to proceed:');
-      if (!apiKey || !apiKey.trim()) return null;
-      setApiKey(apiKey);
-    }
+    if (!API_URL) throw new Error('Worker URL not configured.');
 
     var iter = getIter() + 1;
     setIter(iter);
@@ -75,11 +64,7 @@ var INQUISITOR = (function () {
     try {
       resp = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': getApiKey(),
-          'anthropic-version': '2023-06-01'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model: MODEL,
           max_tokens: 200,
@@ -88,17 +73,13 @@ var INQUISITOR = (function () {
         })
       });
     } catch(e) {
-      throw new Error('Could not reach the API. Check your connection.');
+      throw new Error('Could not reach the gate. Check your connection.');
     }
 
     if (!resp.ok) {
       var errData = {};
       try { errData = await resp.json(); } catch(_) {}
-      if (resp.status === 401) {
-        setApiKey('');
-        throw new Error('API key rejected. Enter a valid key and try again.');
-      }
-      throw new Error('API error ' + resp.status + ': ' + (errData.error && errData.error.message || ''));
+      throw new Error('Gate error ' + resp.status + ': ' + (errData.error && errData.error.message || ''));
     }
 
     var data = await resp.json();
