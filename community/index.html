@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Garden — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:      #1a1810;
+      --parchment: #f7f2e4;
+      --dim:      #7a7060;
+      --rule:     #c8b98a;
+    }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .page-meta {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 2.5rem 0;
+    }
+
+    p { margin-bottom: 1.2rem; }
+
+    .wall {
+      margin-top: 2rem;
+    }
+
+    .wall-note {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 1.05rem;
+    }
+
+    .wall-note:first-child { border-top: 1px solid var(--rule); }
+
+    .wall-note .note-meta {
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      color: var(--dim);
+      margin-top: 0.4rem;
+    }
+
+    .leave-note {
+      margin-top: 2.5rem;
+    }
+
+    .leave-note p {
+      font-style: italic;
+      color: var(--dim);
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 100px;
+      background: transparent;
+      border: 1px solid var(--rule);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      padding: 0.9rem 1rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 300ms ease;
+    }
+
+    textarea:focus { border-color: var(--ink); }
+
+    .submit-btn {
+      margin-top: 0.8rem;
+      background: transparent;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1.3rem;
+      cursor: pointer;
+      transition: background 250ms ease, color 250ms ease;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      background: var(--ink);
+      color: var(--parchment);
+    }
+
+    .submit-btn:disabled { opacity: 0.4; cursor: default; }
+
+    .status-msg {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--dim);
+      margin-top: 0.6rem;
+      min-height: 1.2rem;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 4rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--dim);
+      text-decoration: none;
+    }
+
+    .back-link:hover { color: var(--ink); }
+
+    .empty-wall {
+      font-style: italic;
+      color: var(--dim);
+      font-size: 1.05rem;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <p class="page-meta">The OUGHT: Beneath the Branches &mdash; Full Bloom</p>
+    <h1><em>The Garden</em></h1>
+
+    <p>You are here. The bonsai is in full bloom.</p>
+    <p>Others have arrived by the same path. They left something on the wall. You may do the same.</p>
+
+    <hr>
+
+    <div class="wall" id="note-wall">
+      <p class="empty-wall">The wall is quiet.</p>
+    </div>
+
+    <div class="leave-note">
+      <p>Leave something.</p>
+      <textarea id="note-input" maxlength="400" placeholder=""></textarea>
+      <br>
+      <button class="submit-btn" id="note-btn">[ leave it here ]</button>
+      <p class="status-msg" id="note-status"></p>
+    </div>
+
+    <a class="back-link" href="../desk.html">&larr; the desk</a>
+  </main>
+
+  <script src="../assets/js/gate.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
+    if (!QCE.OUGHT.atMax()) window.location.replace('/desk.html');
+
+    // Community notes — stored in localStorage for now.
+    // Replace with Firebase / Supabase when ready for shared persistence.
+    var STORAGE_KEY = 'qce_community_notes';
+
+    function loadNotes() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) { return []; }
+    }
+
+    function saveNote(text) {
+      var notes = loadNotes();
+      notes.unshift({ text: text, ts: new Date().toISOString() });
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(notes.slice(0, 200))); } catch(e) {}
+    }
+
+    function renderNotes() {
+      var wall = document.getElementById('note-wall');
+      var notes = loadNotes();
+      if (!notes.length) {
+        wall.innerHTML = '<p class="empty-wall">The wall is quiet.</p>';
+        return;
+      }
+      wall.innerHTML = notes.map(function(n) {
+        var d = new Date(n.ts);
+        var dateStr = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+        return '<div class="wall-note"><div>' + escapeHtml(n.text) + '</div><div class="note-meta">' + dateStr + '</div></div>';
+      }).join('');
+    }
+
+    function escapeHtml(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    var alreadyLeft = localStorage.getItem('qce_left_note') === '1';
+
+    renderNotes();
+
+    if (alreadyLeft) {
+      document.getElementById('note-btn').disabled = true;
+      document.getElementById('note-status').textContent = 'You have already left something here.';
+    }
+
+    document.getElementById('note-btn').addEventListener('click', function() {
+      var text = document.getElementById('note-input').value.trim();
+      if (!text) return;
+      saveNote(text);
+      localStorage.setItem('qce_left_note', '1');
+      this.disabled = true;
+      document.getElementById('note-status').textContent = 'Left.';
+      document.getElementById('note-input').value = '';
+      renderNotes();
+    });
+  </script>
+</body>
+</html>

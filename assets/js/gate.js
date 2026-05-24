@@ -38,5 +38,25 @@ var QCE = (function () {
     return true;
   }
 
-  return { set: set, has: has, require: require, FLAGS: FLAGS };
+  // OUGHT_LEVEL — persistent across sessions (localStorage), tracks bonsai growth.
+  // 0 = dead bonsai (before baby puzzle). 1-7 = one leaf per cleared gate. 8 = full bloom.
+  var OUGHT = {
+    MAX: 7,
+    get: function() {
+      try { return parseInt(localStorage.getItem('qce_ought_level') || '0', 10); } catch(e) { return 0; }
+    },
+    set: function(n) {
+      try { localStorage.setItem('qce_ought_level', String(n)); } catch(e) {}
+    },
+    advance: function() {
+      var next = Math.min(this.get() + 1, this.MAX + 1);
+      this.set(next);
+      return next;
+    },
+    atMax: function() {
+      return this.get() > this.MAX;
+    }
+  };
+
+  return { set: set, has: has, require: require, FLAGS: FLAGS, OUGHT: OUGHT };
 })();

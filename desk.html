@@ -191,7 +191,7 @@
 
   <!-- Desk scene -->
   <div class="scene">
-    <img class="desk-img" src="images/Script_desk.png" alt="">
+    <img class="desk-img" id="desk-img" src="images/Script_desk.png" alt="">
     <div class="book-hotspot" id="book-hotspot" role="button" tabindex="0"
          aria-label="Open the book"></div>
     <a class="hotspot hotspot--primer" href="treatise.html"
@@ -239,23 +239,46 @@
   <script>
     QCE.require(QCE.FLAGS.LIBRARY_ENTERED, '/');
 
-    // Correct answer: all four must be checked.
-    // They are all the baby — every branch-self carries one trait of the root.
+    // Bonsai image swap — each level has its own desk image.
+    // Level 0 = dead bonsai (default). Levels 1-7 = one more leaf each.
+    // Full bloom (level 8+) redirects to community.
+    // Images: images/desk-level-N.webp — fall back to base image if not found.
+    (function () {
+      var level = QCE.OUGHT.get();
+      if (QCE.OUGHT.atMax()) {
+        window.location.replace('/community/');
+        return;
+      }
+      if (level > 0) {
+        var img = document.getElementById('desk-img');
+        var candidate = 'images/desk-level-' + level + '.webp';
+        var test = new Image();
+        test.onload = function () { img.src = candidate; };
+        test.src = candidate;
+      }
+    })();
 
     var hotspot   = document.getElementById('book-hotspot');
     var overlay   = document.getElementById('overlay');
     var submitBtn = document.getElementById('submit-btn');
     var wrongScr  = document.getElementById('wrong-screen');
 
-    function openOverlay() {
-      overlay.classList.add('open');
+    function openBook() {
+      var level = QCE.OUGHT.get();
+      if (level === 0) {
+        overlay.classList.add('open');
+      } else {
+        window.location.href = 'library/table/ought.html';
+      }
     }
 
-    hotspot.addEventListener('click', openOverlay);
+    hotspot.addEventListener('click', openBook);
     hotspot.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') openOverlay();
+      if (e.key === 'Enter' || e.key === ' ') openBook();
     });
 
+    // Correct answer: all four must be checked.
+    // They are all the baby — every branch-self carries one trait of the root.
     submitBtn.addEventListener('click', function () {
       var checked = document.querySelectorAll('input[name="answer"]:checked');
       if (checked.length === 0) return;
@@ -263,11 +286,11 @@
       overlay.classList.remove('open');
 
       if (checked.length === 4) {
-        // All four selected — correct
+        // All four selected — correct. Enter the loop.
         QCE.set(QCE.FLAGS.GARDEN_ENTERED);
-        window.location.href = 'garden/';
+        QCE.OUGHT.set(1);
+        window.location.replace('desk.html');
       } else {
-        // Partial or single selection — wrong
         wrongScr.classList.add('open');
       }
     });

@@ -4,40 +4,346 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>The OUGHT: Beneath the Branches — QCE</title>
+  <title>The OUGHT: Beneath the Branches</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:     #1a1810;
+      --parchment: #f7f2e4;
+      --dim:     #7a7060;
+      --rule:    #c8b98a;
+    }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .page-meta {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-style: italic;
+      margin-bottom: 0.4rem;
+    }
+
+    .gate-name {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+      margin-bottom: 2.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 2.5rem 0;
+    }
+
+    .teaching {
+      white-space: pre-line;
+      margin-bottom: 2.5rem;
+    }
+
+    .teaching p { margin-bottom: 1.1rem; }
+
+    .prompt {
+      font-style: italic;
+      color: var(--dim);
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 160px;
+      background: transparent;
+      border: 1px solid var(--rule);
+      color: var(--ink);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      padding: 1rem 1.1rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 300ms ease;
+    }
+
+    textarea:focus { border-color: var(--ink); }
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .submit-btn {
+      background: transparent;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1.3rem;
+      cursor: pointer;
+      transition: background 250ms ease, color 250ms ease;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      background: var(--ink);
+      color: var(--parchment);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    .iter-count {
+      font-family: 'Courier New', monospace;
+      font-size: 0.7rem;
+      color: var(--dim);
+      letter-spacing: 0.06em;
+    }
+
+    .response-area {
+      margin-top: 2rem;
+      display: none;
+    }
+
+    .response-area.visible { display: block; }
+
+    .inquisitor-line {
+      font-style: italic;
+      color: var(--ink);
+      padding: 1.2rem 1.4rem;
+      border-left: 2px solid var(--ink);
+      margin-bottom: 1.2rem;
+    }
+
+    .loading-line {
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+    }
+
+    .gate-held {
+      display: none;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: var(--dim);
+      margin-top: 2rem;
+    }
+
+    .gate-held.visible { display: block; }
+
+    .gate-held a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 4rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--dim);
+      text-decoration: none;
+    }
+
+    .back-link:hover { color: var(--ink); }
+
+    .error-msg {
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: #8a2020;
+      letter-spacing: 0.04em;
+      margin-top: 0.8rem;
+      display: none;
+    }
+
+    .error-msg.visible { display: block; }
+  </style>
 </head>
 <body>
-  <main class="book-page">
-    <p class="book-page__meta">Second Edition &mdash; The Journey Version</p>
+  <main class="page">
+    <p class="page-meta" id="page-meta">The OUGHT: Beneath the Branches &mdash; <span id="edition-label">Loading...</span></p>
     <h1><em>The OUGHT: Beneath the Branches</em></h1>
+    <p class="gate-name" id="gate-name"></p>
 
-    <p>
-      Someone left this face-up on the chair. The spine is uncracked.
-      Or cracked many times &mdash; it is hard to tell.
-    </p>
+    <hr>
 
-    <!--
-      USER: This is "The OUGHT: Beneath the Branches" — the second edition.
-      The spec describes it as "the journey version, the one that walks you through
-      getting lost in the garden and finding your way."
+    <div class="teaching" id="teaching-text"></div>
 
-      Insert the full text here, or a chapter-by-chapter rendering, or a summary
-      that serves as a guide to the garden's logic. This is your authored content.
-      It can be long. The reader is sitting in the chair. They have time.
-    -->
+    <hr>
 
-    <p>[USER: The full text of The OUGHT: Beneath the Branches, second edition.]</p>
+    <p class="prompt" id="prompt-text"></p>
 
-    <p class="book-page__back"><a href="../">&larr; back to the shelf</a></p>
+    <textarea id="reader-input" placeholder="" rows="7"></textarea>
+
+    <div class="submit-row">
+      <button class="submit-btn" id="submit-btn">[ submit ]</button>
+      <span class="iter-count" id="iter-count"></span>
+    </div>
+
+    <p class="error-msg" id="error-msg"></p>
+
+    <div class="response-area" id="response-area">
+      <div class="inquisitor-line" id="inquisitor-response"></div>
+    </div>
+
+    <div class="gate-held" id="gate-held">
+      The gate holds. Return to the text. <a href="../../desk.html">&larr; the desk</a>
+    </div>
+
+    <a class="back-link" href="../../desk.html">&larr; return to the desk</a>
   </main>
 
   <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/inquisitor.js"></script>
   <script>
     if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
+
+    var level = QCE.OUGHT.get();
+
+    if (QCE.OUGHT.atMax()) {
+      window.location.replace('/community/');
+    }
+
+    var levelConfig = null;
+    var levelsData  = null;
+
+    fetch('../../assets/brain-matter-levels.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        levelsData = data;
+
+        if (level === 0) {
+          // Should not be here — level 0 is handled by the desk puzzle.
+          window.location.replace('/desk.html');
+          return;
+        }
+
+        levelConfig = data.levels.find(function(l) { return l.id === level; });
+
+        if (!levelConfig) {
+          document.getElementById('teaching-text').textContent = 'No configuration found for this level.';
+          return;
+        }
+
+        document.getElementById('edition-label').textContent = 'Gate ' + level + ' of ' + data.max_level;
+        document.getElementById('gate-name').textContent = levelConfig.name.toUpperCase();
+        document.getElementById('teaching-text').textContent = levelConfig.teaching;
+        document.getElementById('prompt-text').textContent = levelConfig.prompt;
+        updateIterDisplay();
+      })
+      .catch(function(e) {
+        document.getElementById('teaching-text').textContent = 'Could not load the level configuration.';
+      });
+
+    function updateIterDisplay() {
+      var iter = parseInt(sessionStorage.getItem('qce_ought_iter') || '0', 10);
+      var remaining = INQUISITOR.MAX_ITER - iter;
+      if (iter === 0) {
+        document.getElementById('iter-count').textContent = '';
+      } else {
+        document.getElementById('iter-count').textContent = remaining + ' attempt' + (remaining === 1 ? '' : 's') + ' remaining';
+      }
+    }
+
+    document.getElementById('submit-btn').addEventListener('click', function () {
+      var text = document.getElementById('reader-input').value.trim();
+      if (!text || !levelConfig) return;
+      if (INQUISITOR.maxed()) return;
+
+      var btn = document.getElementById('submit-btn');
+      var responseArea = document.getElementById('response-area');
+      var inquisitorEl = document.getElementById('inquisitor-response');
+      var errorEl      = document.getElementById('error-msg');
+
+      btn.disabled = true;
+      btn.textContent = '[ ... ]';
+      errorEl.classList.remove('visible');
+      responseArea.classList.add('visible');
+      inquisitorEl.textContent = '';
+
+      var loadingEl = document.createElement('span');
+      loadingEl.className = 'loading-line';
+      loadingEl.textContent = '...';
+      inquisitorEl.appendChild(loadingEl);
+
+      INQUISITOR.submit(levelConfig, text)
+        .then(function (result) {
+          if (!result) {
+            btn.disabled = false;
+            btn.textContent = '[ submit ]';
+            inquisitorEl.innerHTML = '';
+            responseArea.classList.remove('visible');
+            return;
+          }
+
+          inquisitorEl.textContent = result.message;
+          updateIterDisplay();
+
+          if (result.verdict === 'pass') {
+            btn.disabled = true;
+            btn.textContent = '[ ... ]';
+            setTimeout(function () {
+              INQUISITOR.resetIter();
+              QCE.OUGHT.advance();
+              window.location.replace('/desk.html');
+            }, 1800);
+          } else {
+            if (INQUISITOR.maxed()) {
+              btn.disabled = true;
+              document.getElementById('gate-held').classList.add('visible');
+            } else {
+              btn.disabled = false;
+              btn.textContent = '[ submit ]';
+            }
+          }
+        })
+        .catch(function (err) {
+          btn.disabled = false;
+          btn.textContent = '[ submit ]';
+          inquisitorEl.textContent = '';
+          responseArea.classList.remove('visible');
+          errorEl.textContent = err.message;
+          errorEl.classList.add('visible');
+          // Undo the iter increment on error
+          var cur = parseInt(sessionStorage.getItem('qce_ought_iter') || '0', 10);
+          sessionStorage.setItem('qce_ought_iter', String(Math.max(0, cur - 1)));
+          updateIterDisplay();
+        });
+    });
   </script>
 </body>
 </html>
