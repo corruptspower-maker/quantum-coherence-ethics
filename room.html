@@ -13,14 +13,32 @@
       position: relative;
       width: 100vw;
       height: 100vh;
+      overflow: hidden;
+      cursor: grab;
+    }
+
+    .scene.dragging { cursor: grabbing; }
+
+    /* pan-target: the moveable layer containing image + hotspots.
+       Sized to the larger of viewport width or height (image is square),
+       with a 20% bonus so there's always room to pan in any direction. */
+    .pan-target {
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* Square: sized to whichever viewport dimension is larger */
+      width: max(120vw, 120vh);
+      height: max(120vw, 120vh);
     }
 
     .room {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: 20% center;
       display: block;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
     .hotspot {
@@ -30,7 +48,7 @@
          background: rgba(255, 0, 0, 0.25); */
     }
 
-    /* Bookshelf: right half of the image */
+    /* Bookshelf: right portion of image */
     .hotspot--shelf {
       right: 2%;
       top: 5%;
@@ -38,7 +56,7 @@
       height: 88%;
     }
 
-    /* Desk with the open book: lower-left area */
+    /* Desk: lower-left area */
     .hotspot--desk {
       left: 3%;
       top: 52%;
@@ -46,7 +64,7 @@
       height: 42%;
     }
 
-    /* Portrait on the left wall */
+    /* Portrait on left wall */
     .hotspot--portrait {
       left: 0%;
       top: 8%;
@@ -56,16 +74,134 @@
   </style>
 </head>
 <body>
-  <div class="scene">
-    <img class="room" src="images/Scriptorium.webp" alt="">
-    <a class="hotspot hotspot--shelf" href="shelf.html" aria-label="The bookshelf"></a>
-    <a class="hotspot hotspot--desk" href="desk.html" aria-label="The desk"></a>
-    <a class="hotspot hotspot--portrait" href="everett.html" aria-label="The portrait"></a>
+  <div class="scene" id="scene">
+    <div class="pan-target" id="pan-target">
+      <img class="room" src="images/Scriptorium.webp" alt="" draggable="false">
+      <a class="hotspot hotspot--shelf" href="shelf.html" aria-label="The bookshelf"></a>
+      <a class="hotspot hotspot--desk" href="desk.html" aria-label="The desk"></a>
+      <a class="hotspot hotspot--portrait" href="everett.html" aria-label="The portrait"></a>
+    </div>
   </div>
 
   <script src="assets/js/gate.js"></script>
   <script>
     QCE.set(QCE.FLAGS.LIBRARY_ENTERED);
+
+    var scene     = document.getElementById('scene');
+    var panTarget = document.getElementById('pan-target');
+
+    var posX = 0, posY = 0;
+    var isDragging = false;
+    var startX, startY;
+    var hasMoved = false;
+
+    function clamp(val, min, max) {
+      return Math.max(min, Math.min(max, val));
+    }
+
+    function getBounds() {
+      var pw = panTarget.offsetWidth;
+      var ph = panTarget.offsetHeight;
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      return {
+        minX: Math.min(0, vw - pw),
+        maxX: 0,
+        minY: Math.min(0, vh - ph),
+        maxY: 0
+      };
+    }
+
+    function applyPosition() {
+      panTarget.style.transform = 'translate(' + posX + 'px, ' + posY + 'px)';
+    }
+
+    // Start centered on the interesting part of the image.
+    // The room has shelf on right, desk lower-left, portrait far left.
+    // Start slightly left of center so desk and shelf are both visible.
+    function initPosition() {
+      var pw = panTarget.offsetWidth;
+      var ph = panTarget.offsetHeight;
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      // Center horizontally with a slight left bias (20% from left of image)
+      posX = clamp(-(pw * 0.20) + vw * 0.1, vw - pw, 0);
+      posY = clamp(-(ph * 0.1), vh - ph, 0);
+      applyPosition();
+    }
+
+    // Wait for image to load so offsetWidth/Height are correct
+    var img = panTarget.querySelector('img');
+    if (img.complete) {
+      initPosition();
+    } else {
+      img.addEventListener('load', initPosition);
+    }
+    window.addEventListener('resize', initPosition);
+
+    // Mouse drag
+    scene.addEventListener('mousedown', function(e) {
+      if (e.button !== 0) return;
+      isDragging = true;
+      hasMoved = false;
+      startX = e.clientX - posX;
+      startY = e.clientY - posY;
+      scene.classList.add('dragging');
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
+      var dx = e.clientX - startX;
+      var dy = e.clientY - startY;
+      if (Math.abs(dx - posX) > 3 || Math.abs(dy - posY) > 3) hasMoved = true;
+      var b = getBounds();
+      posX = clamp(dx, b.minX, b.maxX);
+      posY = clamp(dy, b.minY, b.maxY);
+      applyPosition();
+    });
+
+    document.addEventListener('mouseup', function(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      scene.classList.remove('dragging');
+      // If the user barely moved, treat as a click — let the hotspot fire normally
+      if (!hasMoved) {
+        var el = document.elementFromPoint(e.clientX, e.clientY);
+        if (el && el.closest('a')) el.closest('a').click();
+      }
+    });
+
+    // Touch drag
+    scene.addEventListener('touchstart', function(e) {
+      var t = e.touches[0];
+      isDragging = true;
+      hasMoved = false;
+      startX = t.clientX - posX;
+      startY = t.clientY - posY;
+    }, { passive: true });
+
+    document.addEventListener('touchmove', function(e) {
+      if (!isDragging) return;
+      var t = e.touches[0];
+      hasMoved = true;
+      var b = getBounds();
+      posX = clamp(t.clientX - startX, b.minX, b.maxX);
+      posY = clamp(t.clientY - startY, b.minY, b.maxY);
+      applyPosition();
+      e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('touchend', function() {
+      isDragging = false;
+    });
+
+    // Prevent hotspot clicks from firing during a drag
+    panTarget.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        if (hasMoved) e.preventDefault();
+      });
+    });
   </script>
 </body>
 </html>

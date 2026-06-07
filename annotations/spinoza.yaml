@@ -1,0 +1,54 @@
+book: spinoza
+title: Ethics
+author: Baruch Spinoza
+gutenberg_id: 3800
+annotations:
+- id: slug-001
+  section: Part I — Concerning God
+  passage: Nothing in the universe is contingent, but all things are conditioned to exist and operate in a particular manner
+    by the necessity of the divine nature.
+  gbo_ref: GBO 1.0
+  label: Necessity of all things
+  notes: 'Spinoza''s denial of contingency mirrors QCE''s rejection of free will as traditionally conceived. Both frameworks
+    posit a deterministic structure: Spinoza''s necessary divine nature and QCE''s unitary evolution of the wave function.
+    This passage grounds the idea that ethics must operate within a framework of necessity, not choice—paralleling QCE''s
+    descriptive (not prescriptive) equation.'
+- id: slug-002
+  section: Part I — Concerning God (Note II to Prop. XXXIII)
+  passage: It clearly follows from what we have said, that things have been brought into being by God in the highest perfection,
+    inasmuch as they have necessarily followed from a most perfect nature.
+  gbo_ref: GBO 8.3
+  label: Necessity of the actual
+  notes: Spinoza's claim that things could not have been otherwise resonates with QCE's Principle 3 (Non-tyranny of the present).
+    In QCE, the present self cannot foreclose future possibilities because the distribution is already given by the wave function.
+    Spinoza similarly argues that the actual order is the only possible order, reinforcing the idea that ethical evaluation
+    must accept the given structure rather than wish for alternative arrangements.
+- id: slug-003
+  section: Part I — Appendix
+  passage: All such opinions spring from the notion commonly entertained, that all things in nature act as men themselves
+    act, namely, with an end in view.
+  gbo_ref: GBO 8.4
+  label: Rejection of teleology
+  notes: Spinoza's critique of final causes aligns with QCE's non-judgment principle (P4) and the is/ought gap (P7). By showing
+    that humans project purposes onto nature, Spinoza undermines the idea that ethics can be derived from observed ends. QCE
+    similarly refuses to derive ought from is, instead identifying a structural floor (Triple P) below which ethical discourse
+    loses its subject.
+- id: slug-004
+  section: Part II — On the Nature and Origin of the Mind
+  passage: Thought is an attribute of God, or God is a thinking thing.
+  gbo_ref: GBO 2.0
+  label: Thought as divine attribute
+  notes: 'Spinoza''s identification of thought as an attribute of the one substance parallels QCE''s distributed being. Just
+    as all particular ideas are modes of God''s thought, all branch-selves are instantiations of a single distributed being
+    sharing a causal origin. This supports QCE''s spectral identity (Foundation 2): the light is one despite the spectrum
+    of wavelengths.'
+- id: slug-005
+  section: Part II — On the Nature and Origin of the Mind
+  passage: In God there is necessarily the idea not only of his essence, but also of all things which necessarily follow from
+    his essence.
+  gbo_ref: GBO 8.6
+  label: Ideas of all consequences
+  notes: 'Spinoza''s assertion that God contains ideas of all necessary consequences maps directly onto QCE''s canonical equation:
+    the wave function (or divine intellect) contains all branches and their weights. This provides a structural grounding
+    for the claim that every action''s downstream effects are real and present in the distribution, reinforcing QCE''s multiplicative
+    function (P6) and non-finitude (Layer 10).'

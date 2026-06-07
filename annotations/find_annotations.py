@@ -16,12 +16,11 @@ Output:
 
 import os, sys, re, json, textwrap, requests, yaml
 from pathlib import Path
-from bs4 import BeautifulSoup
 from openai import OpenAI
 
 ROOT      = Path(__file__).parent.parent
 ANNOT_DIR = Path(__file__).parent
-QCE_HTML  = ROOT / "treatise.html"
+QCE_PDF   = ROOT / "assets" / "ground-beneath-the-ought.pdf"
 
 MODEL_PRIMARY  = "deepseek/deepseek-v4-flash:free"
 MODEL_FALLBACK = "meta-llama/llama-3.3-70b-instruct:free"
@@ -62,16 +61,15 @@ BOOKS = {
 # ── Helpers ────────────────────────────────────────────────────────────────
 
 def load_qce_context():
-    html = QCE_HTML.read_text(encoding="utf-8")
-    soup = BeautifulSoup(html, "html.parser")
-    for tag in soup(["script", "style"]):
-        tag.decompose()
-    text = soup.get_text(separator="\n")
-    # Trim to ~8000 words so it fits comfortably in context
+    import pdfplumber
+    with pdfplumber.open(QCE_PDF) as pdf:
+        pages = [page.extract_text() or "" for page in pdf.pages]
+    text = "\n\n".join(pages).strip()
     words = text.split()
-    if len(words) > 8000:
-        text = " ".join(words[:8000]) + "\n[... truncated for context ...]"
-    return text.strip()
+    # Full treatise is ~9400 words — fits entirely; cap at 12000 as a safety limit
+    if len(words) > 12000:
+        text = " ".join(words[:12000]) + "\n[... truncated ...]"
+    return text
 
 
 def fetch_gutenberg(gutenberg_id):
@@ -122,18 +120,50 @@ You MUST use only SHORT quotes (1-3 sentences max) to avoid copyright infringeme
 
     return f"""You are an annotator for the Quantum Coherence Ethics (QCE) library.
 
-QCE CONTEXT — read this carefully before annotating:
+QCE CONTEXT — the full treatise. Read it carefully:
 <qce>
 {qce_context}
 </qce>
 
-Your task: find 3 to 5 passages in "{slug_label}" that are most relevant to QCE concepts — especially:
-- The is/ought gap and how QCE resolves it through branching reality
+CRITICAL — KNOWN MISREADINGS OF QCE. Every model reads this wrong the first time.
+Internalize these corrections before you annotate anything:
+
+1. MOTIVATIONAL GAP / THRASYMACHUS
+   Wrong: "The framework only closes the Thrasymachus problem if the agent identifies with their full distribution."
+   Correct: You EXPERIENCE every branch. Identification is irrelevant. The unjust man will BE in the branches where he faces consequences — he doesn't get to choose. Both branches are him. There is nowhere to hide. (§6.3)
+
+2. "YOUR IS BECOMES YOUR OUGHT"
+   Wrong: "This is a universal normative command — it smuggles in an ought from an is, violating Hume."
+   Correct: The POSSESSIVE is doing the work. YOUR is becomes YOUR ought. The normative force comes from the INDIVIDUAL'S OWN VALUES, made visible by the correct ontology. The framework is not telling you what to value. It is showing you the structure of what you already value, if you understood what you are. This does NOT cross Hume's guillotine. (§6.1)
+
+3. GOOD AND EVIL (Principle 1)
+   Wrong: "'Good is increasing Triple P, evil is decreasing it' is a normative claim that crosses the guillotine."
+   Correct: It is a REFERENTIAL claim. Good and evil have never had a concrete referent in any ethical system — every prior attempt ended in circularity or faith. QCE identifies Triple P as the structural floor below which those words have no subject at all. He is GROUNDING the terms for the first time, not deriving an obligation. "If you are going to use the word good, this is what it refers to."
+
+4. THE FRAMEWORK'S SCOPE
+   Wrong: "QCE tells you what to do."
+   Correct: QCE tells you HOW TO THINK ABOUT what you do. It is a lens, not a command. The ought in the framework is an EPISTEMIC ought — like "you ought to consider that the Earth orbits the Sun." It is the ought of accuracy. Whether you act on it is entirely yours.
+
+5. TRIPLE P IS NOT A VALUE
+   Wrong: "The framework says you should increase Triple P because it's good."
+   Correct: Triple P is a PRECONDITION of valuation, not a value. Whatever your values are, they require Triple P to have a subject to be about at all. The framework does not tell you which values to have. It identifies what must be present for any values to mean anything.
+
+6. SUFFERING
+   Wrong: "The framework dissolves or ignores local suffering."
+   Correct: Suffering is LOCAL and REAL. The branch-self in pain is in pain here. Non-Judgment is not indifference — it is epistemic humility about rendering verdict from a vantage point that cannot see the full distribution. "The suffering is seen. The judgment is withheld. These are different acts." (§6.4)
+
+7. PRE-ETHICAL FRAMEWORK
+   The document does not claim to be a complete moral system, a decision procedure, or a therapy.
+   It identifies PRECONDITIONS. It describes STRUCTURE. It tells you what is actually at stake.
+   Everything else — the feelings, the tradeoffs, the lived experience — is yours to find.
+
+Your task: find 3 to 5 passages in "{slug_label}" that are most relevant to QCE — especially:
+- The is/ought gap and how QCE resolves it (preconditions, not derivation)
 - The nature of the self, identity, and continuity across branches
-- Suffering as an ontological fact rather than a preference
-- The canonical threshold for ethical action
-- Many-worlds / branching consciousness
-- The relationship between reason, ethics, and structure
+- Suffering as a structural, ontological fact — local, real, not dissolved
+- Triple P as structural precondition of any ethical discourse
+- Many-worlds / branching consciousness / distributed being
+- The relationship between reason, ethics, and the correct physics
 
 {book_section}
 
@@ -142,7 +172,7 @@ For each passage, return a JSON object in this exact schema:
   "id": "slug-NNN",
   "section": "Book/Part/Chapter name",
   "passage": "{quote_instruction}",
-  "gbo_ref": "GBO X.Y",
+  "gbo_ref": "Section from the QCE treatise most relevant to this connection (e.g. '§2.1', '§4.6', 'Chapter 5'). Only cite a section you actually see in the provided QCE text. If no specific section applies, write 'see treatise'.",
   "label": "short label (3-6 words)",
   "notes": "2-4 sentences explaining how this passage connects to QCE. Be specific — name the concept, name the tension or resonance."
 }}

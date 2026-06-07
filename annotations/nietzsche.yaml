@@ -1,0 +1,63 @@
+book: nietzsche
+title: On the Genealogy of Morality
+author: Friedrich Nietzsche
+gutenberg_id: 52319
+annotations:
+- id: slug-001
+  section: Preface
+  passage: 'We are unknown, we knowers, ourselves to ourselves: this has its own good reason. We have never searched for ourselves--how
+    should it then come to pass, that we should ever _find_ ourselves?'
+  gbo_ref: GBO 1.1
+  label: Self-knowledge gap
+  notes: This passage resonates with QCE's concept of the distributed being, where the self is not a single entity but a spectrum
+    of possibilities. The search for self-knowledge is a fundamental aspect of QCE, as it requires understanding one's own
+    causal origin and wave function structure. The passage highlights the challenge of self-discovery, which is a key theme
+    in QCE.
+- id: slug-002
+  section: First Essay
+  passage: The 'good' did not originate among those to whom goodness was shown. Much rather has it been the good themselves,
+    that is, the aristocratic, the powerful, the high-stationed, the high-minded, who have felt that they themselves were
+    good, and that their actions were good, that is to say of the first order, in contradistinction to all the low, the low-minded,
+    the vulgar, and the plebeian.
+  gbo_ref: GBO 3.1
+  label: Aristocratic values
+  notes: This passage connects to QCE's concept of Triple P, where the values of probability, possibility, and potential are
+    intertwined. The aristocratic values described in the passage reflect a sense of self-worth and confidence that is rooted
+    in their own power and status, which is similar to the QCE concept of potential. The passage also highlights the tension
+    between aristocratic and plebeian values, which is reminiscent of the QCE distinction between the conditional physics
+    of the wave function and the distributed being.
+- id: slug-003
+  section: Second Essay
+  passage: The breeding of an animal that _can promise_--is not this just that very paradox of a task which nature has set
+    itself in regard to man? Is not this the very problem of man?
+  gbo_ref: GBO 2.1
+  label: Promising and responsibility
+  notes: This passage resonates with QCE's concept of the sovereign individual, who is capable of making promises and taking
+    responsibility for their actions. The passage highlights the challenge of creating a being that can make promises, which
+    is a fundamental aspect of QCE's concept of identity and continuity across branches. The ability to promise is closely
+    tied to the concept of responsibility, which is a key theme in QCE.
+- id: slug-004
+  section: First Essay
+  passage: The revolt of the slaves in morals begins in the very principle of _resentment_ becoming creative and giving birth
+    to values--a resentment experienced by creatures who, deprived as they are of the proper outlet of action, are forced
+    to find their compensation in an imaginary revenge.
+  gbo_ref: GBO 1.10
+  label: Resentment and values
+  notes: This passage connects to QCE's concept of the is/ought gap, where the distinction between descriptive and prescriptive
+    ethics is blurred. The passage describes how resentment can give birth to new values, which is similar to the QCE concept
+    of how the wave function can give rise to new possibilities and branches. The passage also highlights the tension between
+    creative and reactive forces, which is reminiscent of the QCE distinction between the conditional physics of the wave
+    function and the distributed being.
+- id: slug-005
+  section: Preface
+  passage: My thoughts concerning the _genealogy_ of our moral prejudices--for they constitute the issue in this polemic--have
+    their first, bald, and provisional expression in that collection of aphorisms entitled _Human, all-too-Human_, the writing
+    of which was begun in Sorrento, during a winter which allowed me to gaze over the broad and dangerous territory through
+    which my mind had up to that time wandered.
+  gbo_ref: GBO 1.2
+  label: Genealogy of morals
+  notes: This passage resonates with QCE's concept of the ancestral structure, where the present self shapes the inherited
+    conditions of future selves. The passage describes the author's thoughts on the genealogy of moral prejudices, which is
+    similar to the QCE concept of how the wave function can give rise to new possibilities and branches. The passage also
+    highlights the importance of understanding the historical and cultural context of moral values, which is a key theme in
+    QCE.
