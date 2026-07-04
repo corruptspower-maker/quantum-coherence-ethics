@@ -16,12 +16,47 @@ TEXT_COLOR   = (245, 225, 165)   # warm cream-gold
 SHADOW_COLOR = (20, 10, 0, 180)  # dark shadow for legibility
 
 # ── Shelf definitions ──────────────────────────────────────────────────────
-# (y_top, y_bottom, x_start, x_end)
-# Measured in original 5344 × 3008 pixels.
+# (y_top, y_bottom, book_coords)
+# book_coords = [(x, width), ...] from the SVG in shelf.html
 SHELVES = [
-    (110,  740,  380, 4600),   # top shelf
-    (960, 1720,  380, 4600),   # middle shelf
-    (1950, 2650, 380, 3680),   # bottom shelf (candle occupies right portion)
+    # Shelf 1 (y 110–740)
+    (110, 740, [
+        (216, 375),   # Bruno
+        (708, 375),   # Epictetus
+        (1200, 375),  # Hume
+        (1692, 375),  # Rand
+        (2185, 375),  # Attar
+        (2677, 375),  # Hobbes
+        (3169, 375),  # Whitehead
+        (3661, 375),  # Wilson
+        (4153, 375),  # Coleridge
+    ]),
+    # Shelf 2 (y 960–1720)
+    (960, 1720, [
+        (227, 338),   # Aristotle
+        (670, 338),   # Nietzsche
+        (1113, 338),  # Spinoza
+        (1556, 338),  # Borges
+        (1999, 338),  # M. Aurelius
+        (2442, 338),  # Parfit
+        (2885, 338),  # Rumi
+        (3328, 338),  # Hegel
+        (3771, 338),  # Wittgenstein
+        (4214, 338),  # Danielewski
+    ]),
+    # Shelf 3 (y 1950–2650)
+    (1950, 2650, [
+        (239, 293),   # Calvino
+        (616, 293),   # James
+        (992, 293),   # Russell
+        (1369, 293),  # Hafez
+        (1746, 293),  # Everett
+        (2122, 293),  # Deutsch
+        (2499, 293),  # Wordsworth
+        (2876, 293),  # Serafini
+        (3252, 293),  # The Ground Beneath the Ought
+        (3545, 293),  # Journal Submissions
+    ]),
 ]
 
 # ── Book lists ─────────────────────────────────────────────────────────────
@@ -62,6 +97,7 @@ BOOKS = [
         "Wordsworth",
         "Serafini",
         "The Ground\nBeneath\nthe Ought",
+        "Journal\nSubmissions",
     ],
 ]
 
@@ -119,16 +155,14 @@ def make_spine_label(text, spine_width, spine_height, font_path):
 def main():
     img = Image.open(SRC).convert('RGBA')
 
-    for shelf_idx, (y_top, y_bot, x_start, x_end) in enumerate(SHELVES):
+    for shelf_idx, (y_top, y_bot, book_coords) in enumerate(SHELVES):
         shelf_books = BOOKS[shelf_idx]
-        n = len(shelf_books)
-        shelf_w = x_end - x_start
         shelf_h = y_bot - y_top
-        spine_w  = shelf_w / n
 
         for book_idx, title in enumerate(shelf_books):
-            x_center = int(x_start + spine_w * (book_idx + 0.5))
-            label = make_spine_label(title, int(spine_w * 0.88), shelf_h, FONT_PATH)
+            x, width = book_coords[book_idx]
+            x_center = x + width // 2
+            label = make_spine_label(title, width, shelf_h, FONT_PATH)
 
             paste_x = x_center - label.width  // 2
             paste_y = y_top    + (shelf_h - label.height) // 2
@@ -138,7 +172,7 @@ def main():
 
     out = img.convert('RGB')
     out.save(DEST, quality=95)
-    print(f"\nSaved → {DEST}")
+    print(f"\nSaved -> {DEST}")
 
 
 if __name__ == '__main__':

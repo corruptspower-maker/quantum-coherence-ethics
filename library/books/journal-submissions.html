@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Journal Submissions — QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .submission {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(26, 25, 22, 0.1);
+    }
+    .submission:last-child {
+      border-bottom: none;
+    }
+    .submission__title {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .submission__journal {
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+    .submission__meta {
+      font-size: 0.85rem;
+      color: rgba(26, 25, 22, 0.65);
+      margin-bottom: 0.4rem;
+    }
+    .submission__status {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+      background: rgba(26, 25, 22, 0.08);
+      border-radius: 2px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .submission__notes {
+      font-size: 0.9rem;
+      color: rgba(26, 25, 22, 0.7);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <main class="book-page">
+    <p class="book-page__meta">Archive</p>
+    <h1>Journal Submissions</h1>
+
+    <div id="submissions"></div>
+
+    <p class="book-page__back"><a href="../">&larr; back to the shelf</a></p>
+  </main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace("/");
+
+    const submissions = [
+      // Format: { title, journal, submitted, status, notes }
+      // Add submissions here
+    ];
+
+    function renderSubmissions() {
+      const container = document.getElementById('submissions');
+
+      if (submissions.length === 0) {
+        container.innerHTML = '<p>No submissions yet.</p>';
+        return;
+      }
+
+      const html = submissions.map(s => `
+        <div class="submission">
+          <p class="submission__title">${s.title}</p>
+          <p class="submission__journal">${s.journal}</p>
+          <p class="submission__meta">Submitted: ${s.submitted}</p>
+          <span class="submission__status">${s.status}</span>
+          ${s.notes ? `<p class="submission__notes">${s.notes}</p>` : ''}
+        </div>
+      `).join('');
+
+      container.innerHTML = html;
+    }
+
+    renderSubmissions();
+  </script>
+</body>
+</html>

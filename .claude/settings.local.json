@@ -9,7 +9,10 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
       "Bash(Copy-Item \"C:\\\\Users\\\\Power\\\\Desktop\\\\qce_site_resources\\\\qce_site_images\\\\Everett_sage_mfr.png\" \"C:\\\\Users\\\\Power\\\\Repos\\\\quantum-coherence-ethics\\\\images\\\\everett-portrait.png\")",
       "Bash(py -3 add_spine_titles.py)",
-      "Bash(cp \"C:/Users/Power/Desktop/qce_site_resources/QCE_Ground_Beneath_the_Ought.html\" \"C:/Users/Power/Repos/quantum-coherence-ethics/treatise.html\")"
+      "Bash(cp \"C:/Users/Power/Desktop/qce_site_resources/QCE_Ground_Beneath_the_Ought.html\" \"C:/Users/Power/Repos/quantum-coherence-ethics/treatise.html\")",
+      "WebFetch(domain:zenodo.org)",
+      "mcp__claude-in-chrome__tabs_create_mcp",
+      "Bash(git add *)"
     ]
   }
 }
