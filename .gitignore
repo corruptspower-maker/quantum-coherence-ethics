@@ -1,2 +1,5 @@
 annotations/*.txt
 assets/books/*.pdf
+.claude/
+__pycache__/
+*.pyc
