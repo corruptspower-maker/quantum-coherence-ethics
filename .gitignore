@@ -3,3 +3,6 @@ assets/books/*.pdf
 .claude/
 __pycache__/
 *.pyc
+garden/
+cloister/
+assets/brain-matter-levels.json
