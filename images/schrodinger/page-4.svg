@@ -19,8 +19,10 @@
     <!-- OUR GUY mid-dodge: leaning hard, one leg lifted, arms out -->
     <g transform="rotate(-13, 400, 340)">
       <circle cx="400" cy="252" r="33" stroke-width="5"/>
-      <path d="M 378 222 L 366 190 L 400 212" stroke-width="4.5"/>
-      <path d="M 422 222 L 434 190 L 400 212" stroke-width="4.5"/>
+      <path d="M 372 235 L 365 195 L 393 221" stroke-width="4.5"/>
+    <path d="M 373 229 L 369 202 L 388 219" stroke-width="2.5"/>
+    <path d="M 428 235 L 435 195 L 407 221" stroke-width="4.5"/>
+    <path d="M 427 229 L 431 202 L 412 219" stroke-width="2.5"/>
       <circle cx="389" cy="246" r="3.2" fill="#5c1212" stroke="none"/>
       <circle cx="411" cy="246" r="3.2" fill="#5c1212" stroke="none"/>
       <ellipse cx="400" cy="266" rx="7" ry="9" stroke-width="3"/>

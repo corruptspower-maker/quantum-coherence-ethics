@@ -6,9 +6,10 @@
 
     <!-- THE PAW-PAW. hero shot. -->
     <!-- headband ears -->
-    <path d="M 372 224 L 358 178 L 400 206" stroke-width="5"/>
-    <path d="M 428 224 L 442 178 L 400 206" stroke-width="5"/>
-    <path d="M 366 232 Q 400 214 434 232" stroke-width="4"/>
+    <path d="M 364 240 L 356 190 L 392 222" stroke-width="5"/>
+    <path d="M 366 233 L 361 199 L 385 221" stroke-width="2.8"/>
+    <path d="M 436 240 L 444 190 L 408 222" stroke-width="5"/>
+    <path d="M 434 233 L 439 199 L 415 221" stroke-width="2.8"/>
 
     <!-- head -->
     <circle cx="400" cy="262" r="42" stroke-width="5.5"/>

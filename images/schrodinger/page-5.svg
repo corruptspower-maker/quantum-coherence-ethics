@@ -32,8 +32,10 @@
 
     <!-- OUR GUY, right, ears still on, dawning realisation -->
     <circle cx="576" cy="288" r="33" stroke-width="5"/>
-    <path d="M 554 258 L 542 226 L 576 248" stroke-width="4.5"/>
-    <path d="M 598 258 L 610 226 L 576 248" stroke-width="4.5"/>
+    <path d="M 548 271 L 541 231 L 569 257" stroke-width="4.5"/>
+    <path d="M 549 265 L 545 238 L 564 255" stroke-width="2.5"/>
+    <path d="M 604 271 L 611 231 L 583 257" stroke-width="4.5"/>
+    <path d="M 603 265 L 607 238 L 588 255" stroke-width="2.5"/>
     <circle cx="565" cy="282" r="3.2" fill="#5c1212" stroke="none"/>
     <circle cx="587" cy="282" r="3.2" fill="#5c1212" stroke="none"/>
     <path d="M 564 306 Q 576 299 588 306" stroke-width="3.5"/>

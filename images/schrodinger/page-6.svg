@@ -21,8 +21,10 @@
 
     <!-- OUR GUY, sauntering, one hand out, mid-song -->
     <circle cx="246" cy="272" r="33" stroke-width="5"/>
-    <path d="M 224 242 L 212 210 L 246 232" stroke-width="4.5"/>
-    <path d="M 268 242 L 280 210 L 246 232" stroke-width="4.5"/>
+    <path d="M 218 255 L 211 215 L 239 241" stroke-width="4.5"/>
+    <path d="M 219 249 L 215 222 L 234 239" stroke-width="2.5"/>
+    <path d="M 274 255 L 281 215 L 253 241" stroke-width="4.5"/>
+    <path d="M 273 249 L 277 222 L 258 239" stroke-width="2.5"/>
     <path d="M 224 264 Q 232 256 240 264" stroke-width="3.5"/>
     <path d="M 254 264 Q 262 256 270 264" stroke-width="3.5"/>
     <!-- open singing mouth -->

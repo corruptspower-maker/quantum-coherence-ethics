@@ -30,8 +30,10 @@
 
     <!-- OUR GUY, ears on, looking in -->
     <circle cx="238" cy="278" r="33" stroke-width="5"/>
-    <path d="M 216 248 L 204 216 L 238 238" stroke-width="4.5"/>
-    <path d="M 260 248 L 272 216 L 238 238" stroke-width="4.5"/>
+    <path d="M 210 261 L 203 221 L 231 247" stroke-width="4.5"/>
+    <path d="M 211 255 L 207 228 L 226 245" stroke-width="2.5"/>
+    <path d="M 266 261 L 273 221 L 245 247" stroke-width="4.5"/>
+    <path d="M 265 255 L 269 228 L 250 245" stroke-width="2.5"/>
     <circle cx="250" cy="274" r="3.2" fill="#5c1212" stroke="none"/>
     <circle cx="228" cy="274" r="3.2" fill="#5c1212" stroke="none"/>
     <line x1="238" y1="311" x2="238" y2="396" stroke-width="5.5"/>
