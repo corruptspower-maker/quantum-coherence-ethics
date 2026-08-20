@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+
+    <line x1="30" y1="486" x2="770" y2="486" stroke-width="3"/>
+
+    <!-- TOXOPLASMA GONDII in the air — crescent spores -->
+    <g stroke-width="3" opacity="0.85">
+      <path d="M 150 128 Q 168 112 186 128 Q 168 122 150 128"/>
+      <path d="M 262 96 Q 280 80 298 96 Q 280 90 262 96"/>
+      <path d="M 388 132 Q 406 116 424 132 Q 406 126 388 132"/>
+      <path d="M 516 92 Q 534 76 552 92 Q 534 86 516 92"/>
+      <path d="M 620 140 Q 638 124 656 140 Q 638 134 620 140"/>
+      <path d="M 330 176 Q 346 162 362 176 Q 346 170 330 176"/>
+      <path d="M 470 178 Q 486 164 502 178 Q 486 172 470 178"/>
+      <path d="M 214 190 Q 230 176 246 190 Q 230 184 214 190"/>
+    </g>
+
+    <!-- OUR GUY mid-dodge: leaning hard, one leg lifted, arms out -->
+    <g transform="rotate(-13, 400, 340)">
+      <circle cx="400" cy="252" r="33" stroke-width="5"/>
+      <path d="M 378 222 L 366 190 L 400 212" stroke-width="4.5"/>
+      <path d="M 422 222 L 434 190 L 400 212" stroke-width="4.5"/>
+      <circle cx="389" cy="246" r="3.2" fill="#5c1212" stroke="none"/>
+      <circle cx="411" cy="246" r="3.2" fill="#5c1212" stroke="none"/>
+      <ellipse cx="400" cy="266" rx="7" ry="9" stroke-width="3"/>
+      <line x1="400" y1="285" x2="400" y2="374" stroke-width="5.5"/>
+      <line x1="400" y1="304" x2="336" y2="284" stroke-width="4.5"/>
+      <line x1="400" y1="304" x2="466" y2="288" stroke-width="4.5"/>
+      <line x1="400" y1="374" x2="376" y2="446" stroke-width="4.5"/>
+      <line x1="400" y1="374" x2="458" y2="404" stroke-width="4.5"/>
+      <line x1="458" y1="404" x2="496" y2="386" stroke-width="4.5"/>
+    </g>
+
+    <!-- MINI-CATS UNDERFOOT -->
+    <g stroke-width="3.2">
+      <!-- cat A -->
+      <circle cx="196" cy="452" r="17"/>
+      <path d="M 184 440 L 181 426 L 192 435"/>
+      <path d="M 208 440 L 211 426 L 200 435"/>
+      <circle cx="191" cy="450" r="1.9" fill="#5c1212" stroke="none"/>
+      <circle cx="201" cy="450" r="1.9" fill="#5c1212" stroke="none"/>
+      <path d="M 213 458 Q 232 456 230 438" stroke-width="2.8"/>
+      <!-- cat B -->
+      <circle cx="292" cy="470" r="15"/>
+      <path d="M 282 459 L 279 447 L 289 455"/>
+      <path d="M 302 459 L 305 447 L 295 455"/>
+      <circle cx="287" cy="468" r="1.8" fill="#5c1212" stroke="none"/>
+      <circle cx="297" cy="468" r="1.8" fill="#5c1212" stroke="none"/>
+      <path d="M 306 476 Q 324 472 320 458" stroke-width="2.6"/>
+      <!-- cat C -->
+      <circle cx="536" cy="458" r="16"/>
+      <path d="M 525 446 L 522 433 L 532 442"/>
+      <path d="M 547 446 L 550 433 L 540 442"/>
+      <circle cx="531" cy="456" r="1.8" fill="#5c1212" stroke="none"/>
+      <circle cx="541" cy="456" r="1.8" fill="#5c1212" stroke="none"/>
+      <path d="M 551 464 Q 570 460 566 445" stroke-width="2.6"/>
+      <!-- cat D -->
+      <circle cx="640" cy="472" r="14"/>
+      <path d="M 631 462 L 628 450 L 637 458"/>
+      <path d="M 649 462 L 652 450 L 643 458"/>
+      <circle cx="636" cy="470" r="1.7" fill="#5c1212" stroke="none"/>
+      <circle cx="644" cy="470" r="1.7" fill="#5c1212" stroke="none"/>
+      <path d="M 653 478 Q 670 474 666 461" stroke-width="2.5"/>
+      <!-- cat E, tiny, far -->
+      <circle cx="716" cy="450" r="11"/>
+      <path d="M 709 442 L 707 432 L 714 439"/>
+      <path d="M 723 442 L 725 432 L 718 439"/>
+      <circle cx="713" cy="449" r="1.5" fill="#5c1212" stroke="none"/>
+      <circle cx="719" cy="449" r="1.5" fill="#5c1212" stroke="none"/>
+    </g>
+
+  </g>
+
+  <line x1="596" y1="196" x2="546" y2="176" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 546 176 l 8 -1 l -5 6" fill="#1a1a2e"/>
+  <text x="602" y="192" font-family="'Comic Sans MS',cursive" font-size="18" fill="#1a1a2e"
+        transform="rotate(-4, 602, 192)">toxoplasma</text>
+  <text x="602" y="216" font-family="'Comic Sans MS',cursive" font-size="18" fill="#1a1a2e"
+        transform="rotate(-4, 602, 216)">gondii</text>
+
+  <text x="400" y="562" font-family="Georgia,serif" font-size="26" font-style="italic"
+        fill="#5c1212" text-anchor="middle">&#8212;&#8202;and I dodge the mini-cats underfoot,</text>
+  <text x="400" y="594" font-family="Georgia,serif" font-size="26" font-style="italic"
+        fill="#5c1212" text-anchor="middle">toxoplasma gondii in the air&#8212;</text>
+</svg>

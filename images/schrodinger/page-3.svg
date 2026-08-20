@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+
+    <!-- THE PAW-PAW. hero shot. -->
+    <!-- headband ears -->
+    <path d="M 372 224 L 358 178 L 400 206" stroke-width="5"/>
+    <path d="M 428 224 L 442 178 L 400 206" stroke-width="5"/>
+    <path d="M 366 232 Q 400 214 434 232" stroke-width="4"/>
+
+    <!-- head -->
+    <circle cx="400" cy="262" r="42" stroke-width="5.5"/>
+    <!-- eyes: pleased, closed-happy arcs -->
+    <path d="M 378 254 Q 386 246 394 254" stroke-width="3.5"/>
+    <path d="M 408 254 Q 416 246 424 254" stroke-width="3.5"/>
+    <!-- cat mouth -->
+    <path d="M 388 276 Q 394 282 400 276 Q 406 282 412 276" stroke-width="3"/>
+    <!-- whisker dots -->
+    <circle cx="376" cy="277" r="2" fill="#5c1212" stroke="none"/>
+    <circle cx="424" cy="277" r="2" fill="#5c1212" stroke="none"/>
+
+    <!-- TONGUE, out, reaching the back of the hand -->
+    <path d="M 396 282 Q 380 296 358 292" stroke-width="5"/>
+
+    <!-- RAISED HAND — back of hand presented to the face -->
+    <circle cx="336" cy="286" r="19" stroke-width="4.5"/>
+    <line x1="324" y1="272" x2="318" y2="262" stroke-width="3"/>
+    <line x1="336" y1="268" x2="334" y2="256" stroke-width="3"/>
+    <line x1="348" y1="271" x2="352" y2="260" stroke-width="3"/>
+    <!-- forearm up to it -->
+    <line x1="400" y1="330" x2="352" y2="308" stroke-width="5"/>
+
+    <!-- body -->
+    <line x1="400" y1="304" x2="400" y2="404" stroke-width="6"/>
+
+    <!-- OTHER FIST, tucked at the chest -->
+    <line x1="400" y1="332" x2="446" y2="326" stroke-width="5"/>
+    <circle cx="454" cy="330" r="16" stroke-width="4.5"/>
+    <line x1="450" y1="318" x2="456" y2="316" stroke-width="2.5"/>
+
+    <!-- legs, planted, confident -->
+    <line x1="400" y1="404" x2="366" y2="478" stroke-width="5"/>
+    <line x1="366" y1="478" x2="346" y2="498" stroke-width="5"/>
+    <line x1="400" y1="404" x2="434" y2="478" stroke-width="5"/>
+    <line x1="434" y1="478" x2="454" y2="498" stroke-width="5"/>
+
+  </g>
+
+  <line x1="596" y1="272" x2="500" y2="290" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 500 290 l 9 -3 l -3 8" fill="#1a1a2e"/>
+  <text x="606" y="252" font-family="'Comic Sans MS',cursive" font-size="19" fill="#1a1a2e"
+        transform="rotate(-5, 606, 252)">the classic</text>
+  <text x="606" y="278" font-family="'Comic Sans MS',cursive" font-size="19" fill="#1a1a2e"
+        transform="rotate(-5, 606, 278)">paw-paw</text>
+
+  <text x="400" y="564" font-family="Georgia,serif" font-size="26" font-style="italic"
+        fill="#5c1212" text-anchor="middle">&#8212;&#8202;and I hit him with the classic paw-paw, fists tucked,</text>
+  <text x="400" y="596" font-family="Georgia,serif" font-size="26" font-style="italic"
+        fill="#5c1212" text-anchor="middle">licking the back of my hand, ears on&#8212;</text>
+</svg>

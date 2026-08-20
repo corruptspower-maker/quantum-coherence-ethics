@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+
+    <line x1="30" y1="492" x2="770" y2="492" stroke-width="3"/>
+
+    <!-- THE BOX, closed, waiting -->
+    <path d="M 512 492 L 512 350 L 700 350 L 700 492 Z" stroke-width="6"/>
+    <path d="M 512 350 L 546 316 L 734 316 L 700 350" stroke-width="6"/>
+    <path d="M 700 350 L 734 316 L 734 458 L 700 492" stroke-width="6"/>
+    <!-- lid seam -->
+    <line x1="512" y1="368" x2="700" y2="368" stroke-width="3" opacity="0.55"/>
+    <!-- little cat stencil on the crate -->
+    <circle cx="596" cy="420" r="17" stroke-width="3.5"/>
+    <path d="M 584 408 L 581 394 L 592 403" stroke-width="3.5"/>
+    <path d="M 608 408 L 611 394 L 600 403" stroke-width="3.5"/>
+    <circle cx="591" cy="418" r="2" fill="#5c1212" stroke="none"/>
+    <circle cx="601" cy="418" r="2" fill="#5c1212" stroke="none"/>
+    <line x1="578" y1="426" x2="566" y2="423" stroke-width="2"/>
+    <line x1="614" y1="426" x2="626" y2="423" stroke-width="2"/>
+
+    <!-- OUR GUY, sauntering, one hand out, mid-song -->
+    <circle cx="246" cy="272" r="33" stroke-width="5"/>
+    <path d="M 224 242 L 212 210 L 246 232" stroke-width="4.5"/>
+    <path d="M 268 242 L 280 210 L 246 232" stroke-width="4.5"/>
+    <path d="M 224 264 Q 232 256 240 264" stroke-width="3.5"/>
+    <path d="M 254 264 Q 262 256 270 264" stroke-width="3.5"/>
+    <!-- open singing mouth -->
+    <ellipse cx="248" cy="288" rx="9" ry="12" stroke-width="3.5"/>
+    <!-- loose saunter body -->
+    <path d="M 246 305 Q 254 348 248 390" stroke-width="5.5"/>
+    <!-- one arm out, presenting -->
+    <path d="M 250 326 Q 300 316 344 330" stroke-width="4.5"/>
+    <!-- other arm swinging back -->
+    <line x1="248" y1="326" x2="208" y2="356" stroke-width="4.5"/>
+    <!-- sauntering legs -->
+    <line x1="248" y1="390" x2="218" y2="458" stroke-width="4.5"/>
+    <line x1="218" y1="458" x2="200" y2="482" stroke-width="4.5"/>
+    <line x1="248" y1="390" x2="290" y2="446" stroke-width="4.5"/>
+    <line x1="290" y1="446" x2="316" y2="480" stroke-width="4.5"/>
+
+    <!-- music notes -->
+    <g stroke-width="3.5">
+      <circle cx="330" cy="220" r="8"/>
+      <line x1="338" y1="220" x2="338" y2="182"/>
+      <path d="M 338 182 Q 354 188 352 202"/>
+      <circle cx="404" cy="176" r="7"/>
+      <line x1="411" y1="176" x2="411" y2="142"/>
+      <path d="M 411 142 Q 425 148 423 160"/>
+      <circle cx="468" cy="222" r="6"/>
+      <line x1="474" y1="222" x2="474" y2="194"/>
+    </g>
+
+  </g>
+
+  <text x="400" y="546" font-family="Georgia,serif" font-size="25" font-style="italic"
+        fill="#5c1212" text-anchor="middle">&#8212;&#8202;and I saunter down to the box, and half-stated, half-sung&#8212;</text>
+  <text x="400" y="588" font-family="Georgia,serif" font-size="29" font-style="italic"
+        fill="#5c1212" text-anchor="middle">&#8220;Tommy the Cat is my name, and I say unto thee&#8212;&#8221;</text>
+</svg>

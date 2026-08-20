@@ -267,6 +267,8 @@
       var level = QCE.OUGHT.get();
       if (level === 0) {
         overlay.classList.add('open');
+      } else if (level === 1) {
+        window.location.href = 'library/table/schrodinger.html';
       } else {
         window.location.href = 'library/table/ought.html';
       }

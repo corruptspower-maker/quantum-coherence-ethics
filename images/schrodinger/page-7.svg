@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+
+    <line x1="30" y1="492" x2="770" y2="492" stroke-width="3"/>
+
+    <!-- THE BOX, open. lid swung back. -->
+    <path d="M 470 492 L 470 352 L 658 352 L 658 492 Z" stroke-width="6"/>
+    <path d="M 470 352 L 504 318 L 692 318 L 658 352" stroke-width="6"/>
+    <path d="M 658 352 L 692 318 L 692 458 L 658 492" stroke-width="6"/>
+    <!-- open lid, hinged back -->
+    <path d="M 504 318 L 540 246 L 728 246 L 692 318" stroke-width="5"/>
+    <line x1="504" y1="318" x2="540" y2="246" stroke-width="5"/>
+
+    <!-- CAT, alive and well. sitting up, tail curled, pleased. -->
+    <g stroke-width="4">
+      <circle cx="564" cy="404" r="27"/>
+      <path d="M 545 385 L 540 362 L 558 377"/>
+      <path d="M 583 385 L 588 362 L 570 377"/>
+      <circle cx="555" cy="401" r="2.8" fill="#5c1212" stroke="none"/>
+      <circle cx="573" cy="401" r="2.8" fill="#5c1212" stroke="none"/>
+      <path d="M 555 414 Q 560 419 564 414 Q 568 419 573 414" stroke-width="3"/>
+      <line x1="536" y1="408" x2="518" y2="404" stroke-width="2.4"/>
+      <line x1="536" y1="416" x2="519" y2="418" stroke-width="2.4"/>
+      <line x1="592" y1="408" x2="610" y2="404" stroke-width="2.4"/>
+      <line x1="592" y1="416" x2="609" y2="418" stroke-width="2.4"/>
+      <path d="M 564 431 L 564 466" stroke-width="4"/>
+      <path d="M 588 462 Q 616 458 610 428" stroke-width="4"/>
+    </g>
+
+    <!-- OUR GUY, ears on, looking in -->
+    <circle cx="238" cy="278" r="33" stroke-width="5"/>
+    <path d="M 216 248 L 204 216 L 238 238" stroke-width="4.5"/>
+    <path d="M 260 248 L 272 216 L 238 238" stroke-width="4.5"/>
+    <circle cx="250" cy="274" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="228" cy="274" r="3.2" fill="#5c1212" stroke="none"/>
+    <line x1="238" y1="311" x2="238" y2="396" stroke-width="5.5"/>
+    <line x1="238" y1="330" x2="290" y2="352" stroke-width="4.5"/>
+    <line x1="238" y1="330" x2="202" y2="368" stroke-width="4.5"/>
+    <line x1="238" y1="396" x2="216" y2="464" stroke-width="4.5"/>
+    <line x1="238" y1="396" x2="262" y2="464" stroke-width="4.5"/>
+    <line x1="216" y1="464" x2="200" y2="490" stroke-width="4.5"/>
+    <line x1="262" y1="464" x2="280" y2="490" stroke-width="4.5"/>
+
+  </g>
+
+  <text x="400" y="566" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">&#8212;&#8202;and I open it. And I experience the cat alive and well.</text>
+</svg>

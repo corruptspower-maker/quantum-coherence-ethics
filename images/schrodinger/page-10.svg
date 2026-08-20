@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+
+  <!-- TWO panels. separate. each whole. never merged. -->
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+
+    <rect x="88" y="120" width="284" height="252" rx="4" stroke-width="6"/>
+    <rect x="428" y="120" width="284" height="252" rx="4" stroke-width="6"/>
+
+    <!-- LEFT: alive, complete -->
+    <g stroke-width="4" transform="translate(-334, -156)">
+      <circle cx="564" cy="404" r="27"/>
+      <path d="M 545 385 L 540 362 L 558 377"/>
+      <path d="M 583 385 L 588 362 L 570 377"/>
+      <circle cx="555" cy="401" r="2.8" fill="#5c1212" stroke="none"/>
+      <circle cx="573" cy="401" r="2.8" fill="#5c1212" stroke="none"/>
+      <path d="M 555 414 Q 560 419 564 414 Q 568 419 573 414" stroke-width="3"/>
+      <line x1="536" y1="408" x2="518" y2="404" stroke-width="2.4"/>
+      <line x1="592" y1="408" x2="610" y2="404" stroke-width="2.4"/>
+      <path d="M 564 431 L 564 466" stroke-width="4"/>
+      <path d="M 588 462 Q 616 458 610 428" stroke-width="4"/>
+    </g>
+
+    <!-- RIGHT: dead, equally complete -->
+    <g stroke-width="4" transform="translate(6, -180)">
+      <circle cx="564" cy="428" r="27"/>
+      <path d="M 545 409 L 540 386 L 558 401"/>
+      <path d="M 583 409 L 588 386 L 570 401"/>
+      <line x1="549" y1="420" x2="561" y2="430" stroke-width="3.4"/>
+      <line x1="561" y1="420" x2="549" y2="430" stroke-width="3.4"/>
+      <line x1="567" y1="420" x2="579" y2="430" stroke-width="3.4"/>
+      <line x1="579" y1="420" x2="567" y2="430" stroke-width="3.4"/>
+      <path d="M 556 444 L 566 444" stroke-width="3"/>
+      <path d="M 566 444 Q 574 448 572 456" stroke-width="3"/>
+      <line x1="536" y1="432" x2="518" y2="428" stroke-width="2.4"/>
+      <line x1="592" y1="432" x2="610" y2="428" stroke-width="2.4"/>
+      <path d="M 590 452 L 634 452" stroke-width="4"/>
+    </g>
+
+    <!-- P = 1 under each. neither is a fraction. -->
+    <g stroke="none" fill="#5c1212">
+      <text x="230" y="410" font-family="Georgia,serif" font-size="22" font-style="italic"
+            text-anchor="middle">P = 1</text>
+      <text x="570" y="410" font-family="Georgia,serif" font-size="22" font-style="italic"
+            text-anchor="middle">P = 1</text>
+    </g>
+  </g>
+
+  <text x="400" y="504" font-family="Georgia,serif" font-size="26" font-style="italic"
+        fill="#5c1212" text-anchor="middle">&#8212;&#8202;because the unity of the experience</text>
+  <text x="400" y="538" font-family="Georgia,serif" font-size="26" font-style="italic"
+        fill="#5c1212" text-anchor="middle">never depended on holding both at once.</text>
+</svg>
