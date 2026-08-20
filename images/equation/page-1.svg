@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+
+    <!-- STOVE -->
+    <rect x="452" y="396" width="256" height="104" stroke-width="6"/>
+    <line x1="452" y1="396" x2="708" y2="396" stroke-width="6"/>
+    <circle cx="492" cy="448" r="17" stroke-width="5"/>
+    <line x1="492" y1="448" x2="492" y2="434" stroke-width="4"/>
+    <line x1="524" y1="430" x2="690" y2="430" stroke-width="2.5" opacity="0.35"/>
+
+    <!-- POT -->
+    <path d="M 512 396 L 500 316 L 664 316 L 652 396 Z" stroke-width="6"/>
+    <line x1="492" y1="316" x2="672" y2="316" stroke-width="6"/>
+    <path d="M 672 322 Q 700 336 676 356" stroke-width="4.5"/>
+    <path d="M 512 350 Q 582 336 652 350" stroke-width="3" opacity="0.5"/>
+
+    <!-- THERMOMETER -->
+    <g transform="rotate(11, 582, 300)">
+      <rect x="570" y="180" width="24" height="176" rx="12" stroke-width="5"/>
+      <circle cx="582" cy="364" r="18" stroke-width="5"/>
+      <line x1="582" y1="346" x2="582" y2="300" stroke-width="7"/>
+      <line x1="596" y1="216" x2="608" y2="216" stroke-width="2.5"/>
+      <line x1="596" y1="242" x2="606" y2="242" stroke-width="2.5"/>
+      <line x1="596" y1="268" x2="608" y2="268" stroke-width="2.5"/>
+      <line x1="596" y1="294" x2="606" y2="294" stroke-width="2.5"/>
+      <line x1="596" y1="320" x2="608" y2="320" stroke-width="2.5"/>
+    </g>
+
+    <!-- OUR GUY, reading it -->
+    <circle cx="234" cy="300" r="31" stroke-width="5"/>
+    <circle cx="246" cy="293" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="224" cy="293" r="3.2" fill="#5c1212" stroke="none"/>
+    <line x1="222" y1="314" x2="246" y2="314" stroke-width="3.4"/>
+    <line x1="234" y1="331" x2="234" y2="412" stroke-width="5.5"/>
+    <line x1="234" y1="348" x2="200" y2="386" stroke-width="4.5"/>
+    <line x1="234" y1="348" x2="288" y2="332" stroke-width="4.5"/>
+    <line x1="234" y1="412" x2="212" y2="472" stroke-width="4.5"/>
+    <line x1="234" y1="412" x2="256" y2="472" stroke-width="4.5"/>
+    <line x1="212" y1="472" x2="196" y2="494" stroke-width="4.5"/>
+    <line x1="256" y1="472" x2="274" y2="494" stroke-width="4.5"/>
+  </g>
+
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">It gave me a number.</text>
+</svg>
