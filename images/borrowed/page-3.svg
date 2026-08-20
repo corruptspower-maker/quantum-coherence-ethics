@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+
+    <!-- post + base -->
+    <line x1="400" y1="500" x2="400" y2="214" stroke-width="8"/>
+    <path d="M 348 500 Q 400 478 452 500" stroke-width="6"/>
+    <!-- beam, tipped left -->
+    <line x1="212" y1="286" x2="588" y2="196" stroke-width="7"/>
+    <circle cx="400" cy="241" r="8" stroke-width="4"/>
+
+    <!-- LEFT PAN, dragged down -->
+    <line x1="212" y1="286" x2="212" y2="330" stroke-width="3.5"/>
+    <path d="M 148 330 Q 212 380 276 330 Z" stroke-width="5"/>
+    <!-- RIGHT PAN, up, empty -->
+    <line x1="588" y1="196" x2="588" y2="240" stroke-width="3.5"/>
+    <path d="M 532 240 Q 588 284 644 240 Z" stroke-width="5"/>
+
+    <!-- A WHOLE TREE standing in the pan. far too big for it. -->
+    <line x1="212" y1="336" x2="212" y2="252" stroke-width="9"/>
+    <line x1="212" y1="272" x2="156" y2="212" stroke-width="6"/>
+    <line x1="212" y1="272" x2="268" y2="212" stroke-width="6"/>
+    <line x1="212" y1="252" x2="212" y2="186" stroke-width="5"/>
+    <line x1="168" y1="224" x2="126" y2="176" stroke-width="4"/>
+    <line x1="172" y1="228" x2="122" y2="240" stroke-width="4"/>
+    <line x1="256" y1="224" x2="298" y2="176" stroke-width="4"/>
+    <line x1="252" y1="228" x2="302" y2="240" stroke-width="4"/>
+    <line x1="212" y1="200" x2="176" y2="150" stroke-width="3.5"/>
+    <line x1="212" y1="200" x2="248" y2="150" stroke-width="3.5"/>
+
+    <!-- label, on the plinth, clear of everything -->
+    <text x="400" y="536" font-family="Georgia,serif" font-size="19" fill="#5c1212"
+          text-anchor="middle" stroke="none" letter-spacing="4">DEONTOLOGY</text>
+  </g>
+
+  <line x1="470" y1="360" x2="330" y2="322" stroke="#1a1a2e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 330 322 l 9 -2 l -4 8" fill="#1a1a2e"/>
+  <text x="478" y="356" font-family="'Comic Sans MS',cursive" font-size="18" fill="#1a1a2e"
+        transform="rotate(-4, 478, 356)">it will not sit still</text>
+  <text x="478" y="380" font-family="'Comic Sans MS',cursive" font-size="18" fill="#1a1a2e"
+        transform="rotate(-4, 478, 380)">long enough to weigh</text>
+
+  <text x="400" y="586" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">The second one would not hold it.</text>
+</svg>

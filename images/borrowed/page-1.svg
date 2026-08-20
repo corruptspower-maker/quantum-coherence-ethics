@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+
+    <!-- THE TREE -->
+    <line x1="600" y1="500" x2="600" y2="372" stroke-width="11"/>
+    <line x1="600" y1="398" x2="514" y2="308" stroke-width="7"/>
+    <line x1="600" y1="398" x2="686" y2="308" stroke-width="7"/>
+    <line x1="524" y1="318" x2="470" y2="230" stroke-width="5"/>
+    <line x1="536" y1="332" x2="464" y2="352" stroke-width="5"/>
+    <line x1="676" y1="318" x2="730" y2="230" stroke-width="5"/>
+    <line x1="664" y1="332" x2="736" y2="352" stroke-width="5"/>
+    <line x1="600" y1="372" x2="588" y2="286" stroke-width="5"/>
+
+    <!-- OUR GUY, listing under the weight of the bag -->
+    <g transform="rotate(7, 236, 380)">
+      <circle cx="236" cy="292" r="31" stroke-width="5"/>
+      <circle cx="225" cy="285" r="3.2" fill="#5c1212" stroke="none"/>
+      <circle cx="247" cy="285" r="3.2" fill="#5c1212" stroke="none"/>
+      <line x1="224" y1="306" x2="248" y2="306" stroke-width="3.4"/>
+      <line x1="236" y1="323" x2="236" y2="404" stroke-width="5.5"/>
+      <line x1="236" y1="340" x2="200" y2="372" stroke-width="4.5"/>
+      <!-- carrying arm, straight down, loaded -->
+      <line x1="236" y1="340" x2="278" y2="386" stroke-width="4.5"/>
+      <line x1="236" y1="404" x2="214" y2="468" stroke-width="4.5"/>
+      <line x1="236" y1="404" x2="258" y2="468" stroke-width="4.5"/>
+      <line x1="214" y1="468" x2="198" y2="492" stroke-width="4.5"/>
+      <line x1="258" y1="468" x2="276" y2="492" stroke-width="4.5"/>
+    </g>
+
+    <!-- THE BAG. heavy. full of other people's instruments. -->
+    <path d="M 262 412 L 366 412 L 358 494 L 270 494 Z" stroke-width="5"/>
+    <path d="M 286 412 Q 314 384 342 412" stroke-width="4"/>
+    <!-- ruler sticking out -->
+    <line x1="298" y1="412" x2="286" y2="352" stroke-width="4"/>
+    <line x1="292" y1="368" x2="300" y2="366" stroke-width="2.5"/>
+    <line x1="294" y1="380" x2="302" y2="378" stroke-width="2.5"/>
+    <!-- scales sticking out -->
+    <line x1="340" y1="412" x2="352" y2="356" stroke-width="4"/>
+    <line x1="336" y1="362" x2="368" y2="356" stroke-width="3.5"/>
+    <path d="M 338 362 Q 342 374 350 372" stroke-width="2.5"/>
+    <path d="M 366 356 Q 370 368 378 366" stroke-width="2.5"/>
+  </g>
+
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">I came to measure it. I brought everything I own.</text>
+</svg>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gate 3 &mdash; The Borrowed Frame &mdash; QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/puzzle.css">
+</head>
+<body>
+  <main class="pz" id="pz"></main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/puzzle-engine.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
+
+    PUZZLE.mount({
+      mount:   document.getElementById('pz'),
+      meta:    'Gate 3 of 7 — The Borrowed Frame',
+      title:   'The OUGHT: Beneath the Branches',
+      imgBase: '../../images/borrowed/page-',
+      pages:   5,
+      level:   3,
+      back:    '../../desk.html',
+
+      question: 'Three of these you brought with you. One was already here. Tick the ones you brought.',
+      hint:     'tick as many as apply',
+
+      options: [
+        { value: 'duty',  text: 'You have a duty to your future branch-selves, and failing them would be morally wrong.' },
+        { value: 'max',   text: 'It is about maximising wellbeing across the branches — the greatest good across the most worlds.' },
+        { value: 'hume',  text: 'It cannot get where it is going, because you can never derive an ought from an is.' },
+        { value: 'own',   text: 'What I do now sets the conditions the ones after me will find. That is not a rule I am obeying. It is the shape of what I am already doing.' }
+      ],
+
+      check: function (p) {
+        if (!p.__any) {
+          return '<p>Nothing is ticked. But you did not arrive empty-handed — nobody does. Read the four again and find the ones that are in your handwriting.</p>';
+        }
+        if (p.own) {
+          return '<p>You ticked the fourth. That one was already here.</p>' +
+                 '<p>Look at what it does and does not do. It names no duty, weighs no outcome, and issues no instruction. It is in the first person and it describes a situation rather than grading one. There is nothing in it you would have to import from anywhere — which is exactly why it did not feel like an answer.</p>' +
+                 '<p>The instruments are the ones that arrived with vocabulary attached. Set those down and look again.</p>';
+        }
+        if (!p.duty) {
+          return '<p>You left the first one standing. <em>Duty</em>, and <em>morally wrong</em> — those are the two words to look at.</p>' +
+                 '<p>Neither of them appears in the argument you have been reading, and neither has to. They came with you, from a framework where obligations are owed and violations are punished. It is a serious framework. It is not this one.</p>' +
+                 '<p>It reads like the text because it is talking about branch-selves. Listen to the grammar instead of the subject.</p>';
+        }
+        if (!p.max) {
+          return '<p>You left the second one standing. It is the most comfortable of the three, because it turns the thing into a number and a number can be acted on.</p>' +
+                 '<p>But <em>maximising</em> and <em>the greatest good</em> are borrowed outright. The equation here describes what is at stake; it does not hand you a quantity to push upward. A thermometer tells you the temperature. It does not tell you to boil the water.</p>' +
+                 '<p>You brought that one. It has been useful to you elsewhere. It is not in this room.</p>';
+        }
+        if (!p.hume) {
+          return '<p>You left the third one standing, and this is the hardest to see, because it does not sound like an import — it sounds like rigour.</p>' +
+                 '<p>Hume’s objection is real and it applies to a certain kind of argument. Whether it applies to this one is a thing you could only find out by following the argument to its end. Raising it at the door is not rigour; it is a tool swung before anyone has looked at what is being measured.</p>' +
+                 '<p>It cuts beautifully. It measures nothing. Set it down — it will be there when you leave.</p>';
+        }
+        return null;
+      }
+    });
+  </script>
+</body>
+</html>

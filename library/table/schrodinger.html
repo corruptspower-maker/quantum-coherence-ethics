@@ -9,210 +9,56 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/main.css">
-  <style>
-    .lab { max-width: 940px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-
-    .lab-meta {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
-      color: rgba(26,25,22,.5); margin-bottom: .4rem;
-    }
-    .lab h1 { font-size: 1.9rem; margin-bottom: 1.6rem; font-weight: 400; }
-
-    .plate {
-      border: 1px solid rgba(26,25,22,.25);
-      background: #c09040;
-      line-height: 0;
-    }
-    .plate img { width: 100%; height: auto; display: block; }
-
-    .turn {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; margin-top: 1rem; flex-wrap: wrap;
-    }
-    .turn-count {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: .8rem; color: rgba(26,25,22,.45); letter-spacing: .08em;
-    }
-    .turn-btns { display: flex; gap: .75rem; flex-wrap: wrap; }
-
-    .btn-plain {
-      background: transparent; border: 1px solid var(--ink); color: var(--ink);
-      font-family: 'Courier New', Courier, monospace; font-size: .84rem;
-      padding: .55rem 1.1rem; cursor: pointer; letter-spacing: .06em;
-    }
-    .btn-plain:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-plain:disabled { opacity: .3; cursor: default; }
-    .btn-plain:disabled:hover { border-color: var(--ink); color: var(--ink); }
-    .btn-quiet { border-color: rgba(26,25,22,.3); color: rgba(26,25,22,.55); }
-
-    .test { display: none; }
-    .test.open { display: block; }
-    .book { display: block; }
-    .book.closed { display: none; }
-
-    .test-q { font-size: 1.35rem; margin: 2.2rem 0 .5rem; line-height: 1.5; }
-    .test-hint {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: .78rem; color: rgba(26,25,22,.45);
-      letter-spacing: .06em; margin-bottom: 1.6rem;
-    }
-    .ticks { list-style: none; margin: 0 0 1.8rem; padding: 0; }
-    .tick {
-      display: flex; align-items: flex-start; gap: .85rem;
-      padding: .85rem 1rem; margin-bottom: .55rem;
-      border: 1px solid rgba(26,25,22,.2); cursor: pointer;
-    }
-    .tick:hover { border-color: rgba(26,25,22,.5); }
-    .tick input { margin-top: .35rem; width: 1.05rem; height: 1.05rem; flex: none; cursor: pointer; }
-    .tick span { font-size: 1.08rem; line-height: 1.45; }
-
-    .routing {
-      display: none; margin: 1.8rem 0;
-      border-left: 2px solid #c8b98a;
-      padding: .3rem 0 .3rem 1.4rem;
-      font-style: italic; font-size: 1.08rem; line-height: 1.62;
-    }
-    .routing.open { display: block; }
-    .routing p { margin-bottom: .9rem; }
-    .routing p:last-child { margin-bottom: 0; }
-
-    .back-link {
-      display: inline-block; margin-top: 2.6rem;
-      font-family: 'Courier New', Courier, monospace; font-size: .8rem;
-      color: rgba(26,25,22,.5); text-decoration: none;
-    }
-    .back-link:hover { color: var(--accent); }
-  </style>
+  <link rel="stylesheet" href="../../assets/css/puzzle.css">
 </head>
 <body>
-  <main class="lab">
-    <p class="lab-meta">Gate 2 of 7 &mdash; Schr&ouml;dinger&rsquo;s Lab</p>
-    <h1><em>The OUGHT: Beneath the Branches</em></h1>
-
-    <div class="book" id="book">
-      <div class="plate">
-        <img id="plate-img" src="../../images/schrodinger/page-1.svg" alt="">
-      </div>
-      <div class="turn">
-        <span class="turn-count" id="turn-count"></span>
-        <span class="turn-btns">
-          <button class="btn-plain btn-quiet" id="prev-btn">[ back ]</button>
-          <button class="btn-plain" id="next-btn">[ next page ]</button>
-          <button class="btn-plain btn-quiet" id="skip-btn">[ skip to the test ]</button>
-        </span>
-      </div>
-    </div>
-
-    <div class="test" id="test">
-      <p class="test-q">You opened the box. Tick everything you experienced.</p>
-      <p class="test-hint">tick as many as apply</p>
-
-      <ul class="ticks">
-        <li><label class="tick"><input type="checkbox" value="alive"><span>the cat, alive</span></label></li>
-        <li><label class="tick"><input type="checkbox" value="dead"><span>the cat, dead</span></label></li>
-        <li><label class="tick"><input type="checkbox" value="both"><span>both &mdash; together, in one moment</span></label></li>
-        <li><label class="tick"><input type="checkbox" value="copy"><span>one of them was me; the other was a copy of me</span></label></li>
-      </ul>
-
-      <button class="btn-plain" id="submit-btn">[ submit ]</button>
-
-      <div class="routing" id="routing"></div>
-    </div>
-
-    <a class="back-link" href="../../desk.html">&larr; return to the desk</a>
-  </main>
+  <main class="pz" id="pz"></main>
 
   <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/puzzle-engine.js"></script>
   <script>
     if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
 
-    var PAGES = 10;
-    var page  = 1;
+    PUZZLE.mount({
+      mount:   document.getElementById('pz'),
+      meta:    'Gate 2 of 7 — Schrödinger’s Lab',
+      title:   'The OUGHT: Beneath the Branches',
+      imgBase: '../../images/schrodinger/page-',
+      pages:   10,
+      level:   2,
+      back:    '../../desk.html',
 
-    var img   = document.getElementById('plate-img');
-    var count = document.getElementById('turn-count');
-    var next  = document.getElementById('next-btn');
-    var prev  = document.getElementById('prev-btn');
-    var skip  = document.getElementById('skip-btn');
-    var book  = document.getElementById('book');
-    var test  = document.getElementById('test');
+      question: 'You opened the box. Tick everything you experienced.',
+      hint:     'tick as many as apply',
 
-    for (var i = 1; i <= PAGES; i++) {
-      var pre = new Image();
-      pre.src = '../../images/schrodinger/page-' + i + '.svg';
-    }
+      options: [
+        { value: 'alive', text: 'the cat, alive' },
+        { value: 'dead',  text: 'the cat, dead' },
+        { value: 'both',  text: 'both — together, in one moment' },
+        { value: 'copy',  text: 'one of them was me; the other was a copy of me' }
+      ],
 
-    function render() {
-      img.src = '../../images/schrodinger/page-' + page + '.svg';
-      count.textContent = page + ' / ' + PAGES;
-      prev.disabled = (page === 1);
-      next.textContent = (page === PAGES) ? '[ the test ]' : '[ next page ]';
-    }
-
-    function openTest() {
-      book.classList.add('closed');
-      test.classList.add('open');
-      window.scrollTo(0, 0);
-    }
-
-    next.addEventListener('click', function () {
-      if (page < PAGES) { page++; render(); } else { openTest(); }
-    });
-    prev.addEventListener('click', function () {
-      if (page > 1) { page--; render(); }
-    });
-    skip.addEventListener('click', openTest);
-
-    document.addEventListener('keydown', function (e) {
-      if (book.classList.contains('closed')) return;
-      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next.click(); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
-    });
-
-    render();
-
-    var ROUTES = {
-      empty: '<p>Nothing is ticked. Something happened when you opened it &mdash; the question is only what.</p>',
-
-      one: '<p>You ticked one. That is the reading where the box held a fact all along and opening it told you which fact &mdash; the cat was already alive, or already dead, and you merely found out.</p>' +
-           '<p>But nothing in what happened selected an outcome. Both occurred. You are reporting one of them and calling it the whole event, which is exactly what it feels like from inside a single branch: complete, and quiet about the rest.</p>' +
-           '<p>Read it again. Count what you experienced, not what you concluded.</p>',
-
-      both: '<p>You ticked <em>both, in one moment</em>. That is the picture where the cat is smeared across two states and your looking tidies it up &mdash; where the strange thing is a blur that resolves.</p>' +
-            '<p>But nobody has ever had that experience. Not you, not Shrody, not the cat. There is no moment in the story where both are present together, which is why the page that would have shown it could not be drawn.</p>' +
-            '<p>The claim is stranger and plainer than the blur: both happened, wholly, and neither needed the other in the frame to be real.</p>',
-
-      copy: '<p>You ticked the copy. This is the most reasonable wrong answer available and almost everyone reaches for it &mdash; if two of you walk out of that lab, surely only one is the original.</p>' +
-            '<p>So follow it and see where it goes. If one is a copy, there is a fact about which one you are, and nothing in the world could tell you which. Both remember walking in. Both did. The question stops meaning anything, and that is usually a sign it was the wrong question.</p>' +
-            '<p>Identity did not survive by staying single. It branched. Neither is a copy, because neither is a reproduction of the other &mdash; they are both continuations of you.</p>'
-    };
-
-    document.getElementById('submit-btn').addEventListener('click', function () {
-      var picked = {};
-      var any = false;
-      var boxes = document.querySelectorAll('.tick input');
-      for (var j = 0; j < boxes.length; j++) {
-        picked[boxes[j].value] = boxes[j].checked;
-        if (boxes[j].checked) any = true;
+      check: function (p) {
+        if (!p.__any) {
+          return '<p>Nothing is ticked. Something happened when you opened it — the question is only what.</p>';
+        }
+        if (p.copy) {
+          return '<p>You ticked the copy. This is the most reasonable wrong answer available and almost everyone reaches for it — if two of you walk out of that lab, surely only one is the original.</p>' +
+                 '<p>So follow it and see where it goes. If one is a copy, there is a fact about which one you are, and nothing in the world could tell you which. Both remember walking in. Both did. The question stops meaning anything, and that is usually a sign it was the wrong question.</p>' +
+                 '<p>Identity did not survive by staying single. It branched. Neither is a copy, because neither is a reproduction of the other — they are both continuations of you.</p>';
+        }
+        if (p.both) {
+          return '<p>You ticked <em>both, in one moment</em>. That is the picture where the cat is smeared across two states and your looking tidies it up — where the strange thing is a blur that resolves.</p>' +
+                 '<p>But nobody has ever had that experience. Not you, not Shrody, not the cat. There is no moment in the story where both are present together, which is why the page that would have shown it could not be drawn.</p>' +
+                 '<p>The claim is stranger and plainer than the blur: both happened, wholly, and neither needed the other in the frame to be real.</p>';
+        }
+        if (!(p.alive && p.dead)) {
+          return '<p>You ticked one. That is the reading where the box held a fact all along and opening it told you which fact — the cat was already alive, or already dead, and you merely found out.</p>' +
+                 '<p>But nothing in what happened selected an outcome. Both occurred. You are reporting one of them and calling it the whole event, which is exactly what it feels like from inside a single branch: complete, and quiet about the rest.</p>' +
+                 '<p>Read it again. Count what you experienced, not what you concluded.</p>';
+        }
+        return null;
       }
-
-      var routing = document.getElementById('routing');
-      var msg = null;
-
-      if (!any)                                msg = ROUTES.empty;
-      else if (picked.copy)                    msg = ROUTES.copy;
-      else if (picked.both)                    msg = ROUTES.both;
-      else if (!(picked.alive && picked.dead)) msg = ROUTES.one;
-
-      if (msg) {
-        routing.innerHTML = msg;
-        routing.classList.add('open');
-        return;
-      }
-
-      if (QCE.OUGHT.get() < 2) QCE.OUGHT.set(2);
-      window.location.replace('../../desk.html');
     });
   </script>
 </body>

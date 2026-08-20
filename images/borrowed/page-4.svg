@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+
+    <!-- frame -->
+    <line x1="278" y1="500" x2="278" y2="118" stroke-width="9"/>
+    <line x1="522" y1="500" x2="522" y2="118" stroke-width="9"/>
+    <line x1="262" y1="118" x2="538" y2="118" stroke-width="9"/>
+    <line x1="278" y1="152" x2="522" y2="152" stroke-width="4" opacity="0.45"/>
+
+    <!-- BLADE: proper slanted cutting edge -->
+    <path d="M 288 190 L 512 190 L 512 232 L 288 268 Z" stroke-width="6"/>
+    <path d="M 288 268 L 512 232" stroke-width="3.5" opacity="0.55"/>
+    <line x1="330" y1="190" x2="330" y2="256" stroke-width="2.5" opacity="0.4"/>
+    <line x1="470" y1="190" x2="470" y2="234" stroke-width="2.5" opacity="0.4"/>
+
+    <!-- rope, off to the right, clear of the label -->
+    <path d="M 538 122 Q 580 150 574 208 L 574 268" stroke-width="3"/>
+    <line x1="566" y1="268" x2="582" y2="268" stroke-width="3"/>
+
+    <!-- lunette -->
+    <line x1="278" y1="404" x2="522" y2="404" stroke-width="7"/>
+    <path d="M 362 404 A 38 38 0 0 1 438 404" stroke-width="6"/>
+
+    <!-- THE TREE, laid through it, still branching out both sides -->
+    <line x1="118" y1="416" x2="682" y2="416" stroke-width="10"/>
+    <line x1="214" y1="416" x2="150" y2="330" stroke-width="6"/>
+    <line x1="214" y1="416" x2="170" y2="466" stroke-width="5"/>
+    <line x1="300" y1="416" x2="252" y2="342" stroke-width="6"/>
+    <line x1="176" y1="352" x2="112" y2="318" stroke-width="4"/>
+    <line x1="262" y1="360" x2="216" y2="300" stroke-width="4"/>
+    <line x1="500" y1="416" x2="548" y2="342" stroke-width="6"/>
+    <line x1="586" y1="416" x2="650" y2="330" stroke-width="6"/>
+    <line x1="586" y1="416" x2="630" y2="466" stroke-width="5"/>
+    <line x1="538" y1="360" x2="584" y2="300" stroke-width="4"/>
+    <line x1="624" y1="352" x2="688" y2="318" stroke-width="4"/>
+
+    <text x="400" y="146" font-family="Georgia,serif" font-size="21" fill="#5c1212"
+          text-anchor="middle" stroke="none" letter-spacing="6">HUME</text>
+  </g>
+
+  <text x="400" y="548" font-family="'Comic Sans MS',cursive" font-size="18" fill="#1a1a2e"
+        text-anchor="middle" transform="rotate(-3, 400, 548)">cuts beautifully. measures nothing.</text>
+
+  <text x="400" y="592" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">The third one only ever did one thing.</text>
+</svg>

@@ -258,6 +258,12 @@
       }
     })();
 
+    // Gate routing by OUGHT level. Level 0 is the baby puzzle, handled inline.
+    var GATES = {
+      1: 'library/table/schrodinger.html',
+      2: 'library/table/borrowed.html'
+    };
+
     var hotspot   = document.getElementById('book-hotspot');
     var overlay   = document.getElementById('overlay');
     var submitBtn = document.getElementById('submit-btn');
@@ -267,8 +273,8 @@
       var level = QCE.OUGHT.get();
       if (level === 0) {
         overlay.classList.add('open');
-      } else if (level === 1) {
-        window.location.href = 'library/table/schrodinger.html';
+      } else if (GATES[level]) {
+        window.location.href = GATES[level];
       } else {
         window.location.href = 'library/table/ought.html';
       }

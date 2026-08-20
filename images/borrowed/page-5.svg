@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+
+    <!-- the doorway, behind -->
+    <path d="M 76 500 L 76 252 A 62 62 0 0 1 200 252 L 200 500" stroke-width="7"/>
+    <line x1="104" y1="500" x2="104" y2="284" stroke-width="2" opacity="0.35"/>
+
+    <!-- THE BAG, set down by the door. staying. -->
+    <path d="M 122 424 L 226 424 L 218 500 L 130 500 Z" stroke-width="5"/>
+    <path d="M 146 424 Q 174 396 202 424" stroke-width="4"/>
+    <line x1="158" y1="424" x2="146" y2="368" stroke-width="4"/>
+    <line x1="200" y1="424" x2="212" y2="372" stroke-width="4"/>
+    <line x1="196" y1="378" x2="228" y2="372" stroke-width="3.5"/>
+
+    <!-- THE TREE -->
+    <line x1="600" y1="500" x2="600" y2="372" stroke-width="11"/>
+    <line x1="600" y1="398" x2="514" y2="308" stroke-width="7"/>
+    <line x1="600" y1="398" x2="686" y2="308" stroke-width="7"/>
+    <line x1="524" y1="318" x2="470" y2="230" stroke-width="5"/>
+    <line x1="536" y1="332" x2="464" y2="352" stroke-width="5"/>
+    <line x1="676" y1="318" x2="730" y2="230" stroke-width="5"/>
+    <line x1="664" y1="332" x2="736" y2="352" stroke-width="5"/>
+    <line x1="600" y1="372" x2="588" y2="286" stroke-width="5"/>
+    <line x1="588" y1="286" x2="548" y2="228" stroke-width="4"/>
+    <line x1="588" y1="286" x2="628" y2="222" stroke-width="4"/>
+
+    <!-- OUR GUY, upright now, hands empty, walking in -->
+    <circle cx="356" cy="300" r="31" stroke-width="5"/>
+    <circle cx="368" cy="293" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="346" cy="293" r="3.2" fill="#5c1212" stroke="none"/>
+    <line x1="356" y1="331" x2="356" y2="412" stroke-width="5.5"/>
+    <line x1="356" y1="348" x2="322" y2="386" stroke-width="4.5"/>
+    <line x1="356" y1="348" x2="392" y2="384" stroke-width="4.5"/>
+    <line x1="356" y1="412" x2="330" y2="472" stroke-width="4.5"/>
+    <line x1="330" y1="472" x2="312" y2="494" stroke-width="4.5"/>
+    <line x1="356" y1="412" x2="392" y2="466" stroke-width="4.5"/>
+    <line x1="392" y1="466" x2="416" y2="494" stroke-width="4.5"/>
+  </g>
+
+  <text x="400" y="562" font-family="Georgia,serif" font-size="26" font-style="italic"
+        fill="#5c1212" text-anchor="middle">So I set them down by the door. They will be there when I leave.</text>
+</svg>

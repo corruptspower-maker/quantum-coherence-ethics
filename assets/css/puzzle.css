@@ -1,0 +1,73 @@
+/* puzzle.css — shared chrome for the stick-figure gates.
+   The plates themselves are parchment; this is the frame around them. */
+
+.pz { max-width: 940px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+.pz-meta {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(26,25,22,.5); margin-bottom: .4rem;
+}
+.pz h1 { font-size: 1.9rem; margin-bottom: 1.6rem; font-weight: 400; }
+
+.pz-plate { border: 1px solid rgba(26,25,22,.25); background: #c09040; line-height: 0; }
+.pz-plate img { width: 100%; height: auto; display: block; }
+
+.pz-turn {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; margin-top: 1rem; flex-wrap: wrap;
+}
+.pz-count {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .8rem; color: rgba(26,25,22,.45); letter-spacing: .08em;
+}
+.pz-btns { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+.pz-btn {
+  background: transparent; border: 1px solid var(--ink); color: var(--ink);
+  font-family: 'Courier New', Courier, monospace; font-size: .84rem;
+  padding: .55rem 1.1rem; cursor: pointer; letter-spacing: .06em;
+}
+.pz-btn:hover { border-color: var(--accent); color: var(--accent); }
+.pz-btn:disabled { opacity: .3; cursor: default; }
+.pz-btn:disabled:hover { border-color: var(--ink); color: var(--ink); }
+.pz-btn--quiet { border-color: rgba(26,25,22,.3); color: rgba(26,25,22,.55); }
+
+.pz-book { display: block; }
+.pz-book.is-closed { display: none; }
+.pz-test { display: none; }
+.pz-test.is-open { display: block; }
+
+.pz-q { font-size: 1.35rem; margin: 2.2rem 0 .5rem; line-height: 1.5; }
+.pz-hint {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .78rem; color: rgba(26,25,22,.45);
+  letter-spacing: .06em; margin-bottom: 1.6rem;
+}
+
+.pz-opts { list-style: none; margin: 0 0 1.8rem; padding: 0; }
+.pz-opt {
+  display: flex; align-items: flex-start; gap: .85rem;
+  padding: .85rem 1rem; margin-bottom: .55rem;
+  border: 1px solid rgba(26,25,22,.2); cursor: pointer;
+}
+.pz-opt:hover { border-color: rgba(26,25,22,.5); }
+.pz-opt input { margin-top: .35rem; width: 1.05rem; height: 1.05rem; flex: none; cursor: pointer; }
+.pz-opt span { font-size: 1.08rem; line-height: 1.45; }
+
+.pz-route {
+  display: none; margin: 1.8rem 0;
+  border-left: 2px solid #c8b98a;
+  padding: .3rem 0 .3rem 1.4rem;
+  font-style: italic; font-size: 1.08rem; line-height: 1.62;
+}
+.pz-route.is-open { display: block; }
+.pz-route p { margin-bottom: .9rem; }
+.pz-route p:last-child { margin-bottom: 0; }
+
+.pz-back {
+  display: inline-block; margin-top: 2.6rem;
+  font-family: 'Courier New', Courier, monospace; font-size: .8rem;
+  color: rgba(26,25,22,.5); text-decoration: none;
+}
+.pz-back:hover { color: var(--accent); }
