@@ -22,8 +22,16 @@
   </style>
 </head>
 <body>
-  <a href="page2.html">
+  <a href="page2.html" id="front">
     <img src="images/qce_site_Front.webp" alt="">
   </a>
+  <script src="assets/js/gate.js"></script>
+  <script>
+    // The token is the level itself. Cleared the gates? The door goes straight in.
+    if (QCE.OUGHT.atMax()) {
+      QCE.set(QCE.FLAGS.LIBRARY_ENTERED);
+      document.getElementById('front').href = 'desk.html';
+    }
+  </script>
 </body>
 </html>

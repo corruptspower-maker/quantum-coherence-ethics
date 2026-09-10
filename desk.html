@@ -241,14 +241,10 @@
 
     // Bonsai image swap — each level has its own desk image.
     // Level 0 = dead bonsai (default). Levels 1-7 = one more leaf each.
-    // Full bloom (level 8+) redirects to community.
+    // Full bloom (level 8+) opens the community from the book.
     // Images: images/desk-level-N.webp — fall back to base image if not found.
     (function () {
       var level = QCE.OUGHT.get();
-      if (QCE.OUGHT.atMax()) {
-        window.location.replace('/community/');
-        return;
-      }
       if (level > 0) {
         var img = document.getElementById('desk-img');
         var candidate = 'images/desk-level-' + level + '.webp';
@@ -280,7 +276,7 @@
       } else if (GATES[level]) {
         window.location.href = GATES[level];
       } else {
-        window.location.href = 'library/table/ought.html';
+        window.location.replace('/community/');
       }
     }
 

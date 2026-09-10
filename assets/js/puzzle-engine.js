@@ -33,8 +33,13 @@ var PUZZLE = (function () {
     var ext  = cfg.imgExt || '.svg';
     var page = 1;
 
+    // Already through this one? The comics stay. The questions go.
+    var cleared = (typeof cfg.level === 'number') &&
+                  (typeof QCE !== 'undefined') &&
+                  QCE.OUGHT.get() >= cfg.level;
+
     // ── chrome ──
-    root.appendChild(el('p', 'pz-meta', cfg.meta));
+    root.appendChild(el('p', 'pz-meta', cfg.meta + (cleared ? ' — you have been through this one' : '')));
     root.appendChild(el('h1', null, '<em>' + cfg.title + '</em>'));
 
     // ── flip-book ──
@@ -84,7 +89,8 @@ var PUZZLE = (function () {
     test.appendChild(submit);
     var route = el('div', 'pz-route');
     test.appendChild(route);
-    root.appendChild(test);
+    if (!cleared) root.appendChild(test);
+    if (cleared) skip.style.display = 'none';
 
     var back = el('a', 'pz-back', '&larr; return to the desk');
     back.href = cfg.back || '../../desk.html';
@@ -100,7 +106,7 @@ var PUZZLE = (function () {
       img.src = cfg.imgBase + page + ext;
       count.textContent = page + ' / ' + cfg.pages;
       prev.disabled = (page === 1);
-      next.textContent = (page === cfg.pages) ? '[ the test ]' : '[ next page ]';
+      next.textContent = (page === cfg.pages) ? (cleared ? '[ the desk ]' : '[ the test ]') : '[ next page ]';
     }
 
     function openTest() {
@@ -110,7 +116,9 @@ var PUZZLE = (function () {
     }
 
     next.addEventListener('click', function () {
-      if (page < cfg.pages) { page++; render(); } else { openTest(); }
+      if (page < cfg.pages) { page++; render(); }
+      else if (cleared) { window.location.href = cfg.back || '../../desk.html'; }
+      else { openTest(); }
     });
     prev.addEventListener('click', function () {
       if (page > 1) { page--; render(); }
