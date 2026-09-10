@@ -6,3 +6,4 @@ __pycache__/
 garden/
 cloister/
 assets/brain-matter-levels.json
+assets/js/puzzle.js

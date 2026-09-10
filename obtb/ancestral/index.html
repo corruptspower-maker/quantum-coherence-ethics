@@ -131,19 +131,11 @@
       }).join('');
     }
 
-    var lede = document.getElementById('lede');
-    if (!inherited.length) {
-      lede.innerHTML =
-        '<p>This is the room that was behind you.</p>' +
-        '<p>Nothing in it was put here for you by anybody who is not you. ' +
-        'It is empty because you have not been here yet.</p>';
-    } else {
-      lede.innerHTML =
-        '<p>This is the room that was behind you.</p>' +
-        '<p>Someone left these. You are not told which of them you left, ' +
-        'because that was never the useful question &mdash; ' +
-        'you are standing in conditions you made and do not recognise as yours.</p>';
-    }
+    // One line, from the paper, the same whether the shelf is bare or not.
+    // The room does not narrate its own mechanic and does not explain that it
+    // is withholding anything; the shelf's own line covers bare versus not.
+    document.getElementById('lede').innerHTML =
+      '<p>' + "The present self is ancestor to the downstream selves who will inherit the conditions this moment creates." + '</p>';
 
     // ── writing ──
     // The detector classifies this and the verdict is stored. Nothing about it
