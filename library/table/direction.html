@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gate 5 &mdash; The Direction &mdash; QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/puzzle.css">
+</head>
+<body>
+  <main class="pz" id="pz"></main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/puzzle-engine.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
+
+    PUZZLE.mount({
+      mount:   document.getElementById('pz'),
+      meta:    'Gate 5 of 7 — The Direction',
+      title:   'The OUGHT: Beneath the Branches',
+      imgBase: '../../images/direction/page-',
+      pages:   6,
+      level:   5,
+      back:    '../../desk.html',
+
+      teaching: [
+        "Something in the text points somewhere. Most readers follow it sideways.",
+        "They think about parallel selves — all the other versions of you, out there in other branches, living different outcomes simultaneously. They think about obligation to those others. And then they realize the others are causally isolated — there is no channel between branches — and the obligation seems to collapse.",
+        "That is not what the text says.",
+        "The relationship does not run sideways. It runs forward.",
+        "The present self is ancestor to the downstream selves who will inherit the conditions this moment creates. Not obligation to someone else existing now. Obligation that flows from what you are doing to what you will have left behind — for the selves who come after you in your own branching line.",
+        "Branching happens regardless of what you do. You do not choose which branch you enter. You shape what those branches inherit.",
+        "The word is not 'parallel.' The word is 'downstream.'"
+      ],
+
+      question: 'Who received what you did?',
+      hint:     'one of these',
+
+      options: [
+        { value: 'wall',  text: 'The one through the wall. I owe them, and I cannot reach them.' },
+        { value: 'chose', text: 'Whichever room I chose to end up in.' },
+        { value: 'after', text: 'The ones who came after me in this room. They already have it.' },
+        { value: 'none',  text: 'Nobody. They are cut off from each other, so the obligation dissolves.' }
+      ],
+
+      check: function (p) {
+        if (!p.__any) {
+          return '<p>Nothing is ticked. But the cup went somewhere — three of them are holding it. Somebody received it.</p>';
+        }
+        if (p.wall) {
+          return '<p>You ticked the one through the wall, and you spent four plates trying to reach them, so this is the honest answer to what you were doing.</p>' +
+                 '<p>But look at what happened when you gave up. You did not fail to deliver anything. You set something down, and it turned out to be already delivered — to people you had not been thinking about, in the room you were sitting in.</p>' +
+                 '<p>The one behind the wall was never owed anything by you, because nothing you do can arrive there. That is not a tragedy. It is just the wrong direction. The word is not <em>parallel</em>. The word is <em>downstream</em>.</p>';
+        }
+        if (p.chose) {
+          return '<p>You ticked the room you chose. But go back through the plates and find the moment you chose it.</p>' +
+                 '<p>There is not one. You were in the room when the story started. You never selected a branch, steered toward one, or navigated anywhere — and neither does anyone. Branching happens whether you act or not.</p>' +
+                 '<p>What is yours is not which room you end up in. It is what is in the room when the next ones arrive.</p>';
+        }
+        if (p.none) {
+          return '<p>You ticked nobody, and the reasoning is exactly right up to the last step. They <em>are</em> cut off from each other. There is no channel. Nothing crosses.</p>' +
+                 '<p>So the obligation collapses — but only the sideways one, the one you were straining against the wall to honour. Letting that go is correct. It is not the end of the matter.</p>' +
+                 '<p>Turn around. The room behind you is full, they are downstream of you rather than beside you, and they are holding what you set down. Nothing had to cross a wall to reach them.</p>';
+        }
+        if (!p.after) {
+          return '<p>None of the four is ticked as the answer. Read them again — one of them describes what the last plate actually shows.</p>';
+        }
+        return null;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+    <line x1="612" y1="500" x2="612" y2="96" stroke-width="10"/>
+    <line x1="700" y1="500" x2="700" y2="96" stroke-width="10"/>
+    <line x1="612" y1="180" x2="700" y2="180" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="252" x2="700" y2="252" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="324" x2="700" y2="324" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="396" x2="700" y2="396" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="468" x2="700" y2="468" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="144" x2="700" y2="144" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="96"  x2="656" y2="144" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="180" x2="656" y2="252" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="324" x2="656" y2="396" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="468" x2="656" y2="500" stroke-width="3" opacity="0.4"/>
+    <!-- still sat, but head turned left -->
+    <circle cx="556" cy="336" r="31" stroke-width="5"/>
+    <circle cx="536" cy="332" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="552" cy="330" r="3.2" fill="#5c1212" stroke="none"/>
+    <ellipse cx="540" cy="352" rx="8" ry="9" stroke-width="3.2"/>
+    <line x1="558" y1="367" x2="562" y2="436" stroke-width="5.5"/>
+    <line x1="559" y1="386" x2="524" y2="424" stroke-width="4.5"/>
+    <line x1="562" y1="436" x2="486" y2="472" stroke-width="4.5"/>
+    <line x1="486" y1="472" x2="470" y2="494" stroke-width="4.5"/>
+    <line x1="562" y1="436" x2="500" y2="486" stroke-width="4.5"/>
+    <circle cx="342" cy="298" r="27" stroke-width="4.5"/>
+    <circle cx="352" cy="292" r="2.8" fill="#5c1212" stroke="none"/>
+    <circle cx="332" cy="292" r="2.8" fill="#5c1212" stroke="none"/>
+    <line x1="333" y1="313" x2="351" y2="313" stroke-width="3"/>
+    <line x1="342" y1="325" x2="342" y2="408" stroke-width="5"/>
+    <line x1="342" y1="342" x2="312" y2="376" stroke-width="4"/>
+    <line x1="342" y1="342" x2="370" y2="372" stroke-width="4"/>
+    <line x1="342" y1="408" x2="320" y2="466" stroke-width="4"/>
+    <line x1="320" y1="466" x2="304" y2="492" stroke-width="4"/>
+    <line x1="342" y1="408" x2="366" y2="466" stroke-width="4"/>
+    <line x1="366" y1="466" x2="382" y2="492" stroke-width="4"/>
+    <circle cx="214" cy="298" r="27" stroke-width="4.5"/>
+    <circle cx="224" cy="292" r="2.8" fill="#5c1212" stroke="none"/>
+    <circle cx="204" cy="292" r="2.8" fill="#5c1212" stroke="none"/>
+    <line x1="205" y1="313" x2="223" y2="313" stroke-width="3"/>
+    <line x1="214" y1="325" x2="214" y2="408" stroke-width="5"/>
+    <line x1="214" y1="342" x2="184" y2="376" stroke-width="4"/>
+    <line x1="214" y1="342" x2="242" y2="372" stroke-width="4"/>
+    <line x1="214" y1="408" x2="192" y2="466" stroke-width="4"/>
+    <line x1="192" y1="466" x2="176" y2="492" stroke-width="4"/>
+    <line x1="214" y1="408" x2="238" y2="466" stroke-width="4"/>
+    <line x1="238" y1="466" x2="254" y2="492" stroke-width="4"/>
+    <circle cx="92" cy="298" r="27" stroke-width="4.5"/>
+    <circle cx="102" cy="292" r="2.8" fill="#5c1212" stroke="none"/>
+    <circle cx="82" cy="292" r="2.8" fill="#5c1212" stroke="none"/>
+    <line x1="83" y1="313" x2="101" y2="313" stroke-width="3"/>
+    <line x1="92" y1="325" x2="92" y2="408" stroke-width="5"/>
+    <line x1="92" y1="342" x2="62" y2="376" stroke-width="4"/>
+    <line x1="92" y1="342" x2="120" y2="372" stroke-width="4"/>
+    <line x1="92" y1="408" x2="70" y2="466" stroke-width="4"/>
+    <line x1="70" y1="466" x2="54" y2="492" stroke-width="4"/>
+    <line x1="92" y1="408" x2="116" y2="466" stroke-width="4"/>
+    <line x1="116" y1="466" x2="132" y2="492" stroke-width="4"/>
+  </g>
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">Then I noticed the room behind me was full.</text>
+</svg>

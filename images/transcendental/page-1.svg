@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+    <!-- a plain door, the last one -->
+    <rect x="472" y="196" width="184" height="304" stroke-width="7"/>
+    <rect x="492" y="216" width="144" height="264" stroke-width="3" opacity="0.35"/>
+    <circle cx="620" cy="356" r="8" stroke-width="4"/>
+    <circle cx="248" cy="292" r="31" stroke-width="5"/>
+    <circle cx="260" cy="286" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="238" cy="286" r="3.2" fill="#5c1212" stroke="none"/>
+    <line x1="236" y1="310" x2="258" y2="310" stroke-width="3.4"/>
+    <line x1="248" y1="323" x2="248" y2="410" stroke-width="5.5"/>
+    <line x1="248" y1="342" x2="214" y2="378" stroke-width="4.5"/>
+    <line x1="248" y1="342" x2="284" y2="378" stroke-width="4.5"/>
+    <line x1="248" y1="410" x2="224" y2="468" stroke-width="4.5"/>
+    <line x1="224" y1="468" x2="206" y2="492" stroke-width="4.5"/>
+    <line x1="248" y1="410" x2="274" y2="468" stroke-width="4.5"/>
+    <line x1="274" y1="468" x2="294" y2="492" stroke-width="4.5"/>
+  </g>
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">You have come far enough to see the last one.</text>
+</svg>

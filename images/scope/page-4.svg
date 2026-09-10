@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="5"/>
+    <line x1="452" y1="392" x2="676" y2="392" stroke-width="6"/>
+    <line x1="472" y1="392" x2="472" y2="500" stroke-width="5"/>
+    <line x1="656" y1="392" x2="656" y2="500" stroke-width="5"/>
+    <path d="M 560 356 L 563 384 Q 576 394 589 384 L 592 356" stroke-width="4"/>
+    <line x1="560" y1="356" x2="592" y2="356" stroke-width="4"/>
+    <path d="M 592 362 Q 608 366 598 380" stroke-width="3.5"/>
+    <!-- crouched, looking at the floor under the table -->
+    <circle cx="272" cy="336" r="31" stroke-width="5"/>
+    <circle cx="286" cy="336" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="264" cy="336" r="3.2" fill="#5c1212" stroke="none"/>
+    <ellipse cx="278" cy="356" rx="8" ry="10" stroke-width="3.2"/>
+    <line x1="272" y1="367" x2="278" y2="424" stroke-width="5.5"/>
+    <line x1="274" y1="386" x2="336" y2="444" stroke-width="4.5"/>
+    <line x1="273" y1="392" x2="234" y2="428" stroke-width="4.5"/>
+    <line x1="278" y1="424" x2="248" y2="470" stroke-width="4.5"/>
+    <line x1="248" y1="470" x2="286" y2="490" stroke-width="4.5"/>
+    <line x1="278" y1="424" x2="318" y2="472" stroke-width="4.5"/>
+    <line x1="318" y1="472" x2="336" y2="492" stroke-width="4.5"/>
+    <!-- the floor, emphatically the same floor -->
+    <g stroke-width="2.5" opacity="0.45">
+      <line x1="360" y1="500" x2="348" y2="518"/>
+      <line x1="420" y1="500" x2="408" y2="518"/>
+      <line x1="480" y1="500" x2="468" y2="518"/>
+      <line x1="540" y1="500" x2="528" y2="518"/>
+      <line x1="600" y1="500" x2="588" y2="518"/>
+      <line x1="660" y1="500" x2="648" y2="518"/>
+    </g>
+  </g>
+  <text x="400" y="566" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">It applied to that too.</text>
+</svg>

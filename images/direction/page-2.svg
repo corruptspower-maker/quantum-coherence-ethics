@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+    <line x1="612" y1="500" x2="612" y2="96" stroke-width="10"/>
+    <line x1="700" y1="500" x2="700" y2="96" stroke-width="10"/>
+    <line x1="612" y1="180" x2="700" y2="180" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="252" x2="700" y2="252" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="324" x2="700" y2="324" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="396" x2="700" y2="396" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="468" x2="700" y2="468" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="144" x2="700" y2="144" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="96"  x2="656" y2="144" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="180" x2="656" y2="252" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="324" x2="656" y2="396" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="468" x2="656" y2="500" stroke-width="3" opacity="0.4"/>
+    <g stroke-width="3.5">
+      <line x1="576" y1="212" x2="596" y2="198"/>
+      <line x1="574" y1="240" x2="598" y2="240"/>
+      <line x1="576" y1="268" x2="596" y2="282"/>
+    </g>
+    <circle cx="452" cy="272" r="31" stroke-width="5"/>
+    <circle cx="466" cy="266" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="444" cy="266" r="3.2" fill="#5c1212" stroke="none"/>
+    <ellipse cx="456" cy="290" rx="8" ry="10" stroke-width="3.2"/>
+    <line x1="454" y1="303" x2="452" y2="406" stroke-width="5.5"/>
+    <line x1="453" y1="322" x2="536" y2="242" stroke-width="4.5"/>
+    <circle cx="550" cy="232" r="15" stroke-width="4.5"/>
+    <line x1="452" y1="334" x2="414" y2="368" stroke-width="4.5"/>
+    <line x1="452" y1="406" x2="426" y2="466" stroke-width="4.5"/>
+    <line x1="426" y1="466" x2="408" y2="492" stroke-width="4.5"/>
+    <line x1="452" y1="406" x2="480" y2="466" stroke-width="4.5"/>
+    <line x1="480" y1="466" x2="500" y2="492" stroke-width="4.5"/>
+  </g>
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">I knocked.</text>
+</svg>

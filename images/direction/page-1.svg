@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+    <line x1="612" y1="500" x2="612" y2="96" stroke-width="10"/>
+    <line x1="700" y1="500" x2="700" y2="96" stroke-width="10"/>
+    <line x1="612" y1="180" x2="700" y2="180" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="252" x2="700" y2="252" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="324" x2="700" y2="324" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="396" x2="700" y2="396" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="468" x2="700" y2="468" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="144" x2="700" y2="144" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="96"  x2="656" y2="144" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="180" x2="656" y2="252" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="324" x2="656" y2="396" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="468" x2="656" y2="500" stroke-width="3" opacity="0.4"/>
+    <!-- sound arcs on our side -->
+    <path d="M 566 236 Q 584 262 566 288" stroke-width="3" opacity="0.7"/>
+    <path d="M 546 220 Q 572 262 546 304" stroke-width="3" opacity="0.5"/>
+    <!-- figure, leaning in, hand cupped to the ear -->
+    <circle cx="470" cy="268" r="31" stroke-width="5"/>
+    <circle cx="484" cy="262" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="462" cy="262" r="3.2" fill="#5c1212" stroke="none"/>
+    <line x1="460" y1="286" x2="482" y2="286" stroke-width="3.4"/>
+    <path d="M 500 262 Q 516 258 514 274 Q 512 286 500 282" stroke-width="4"/>
+    <line x1="474" y1="299" x2="466" y2="404" stroke-width="5.5"/>
+    <line x1="472" y1="320" x2="498" y2="276" stroke-width="4.5"/>
+    <line x1="471" y1="330" x2="430" y2="366" stroke-width="4.5"/>
+    <line x1="466" y1="404" x2="440" y2="466" stroke-width="4.5"/>
+    <line x1="440" y1="466" x2="422" y2="492" stroke-width="4.5"/>
+    <line x1="466" y1="404" x2="494" y2="466" stroke-width="4.5"/>
+    <line x1="494" y1="466" x2="514" y2="492" stroke-width="4.5"/>
+  </g>
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">I could hear one of them through the wall.</text>
+</svg>

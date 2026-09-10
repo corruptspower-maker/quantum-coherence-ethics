@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gate 7 &mdash; The Transcendental &mdash; QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/puzzle.css">
+</head>
+<body>
+  <main class="pz" id="pz"></main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/puzzle-engine.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
+
+    PUZZLE.mount({
+      mount:   document.getElementById('pz'),
+      meta:    'Gate 7 of 7 — The Transcendental',
+      title:   'The OUGHT: Beneath the Branches',
+      imgBase: '../../images/transcendental/page-',
+      pages:   5,
+      level:   8,
+      back:    '../../desk.html',
+
+      teaching: [
+        "You have come far enough to see the last gate.",
+        "The is-ought objection, here, sounds like this: 'Even if all of this is true, you have not shown why I should care. Facts about branching reality do not generate obligations. Hume's guillotine.'",
+        "And the text's answer is: you are right. It does not cross is-ought. It works below is-ought.",
+        "Principle 7 is not an ethical claim. It identifies what would have to be true for any ethical claim to have a referent. If there are no persons — no continuous subjects for whom things can be good or bad — then 'good' and 'bad' are sounds without a target. The text shows you the floor of the room you are already standing in. It does not tell you which direction to walk. It points out that you are, in fact, standing somewhere.",
+        "And there is one more thing.",
+        "Inside any branch, you experience it as the whole. The probability amplitude — the Born measure that says this branch has some weight in the universal wavefunction — is invisible to you as you live it. From inside, P equals 1. Every branch is complete. There are no partial persons.",
+        "You are not a fraction of a person in a branch that matters less. You are here entirely."
+      ],
+
+      question: 'What does Principle 7 do?',
+      hint:     'one of these',
+
+      options: [
+        { value: 'cross',  text: 'It derives an ought from an is.' },
+        { value: 'oblige', text: 'It asserts that you are obligated to your downstream instances.' },
+        { value: 'below',  text: 'It identifies what would have to be true for any ethical claim to have a referent at all.' },
+        { value: 'weight', text: 'It ranks the branches by how much each one matters.' }
+      ],
+
+      check: function (p) {
+        if (!p.__any) {
+          return '<p>Nothing is ticked. The objection in the second plate was a fair one and it got an answer. One of these four is that answer.</p>';
+        }
+        if (p.cross) {
+          return '<p>You ticked the crossing. But look at the third plate again — the arrow stops. It does not reach the far platform, and it is not straining toward it.</p>' +
+                 '<p>If Principle 7 crossed is-ought, Hume would have it, and the whole thing would fail exactly where every reader expects it to. It does not cross, and conceding that is not a retreat. It is the claim.</p>';
+        }
+        if (p.oblige) {
+          return '<p>You ticked the obligation, and this is the near miss — close enough that it is worth being careful about.</p>' +
+                 '<p>The ancestral relation is real and you have already met it. But Principle 7 is not where it is asserted. Principle 7 sits under the whole conversation, holding up the possibility that any obligation whatsoever could have someone to land on. Assert an obligation here and you have quietly stepped back onto the upper platform.</p>' +
+                 '<p>It does not tell you which direction to walk. It points out that you are standing somewhere.</p>';
+        }
+        if (p.weight) {
+          return '<p>You ticked the ranking. Look at the last plate: four rooms, four labels, four people, all exactly the same size.</p>' +
+                 '<p>The Born measure is a view from outside the branching, and nobody has ever lived there. Inside any branch, you experience it as the whole — P equals 1, and the label on the door is invisible from within. Ranking by amplitude means someone in a thin branch is a lesser person, and there is no such person anywhere.</p>' +
+                 '<p>You are not a fraction of a person in a branch that matters less. You are here entirely.</p>';
+        }
+        if (!p.below) {
+          return '<p>None of these is ticked as the answer. Read the third option again, slowly — it is doing less than the others claim and more than it looks.</p>';
+        }
+        return null;
+      }
+    });
+  </script>
+</body>
+</html>

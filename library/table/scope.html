@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gate 6 &mdash; The Scope &mdash; QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/puzzle.css">
+</head>
+<body>
+  <main class="pz" id="pz"></main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/puzzle-engine.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
+
+    PUZZLE.mount({
+      mount:   document.getElementById('pz'),
+      meta:    'Gate 6 of 7 — The Scope',
+      title:   'The OUGHT: Beneath the Branches',
+      imgBase: '../../images/scope/page-',
+      pages:   5,
+      level:   6,
+      back:    '../../desk.html',
+
+      teaching: [
+        "The constraint applies everywhere. Not just to decisions where quantum events are obviously involved. Not just to dramatic moral choices. Everywhere.",
+        "Some readers reach this and say: circular. 'It just defines the person to include all branch-selves, then says you're obligated to them — of course. It assumes what it proves.'",
+        "But this is not a definition move.",
+        "A definition move would say: 'by definition, ethics covers all branches, therefore act accordingly.' The text does not do this.",
+        "What the text identifies is structural. Before you can meaningfully apply the concepts 'good' or 'evil,' you need a referent — a subject, a context in which those words point at something rather than into the air. The text identifies the floor below which that referent breaks down. That is not a definition. That is a finding about the preconditions of predication.",
+        "It does not tell you what to do. It shows you the shape of the room you are already standing in.",
+        "The scope is total. Read it as such."
+      ],
+
+      question: 'Tick every situation the constraint applies to.',
+      hint:     'tick as many as apply',
+
+      options: [
+        { value: 'tea',      text: 'Making a cup of tea.' },
+        { value: 'email',    text: 'Deciding whether to answer an email.' },
+        { value: 'deathbed', text: 'A choice at a deathbed.' },
+        { value: 'coin',     text: 'A coin flip nobody sees.' }
+      ],
+
+      check: function (p) {
+        if (!p.__any) {
+          return '<p>Nothing is ticked. But you are standing somewhere while you read this, and the floor did not stop at the edge of the dramatic parts.</p>';
+        }
+        var small = [p.tea, p.email, p.coin].filter(Boolean).length;
+        if (p.deathbed && small < 3) {
+          return '<p>You ticked the deathbed. Of course you did — it is the one that looks like ethics. It has weight, and consequence, and somebody watching.</p>' +
+                 '<p>But look at what you left out, and ask what those have in common. They are small, unwitnessed, and reversible-looking. None of that is the test. The constraint is not about how much a moment matters to you; it is about whether the moment leaves conditions behind. All of them do. The tea does.</p>' +
+                 '<p>And if you are about to say this only holds because the argument defined things that way — it did not. A definition move would say ethics covers everything, therefore act accordingly. This says something narrower and stranger: below a certain floor, the words <em>good</em> and <em>evil</em> stop having anything to point at. That is a finding about what has to be true first, not a stipulation.</p>' +
+                 '<p>The scope is total. There was no edge to the floor.</p>';
+        }
+        if (!(p.tea && p.email && p.deathbed && p.coin)) {
+          return '<p>Some are ticked and some are not, so somewhere in that list you drew a line. Go and find where you put it, and ask what it is made of.</p>' +
+                 '<p>Size? Visibility? Whether anyone would ever know? None of those changes whether a moment leaves conditions behind for whoever comes next. Every one of the four does.</p>' +
+                 '<p>You went looking for the edge of the floor and did not find one. That was not because you had not walked far enough.</p>';
+        }
+        return null;
+      }
+    });
+  </script>
+</body>
+</html>

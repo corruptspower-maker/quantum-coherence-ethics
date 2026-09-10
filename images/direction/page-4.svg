@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+    <line x1="612" y1="500" x2="612" y2="96" stroke-width="10"/>
+    <line x1="700" y1="500" x2="700" y2="96" stroke-width="10"/>
+    <line x1="612" y1="180" x2="700" y2="180" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="252" x2="700" y2="252" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="324" x2="700" y2="324" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="396" x2="700" y2="396" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="468" x2="700" y2="468" stroke-width="3" opacity="0.4"/>
+    <line x1="612" y1="144" x2="700" y2="144" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="96"  x2="656" y2="144" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="180" x2="656" y2="252" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="324" x2="656" y2="396" stroke-width="3" opacity="0.4"/>
+    <line x1="656" y1="468" x2="656" y2="500" stroke-width="3" opacity="0.4"/>
+    <!-- sat down, back against it, given up -->
+    <circle cx="556" cy="336" r="31" stroke-width="5"/>
+    <circle cx="542" cy="330" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="564" cy="330" r="3.2" fill="#5c1212" stroke="none"/>
+    <line x1="544" y1="356" x2="566" y2="354" stroke-width="3.4"/>
+    <line x1="558" y1="367" x2="562" y2="436" stroke-width="5.5"/>
+    <line x1="559" y1="386" x2="524" y2="424" stroke-width="4.5"/>
+    <line x1="524" y1="424" x2="546" y2="440" stroke-width="4.5"/>
+    <line x1="562" y1="436" x2="486" y2="472" stroke-width="4.5"/>
+    <line x1="486" y1="472" x2="470" y2="494" stroke-width="4.5"/>
+    <line x1="562" y1="436" x2="500" y2="486" stroke-width="4.5"/>
+    <path d="M 385 456 L 388 478 Q 400 487 412 478 L 415 456" stroke-width="4"/>
+    <line x1="385" y1="456" x2="415" y2="456" stroke-width="4"/>
+  </g>
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">So I sat down, and I set it down, and I stopped trying.</text>
+</svg>

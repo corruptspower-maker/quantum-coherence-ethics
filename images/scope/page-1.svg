@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+    <circle cx="288" cy="256" r="31" stroke-width="5"/>
+    <circle cx="300" cy="250" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="278" cy="250" r="3.2" fill="#5c1212" stroke="none"/>
+    <line x1="276" y1="274" x2="298" y2="274" stroke-width="3.4"/>
+    <line x1="288" y1="287" x2="288" y2="396" stroke-width="5.5"/>
+    <line x1="288" y1="308" x2="342" y2="330" stroke-width="4.5"/>
+    <line x1="288" y1="308" x2="252" y2="344" stroke-width="4.5"/>
+    <line x1="288" y1="396" x2="262" y2="462" stroke-width="4.5"/>
+    <line x1="262" y1="462" x2="244" y2="492" stroke-width="4.5"/>
+    <line x1="288" y1="396" x2="316" y2="462" stroke-width="4.5"/>
+    <line x1="316" y1="462" x2="336" y2="492" stroke-width="4.5"/>
+    <!-- a long list, unrolling to the floor -->
+    <path d="M 348 322 L 452 322 L 452 486 Q 470 496 452 502" stroke-width="5"/>
+    <path d="M 348 322 L 348 486 Q 366 496 348 502" stroke-width="5"/>
+    <g stroke-width="2.5" opacity="0.55">
+      <line x1="364" y1="352" x2="436" y2="352"/>
+      <line x1="364" y1="380" x2="428" y2="380"/>
+      <line x1="364" y1="408" x2="436" y2="408"/>
+      <line x1="364" y1="436" x2="420" y2="436"/>
+      <line x1="364" y1="464" x2="432" y2="464"/>
+    </g>
+  </g>
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">I asked when it applies.</text>
+</svg>

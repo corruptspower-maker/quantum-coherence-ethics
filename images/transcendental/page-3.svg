@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <!-- two platforms, a gap between -->
+    <line x1="60" y1="396" x2="330" y2="396" stroke-width="8"/>
+    <line x1="82" y1="396" x2="82" y2="470" stroke-width="5"/>
+    <line x1="308" y1="396" x2="308" y2="470" stroke-width="5"/>
+    <line x1="470" y1="396" x2="740" y2="396" stroke-width="8"/>
+    <line x1="492" y1="396" x2="492" y2="470" stroke-width="5"/>
+    <line x1="718" y1="396" x2="718" y2="470" stroke-width="5"/>
+    <!-- an arrow that stops short -->
+    <line x1="150" y1="316" x2="378" y2="316" stroke-width="5"/>
+    <path d="M 378 316 l -14 -8 l 2 15" fill="#5c1212" stroke="none"/>
+    <line x1="400" y1="286" x2="400" y2="348" stroke-width="3" stroke-dasharray="8 8" opacity="0.5"/>
+  </g>
+  <text x="195" y="436" font-family="Georgia,serif" font-size="22" fill="#5c1212"
+        text-anchor="middle" letter-spacing="6">IS</text>
+  <text x="605" y="436" font-family="Georgia,serif" font-size="22" fill="#5c1212"
+        text-anchor="middle" letter-spacing="6">OUGHT</text>
+  <text x="400" y="566" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">It never crossed. It was never trying to.</text>
+</svg>
