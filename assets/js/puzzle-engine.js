@@ -15,6 +15,8 @@
      options:  [{ value:'a', text:'...' }, ...]
      check:    function(picked) -> html string to route, or null to pass
      level:    the OUGHT level this gate awards
+     onPass:   where passing sends you - the house, so you walk back in
+               through rooms that are now a level further on
      back:     '../../desk.html'
    })
 */
@@ -152,7 +154,9 @@ var PUZZLE = (function () {
         QCE.OUGHT.set(cfg.level);
         QCE.TRIPLE.add(1);
       }
-      window.location.replace(cfg.back || '../../desk.html');
+      // Out the front door. You come back in through the same rooms and they
+      // are one level further on than when you left them.
+      window.location.replace(cfg.onPass || cfg.back || '../../desk.html');
     });
 
     render();

@@ -63,6 +63,14 @@
       width: 38%;
       height: 42%;
     }
+    /* The window. Two views: pulled back into the room, then closer. */
+    .hotspot--window {
+      left: 14%;
+      top: 8%;
+      width: 19%;
+      height: 52%;
+    }
+
 
     /* Portrait on left wall */
     .hotspot--portrait {
@@ -71,6 +79,15 @@
       width: 14%;
       height: 52%;
     }
+
+    /* the window, filling the screen */
+    .window-view {
+      display: none; position: fixed; inset: 0; z-index: 40;
+      background: #000; align-items: center; justify-content: center;
+      cursor: pointer;
+    }
+    .window-view.open { display: flex; }
+    .window-view img { max-height: 100vh; max-width: 100vw; display: block; }
   </style>
 </head>
 <body>
@@ -80,12 +97,44 @@
       <a class="hotspot hotspot--shelf" href="shelf.html" aria-label="The bookshelf"></a>
       <a class="hotspot hotspot--desk" href="desk.html" aria-label="The desk"></a>
       <a class="hotspot hotspot--portrait" href="everett.html" aria-label="The portrait"></a>
+      <div class="hotspot hotspot--window" id="window-spot" role="button" tabindex="0"
+           aria-label="The window"></div>
     </div>
   </div>
+
+  <div class="window-view" id="window-view" role="button" tabindex="0"
+       aria-label="Look further, or look away"><img id="window-img" src="" alt=""></div>
 
   <script src="assets/js/gate.js"></script>
   <script>
     QCE.set(QCE.FLAGS.LIBRARY_ENTERED);
+
+    // The window. One click looks out, another looks further, a third looks away.
+    (function () {
+      var VIEWS = ['images/window-1.webp', 'images/window-2.webp'];
+      var spot = document.getElementById('window-spot');
+      var view = document.getElementById('window-view');
+      var img  = document.getElementById('window-img');
+      var at   = -1;
+
+      function step() {
+        at++;
+        if (at >= VIEWS.length) { at = -1; view.classList.remove('open'); return; }
+        img.src = VIEWS[at];
+        view.classList.add('open');
+      }
+      function keys(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); step(); } }
+
+      spot.addEventListener('click', step);
+      spot.addEventListener('keydown', keys);
+      view.addEventListener('click', step);
+      view.addEventListener('keydown', keys);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && view.classList.contains('open')) {
+          at = -1; view.classList.remove('open');
+        }
+      });
+    })();
 
     var scene     = document.getElementById('scene');
     var panTarget = document.getElementById('pan-target');

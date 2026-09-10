@@ -243,15 +243,14 @@
       // have read. It falls if left alone. 0 = bare. 8 = full bloom.
       // Images: images/desk-level-N.webp — fall back to base image if not found.
     (function () {
-      var level = QCE.TRIPLE.get();
-      if (level > 0) {
-        var img = document.getElementById('desk-img');
-        var candidate = 'images/desk-level-' + level + '.webp';
-        var test = new Image();
-        test.onload = function () { img.src = candidate; };
-        test.src = candidate;
-      }
-    })();
+        // The bonsai fills in with the condition. Levels 2-8 have their own
+        // plate; 0 and 1 are the bare desk. No onload fallback - a plate that
+        // silently 404s went unnoticed for three months last time.
+        var level = QCE.TRIPLE.get();
+        if (level >= 2) {
+          document.getElementById('desk-img').src = 'images/desk-level-' + level + '.webp';
+        }
+      })();
 
     // Gate routing by OUGHT level. Level 0 is the baby puzzle, handled inline.
     var GATES = {
