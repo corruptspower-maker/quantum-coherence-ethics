@@ -122,3 +122,13 @@
   padding: .55rem 1.1rem; cursor: pointer; letter-spacing: .06em;
 }
 .rm-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* The canonical hook line for this level. Empty until the room opens - it is
+   not teaching, it is the room having more in it than it did. */
+.rm-hook:empty { display: none; }
+.rm-hook {
+  margin: 3rem 0 0; max-width: 32em;
+  font-size: 1.2rem; line-height: 1.7; font-style: italic;
+  color: rgba(26,25,22,.72);
+  border-left: 2px solid rgba(83,74,183,.4); padding-left: 1.3rem;
+}

@@ -47,6 +47,8 @@
 
     <div class="rm-lede" id="lede"></div>
 
+    <p class="rm-hook" id="hook"></p>
+
     <section class="shelf" aria-label="the shelf">
       <div class="shelf-row" id="shelf-row"></div>
       <hr class="shelf-rule">
@@ -110,6 +112,7 @@
       // Descent, not a row of siblings. Oldest at the top; each thing hangs off
       // the line at the point it entered it. There is one line and you are on it.
       document.querySelector('.shelf-rule').style.display = 'none';
+      document.getElementById('hook').textContent = "Branching happens regardless of what you do. You do not choose which branch. You shape what those branches inherit.";
       row.outerHTML =
         '<div class="descent">' +
         inherited.map(function (r) {
@@ -147,9 +150,12 @@
     // is shown back. The room changes on a later visit, by which point it cannot
     // be attributed to anything you can name. That is the whole mechanism.
     var writing = document.getElementById('writing');
-    document.getElementById('ask').textContent = opened
-      ? 'Who was here before you, and what did they leave you standing in?'
-      : 'Who will be here after you, and what will they find?';
+    // The harness's own prompt for this level, verbatim. Deliberately neutral:
+    // it points, it does not hint. A reader in the lateral frame answers
+    // laterally, which is the only way the detector gets anything to read.
+    // Same question whether the room is open or shut - what changed is the
+    // room, not the ask.
+    document.getElementById('ask').textContent = "Write about which way the relationship runs.";
 
     if (ROOM.wroteThisVisit(ROOM_ID, VISIT)) {
       writing.classList.add('is-done');
