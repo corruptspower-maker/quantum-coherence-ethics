@@ -52,6 +52,13 @@
       <hr class="shelf-rule">
     </section>
 
+    <section class="writing" id="writing">
+      <p id="ask"></p>
+      <textarea id="said" aria-label="what you write here"></textarea>
+      <div class="said"><button class="rm-btn" id="say" type="button">[ leave it in the room ]</button></div>
+      <p class="settled">That is in the room now.</p>
+    </section>
+
     <section class="leaving" id="leaving">
       <p>You may leave one thing here.</p>
       <div class="offer" id="offer"></div>
@@ -63,6 +70,7 @@
 
   <script src="../../assets/js/gate.js"></script>
   <script src="../../assets/js/room.js"></script>
+  <script src="../../assets/js/detector.js"></script>
   <script>
     if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
     if (!QCE.OUGHT.atMax()) window.location.replace('/desk.html');
@@ -94,8 +102,24 @@
     var cond = QCE.TRIPLE.get();                 // 0..8
     var ink  = 0.28 + (cond / QCE.TRIPLE.MAX) * 0.62;
 
+    // Has an earlier reading entered the frame? Then the shelf is not a row.
+    var opened = ROOM.opened(ROOM_ID, VISIT);
+
     var row = document.getElementById('shelf-row');
-    if (!inherited.length) {
+    if (opened && inherited.length) {
+      // Descent, not a row of siblings. Oldest at the top; each thing hangs off
+      // the line at the point it entered it. There is one line and you are on it.
+      document.querySelector('.shelf-rule').style.display = 'none';
+      row.outerHTML =
+        '<div class="descent">' +
+        inherited.map(function (r) {
+          return '<div class="descent-node">' +
+                 '<span class="thing" style="color:rgba(26,25,22,' + ink.toFixed(2) + ')">' +
+                 svgFor(r.o) + '</span></div>';
+        }).join('') +
+        '<div class="descent-node"><span class="descent-note">here</span></div>' +
+        '</div>';
+    } else if (!inherited.length) {
       row.innerHTML = '<p class="shelf-empty">The shelf is bare.</p>';
     } else {
       row.innerHTML = inherited.map(function (r) {
@@ -117,6 +141,31 @@
         'because that was never the useful question &mdash; ' +
         'you are standing in conditions you made and do not recognise as yours.</p>';
     }
+
+    // ── writing ──
+    // The detector classifies this and the verdict is stored. Nothing about it
+    // is shown back. The room changes on a later visit, by which point it cannot
+    // be attributed to anything you can name. That is the whole mechanism.
+    var writing = document.getElementById('writing');
+    document.getElementById('ask').textContent = opened
+      ? 'Who was here before you, and what did they leave you standing in?'
+      : 'Who will be here after you, and what will they find?';
+
+    if (ROOM.wroteThisVisit(ROOM_ID, VISIT)) {
+      writing.classList.add('is-done');
+    }
+
+    document.getElementById('say').addEventListener('click', function () {
+      var text = document.getElementById('said').value.trim();
+      if (!text) return;
+      var verdict = DETECTOR.detect(text);
+      ROOM.record(ROOM_ID, verdict);
+      // Entering the frame tends the condition. Missing it costs nothing extra;
+      // the clock is already subtracting.
+      if (verdict.correct_frame) QCE.TRIPLE.add(1);
+      // Identical either way. You are not told which happened.
+      writing.classList.add('is-done');
+    });
 
     // ── leaving ──
     var leaving = document.getElementById('leaving');

@@ -83,3 +83,42 @@
   color: rgba(26,25,22,.42); text-decoration: none;
 }
 .rm-out:hover { color: var(--accent); }
+
+/* ── the descent ──
+   Shown only once a reading has entered the frame. It must read as descent,
+   never as a row of siblings: a mind-map is the lateral misread drawn, and
+   from inside a line you cannot see across to any other. */
+.descent { margin: 3.4rem 0 0; padding-left: 1.6rem; border-left: 2px solid rgba(26,25,22,.28); }
+.descent-node { display: flex; align-items: center; gap: 1.1rem; padding: .5rem 0; position: relative; }
+.descent-node::before {
+  content: ""; position: absolute; left: -1.6rem; width: 1.1rem;
+  border-top: 2px solid rgba(26,25,22,.28);
+}
+.descent .thing { width: 44px; height: 54px; }
+.descent-note {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(26,25,22,.3);
+}
+
+/* ── writing ── */
+.writing { margin: 4.5rem 0 0; max-width: 34em; }
+.writing > p { font-size: 1.12rem; line-height: 1.7; color: rgba(26,25,22,.8); margin-bottom: 1.2rem; }
+.writing textarea {
+  width: 100%; min-height: 8.5rem; padding: 1rem 1.1rem; resize: vertical;
+  background: transparent; color: var(--ink);
+  border: 1px solid rgba(26,25,22,.2);
+  font-family: 'EB Garamond', Georgia, serif; font-size: 1.08rem; line-height: 1.66;
+}
+.writing textarea:focus { outline: none; border-color: rgba(83,74,183,.55); }
+.writing .said { margin-top: 1.1rem; }
+.writing.is-done textarea, .writing.is-done .said { display: none; }
+.writing .settled { display: none; font-style: italic; color: rgba(26,25,22,.55); font-size: 1.08rem; }
+.writing.is-done .settled { display: block; }
+
+.rm-btn {
+  background: transparent; border: 1px solid var(--ink); color: var(--ink);
+  font-family: 'Courier New', Courier, monospace; font-size: .8rem;
+  padding: .55rem 1.1rem; cursor: pointer; letter-spacing: .06em;
+}
+.rm-btn:hover { border-color: var(--accent); color: var(--accent); }
