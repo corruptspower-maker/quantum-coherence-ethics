@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gate 4 &mdash; The Equation &mdash; QCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/puzzle.css">
+</head>
+<body>
+  <main class="pz" id="pz"></main>
+
+  <script src="../../assets/js/gate.js"></script>
+  <script src="../../assets/js/puzzle-engine.js"></script>
+  <script>
+    if (!QCE.has(QCE.FLAGS.LIBRARY_ENTERED)) window.location.replace('/');
+
+    PUZZLE.mount({
+      mount:   document.getElementById('pz'),
+      meta:    'Gate 4 of 7 — The Equation',
+      title:   'The OUGHT: Beneath the Branches',
+      imgBase: '../../images/fire/page-',
+      pages:   7,
+      level:   4,
+      back:    '../../desk.html',
+
+      teaching: [
+        "There is an equation.",
+        "Readers see it and immediately understand that they need to maximize it. They imagine branches, weighted outcomes, aggregate utility across possibility space. They start optimizing.",
+        "They don't.",
+        "The equation describes what is at stake. It is a measure, not a mandate. Think of a thermometer: it tells you the temperature. It does not tell you to boil water. The temperature is just what is happening.",
+        "Quantum Coherence Ethics is not a utility function. It does not give you a number to optimize. It gives you a way of seeing what you are doing — the full shape of what is at stake when you act in a branching reality.",
+        "You do not have to maximize Triple P. You have to not reduce it. Net positive. Even 1% better than you would otherwise have done. The rest compounds across branches you will never see but will nonetheless inhabit.",
+        "The equation is descriptive. Read it as such."
+      ],
+
+      question: 'Tick every one of these that kept the fire.',
+      hint:     'tick as many as apply',
+
+      options: [
+        { value: 'stick',   text: 'I put one stick on.' },
+        { value: 'armful',  text: 'I put on a good armful.' },
+        { value: 'most',    text: 'I built it as high as it would go.' },
+        { value: 'nothing', text: 'I left it exactly as I found it.' }
+      ],
+
+      check: function (p) {
+        if (!p.__any) {
+          return '<p>Nothing is ticked. But the fire was burning when you sat down, and you watched it for a long time. Something in that list happened.</p>';
+        }
+        if (p.nothing) {
+          return '<p>You ticked the last one, and it is the one that feels safest — careful, humble, not overdoing it. You have just been told you do not have to maximise, so restraint looks like the right lesson.</p>' +
+                 '<p>But go back and look at the plates. You did not touch it, and it got smaller. You did not touch it again, and it went to embers. Nothing you did caused that. Nothing you did was the problem.</p>' +
+                 '<p>Leaving it exactly as you found it was never available. The clock was subtracting the whole time you sat there. Downstream instances inherit less time than you had — that is what Potential decaying means. To leave it no worse you have to add, because doing nothing is already a reduction.</p>';
+        }
+        if (p.most && !p.stick && !p.armful) {
+          return '<p>You ticked only the biggest one. That is the maximising read, and it is the most common failure this argument meets.</p>' +
+                 '<p>Look at the last plate. The blaze is not more kept than the one stick. It is a bigger fire, which is a different thing. If the standard were <em>as high as it will go</em>, then every fire that was merely kept would be a failure, and you would be failing permanently, at everything, forever.</p>' +
+                 '<p>The equation never said that. It is a measure, not a mandate. Net positive. One stick counts.</p>';
+        }
+        if (!(p.stick && p.armful && p.most)) {
+          return '<p>You ticked some of them and left others. But look at what separates the ones you ticked from the ones you did not — it is size, and size was never the test.</p>' +
+                 '<p>Every one of those three added something. Each left the fire better than it would otherwise have been. The modest one is not a lesser version of the large one; it is a pass, entire.</p>' +
+                 '<p>And what each of them leaves behind is inherited whole, not shared out. Every downstream instance gets the fire you kept — not a fraction of it apiece.</p>';
+        }
+        return null;
+      }
+    });
+  </script>
+</body>
+</html>

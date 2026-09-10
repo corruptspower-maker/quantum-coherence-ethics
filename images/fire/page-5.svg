@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+    <line x1="500" y1="492" x2="608" y2="466" stroke-width="9"/>
+    <line x1="504" y1="466" x2="612" y2="492" stroke-width="9"/>
+    <line x1="520" y1="480" x2="596" y2="478" stroke-width="7"/>
+    <line x1="694" y1="492" x2="762" y2="492" stroke-width="8"/>
+    <line x1="698" y1="474" x2="758" y2="474" stroke-width="8"/>
+    <line x1="704" y1="456" x2="752" y2="456" stroke-width="8"/>
+    <line x1="712" y1="438" x2="746" y2="438" stroke-width="8"/>
+    <path d="M 548 468 Q 546 456 558 448 Q 557 458 566 452 Q 572 444 568 438 Q 580 450 574 462 Z" stroke-width="4"/>
+    <circle cx="530" cy="480" r="3" stroke-width="2.5"/>
+    <circle cx="592" cy="478" r="2.5" stroke-width="2.5"/>
+    <circle cx="248" cy="352" r="31" stroke-width="5"/>
+    <circle cx="260" cy="345" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="238" cy="345" r="3.2" fill="#5c1212" stroke="none"/>
+    <line x1="248" y1="383" x2="248" y2="444" stroke-width="5.5"/>
+    <line x1="248" y1="398" x2="222" y2="432" stroke-width="4.5"/>
+    <line x1="222" y1="432" x2="266" y2="440" stroke-width="4.5"/>
+    <line x1="248" y1="398" x2="276" y2="430" stroke-width="4.5"/>
+    <line x1="276" y1="430" x2="264" y2="442" stroke-width="4.5"/>
+    <line x1="248" y1="444" x2="300" y2="470" stroke-width="4.5"/>
+    <line x1="300" y1="470" x2="292" y2="496" stroke-width="4.5"/>
+    <line x1="248" y1="444" x2="206" y2="478" stroke-width="4.5"/>
+    <line x1="206" y1="478" x2="228" y2="496" stroke-width="4.5"/>
+    
+  </g>
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">It had not been a decision.</text>
+</svg>

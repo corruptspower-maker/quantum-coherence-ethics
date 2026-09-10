@@ -9,6 +9,7 @@
      imgBase:  '../../images/borrowed/page-'
      imgExt:   '.svg'
      pages:    5
+     teaching: ['para one', 'para two']   // optional; shown above the question
      question: 'Tick the ones you brought.'
      hint:     'tick as many as apply'
      options:  [{ value:'a', text:'...' }, ...]
@@ -57,6 +58,12 @@ var PUZZLE = (function () {
 
     // ── test ──
     var test = el('div', 'pz-test');
+    if (cfg.teaching && cfg.teaching.length) {
+      var teach = el('div', 'pz-teaching');
+      cfg.teaching.forEach(function (para) { teach.appendChild(el('p', null, para)); });
+      test.appendChild(teach);
+      test.appendChild(el('hr', 'pz-rule'));
+    }
     test.appendChild(el('p', 'pz-q', cfg.question));
     if (cfg.hint) test.appendChild(el('p', 'pz-hint', cfg.hint));
 

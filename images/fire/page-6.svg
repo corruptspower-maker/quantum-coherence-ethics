@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <rect width="800" height="620" fill="#c09040"/>
+  <g fill="none" stroke="#5c1212" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="30" y1="500" x2="770" y2="500" stroke-width="3"/>
+    <line x1="500" y1="492" x2="608" y2="466" stroke-width="9"/>
+    <line x1="504" y1="466" x2="612" y2="492" stroke-width="9"/>
+    <line x1="520" y1="480" x2="596" y2="478" stroke-width="7"/>
+    <line x1="694" y1="492" x2="762" y2="492" stroke-width="8"/>
+    <line x1="698" y1="474" x2="758" y2="474" stroke-width="8"/>
+    <line x1="704" y1="456" x2="752" y2="456" stroke-width="8"/>
+    <!-- fire, back up -->
+    <path d="M 528 464 Q 518 420 548 390 Q 544 424 566 404 Q 584 376 572 356
+             Q 606 388 592 428 Q 612 414 608 396 Q 624 436 584 464 Z" stroke-width="5"/>
+    <!-- the one stick, in the air, just released -->
+    <line x1="470" y1="376" x2="536" y2="398" stroke-width="8"/>
+    <path d="M 424 356 Q 452 348 472 366" stroke-width="2.5" opacity="0.6"/>
+    <path d="M 430 384 Q 456 378 474 392" stroke-width="2.5" opacity="0.6"/>
+    <!-- our guy, follow-through -->
+    <circle cx="256" cy="300" r="31" stroke-width="5"/>
+    <circle cx="268" cy="293" r="3.2" fill="#5c1212" stroke="none"/>
+    <circle cx="246" cy="293" r="3.2" fill="#5c1212" stroke="none"/>
+    <line x1="244" y1="316" x2="268" y2="316" stroke-width="3.4"/>
+    <line x1="256" y1="331" x2="256" y2="412" stroke-width="5.5"/>
+    <line x1="256" y1="348" x2="308" y2="322" stroke-width="4.5"/>
+    <line x1="256" y1="348" x2="222" y2="384" stroke-width="4.5"/>
+    <line x1="256" y1="412" x2="232" y2="472" stroke-width="4.5"/>
+    <line x1="232" y1="472" x2="216" y2="494" stroke-width="4.5"/>
+    <line x1="256" y1="412" x2="282" y2="472" stroke-width="4.5"/>
+    <line x1="282" y1="472" x2="300" y2="494" stroke-width="4.5"/>
+  </g>
+  <text x="400" y="562" font-family="Georgia,serif" font-size="27" font-style="italic"
+        fill="#5c1212" text-anchor="middle">One stick. That was the whole of it.</text>
+</svg>

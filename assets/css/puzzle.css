@@ -71,3 +71,10 @@
   color: rgba(26,25,22,.5); text-decoration: none;
 }
 .pz-back:hover { color: var(--accent); }
+
+/* the canonical teaching passage, between the plates and the test */
+.pz-teaching { margin: 2.4rem 0 0; max-width: 34em; }
+.pz-teaching p { font-size: 1.14rem; line-height: 1.72; margin-bottom: 1.05rem; }
+.pz-teaching p:last-child { margin-bottom: 0; }
+.pz-rule { border: 0; border-top: 1px solid rgba(26,25,22,.18); margin: 2.2rem 0 0; }
+.pz-teaching + .pz-rule + .pz-q { margin-top: 2rem; }
