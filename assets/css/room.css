@@ -1,0 +1,85 @@
+/* room.css — the interior.
+   The gates are parchment and stick figures on purpose. Past them, the register
+   changes: paper, air, fine lines. Nothing here shouts, and nothing here grades. */
+
+.rm {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 6rem;
+}
+
+.rm-meta {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .74rem; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(26,25,22,.38); margin-bottom: 1.1rem;
+}
+
+.rm h1 {
+  font-size: 2.4rem; font-weight: 400; line-height: 1.2;
+  margin-bottom: 2.4rem; letter-spacing: -.01em;
+}
+
+.rm-lede { max-width: 32em; }
+.rm-lede p {
+  font-size: 1.18rem; line-height: 1.78; margin-bottom: 1.1rem;
+  color: rgba(26,25,22,.86);
+}
+.rm-lede p:last-child { margin-bottom: 0; }
+
+/* ── the shelf ── */
+.shelf { margin: 4rem 0 0; }
+
+.shelf-row {
+  display: flex; align-items: flex-end; gap: 2.2rem;
+  min-height: 118px; flex-wrap: wrap;
+}
+.shelf-rule {
+  border: 0; border-top: 2px solid rgba(26,25,22,.5);
+  margin: .55rem 0 0;
+}
+.shelf-empty {
+  font-style: italic; color: rgba(26,25,22,.4);
+  font-size: 1.06rem; padding-bottom: .4rem;
+}
+
+.thing { width: 62px; height: 78px; display: block; }
+.thing svg { width: 100%; height: 100%; overflow: visible; }
+
+/* ── what you may leave ── */
+.leaving { margin: 4.5rem 0 0; }
+.leaving > p {
+  font-size: 1.1rem; color: rgba(26,25,22,.72);
+  margin-bottom: 1.6rem; max-width: 30em;
+}
+
+.offer { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.offer button {
+  background: transparent; cursor: pointer;
+  border: 1px solid rgba(26,25,22,.18);
+  padding: 1rem .9rem .7rem; width: 92px;
+  display: flex; flex-direction: column; align-items: center; gap: .55rem;
+  transition: border-color .15s ease;
+}
+.offer button:hover { border-color: rgba(83,74,183,.6); }
+.offer button svg { width: 46px; height: 56px; overflow: visible; }
+.offer button span {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: .7rem; letter-spacing: .1em; color: rgba(26,25,22,.5);
+}
+
+/* Once something is left, the offer goes. It is not replaced by a confirmation:
+   the whole point is that you do not get to watch it land. */
+.leaving.is-done .offer { display: none; }
+.after {
+  display: none; font-style: italic; font-size: 1.1rem;
+  color: rgba(26,25,22,.6); max-width: 30em;
+}
+.leaving.is-done .after { display: block; }
+
+.rm-out {
+  display: inline-block; margin-top: 4.5rem;
+  font-family: 'Courier New', Courier, monospace; font-size: .78rem;
+  color: rgba(26,25,22,.42); text-decoration: none;
+}
+.rm-out:hover { color: var(--accent); }

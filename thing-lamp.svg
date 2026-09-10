@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 0 72 66" width="220" height="200">
+  <rect x="-6" y="0" width="72" height="66" fill="#f5f2eb"/>
+  <g color="#1a1916" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 52 h32 l-4-14 H18 Z"/><path d="M22 38 v-8 a10 10 0 0 1 16 0 v8"/>
+    <path d="M30 22 v-6"/><path d="M30 10 q5 4 0 8 q-5-4 0-8" stroke-width="2"/>
+    <path d="M10 52 h40"/>
+  </g>
+  <text x="30" y="63" font-family="monospace" font-size="5" fill="#1a1916" opacity=".55" text-anchor="middle">lamp</text>
+</svg>

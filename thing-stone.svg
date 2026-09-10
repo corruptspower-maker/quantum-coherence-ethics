@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 0 72 66" width="220" height="200">
+  <rect x="-6" y="0" width="72" height="66" fill="#f5f2eb"/>
+  <g color="#1a1916" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 44 q-2-13 11-19 q14-7 22 3 q8 10 0 18 q-9 8-21 5 q-10-2-12-7 Z"/>
+    <path d="M22 34 q6-5 13-3" stroke-width="1.6" opacity=".45"/>
+  </g>
+  <text x="30" y="63" font-family="monospace" font-size="5" fill="#1a1916" opacity=".55" text-anchor="middle">stone</text>
+</svg>
