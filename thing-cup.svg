@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 0 72 66" width="220" height="200">
-  <rect x="-6" y="0" width="72" height="66" fill="#f5f2eb"/>
-  <g color="#1a1916" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 22 l3 26 q11 8 22 0 l3-26"/><path d="M16 22 h28"/>
-    <path d="M44 28 q9 3 3 12"/>
-  </g>
-  <text x="30" y="63" font-family="monospace" font-size="5" fill="#1a1916" opacity=".55" text-anchor="middle">cup</text>
-</svg>

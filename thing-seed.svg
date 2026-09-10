@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 0 72 66" width="220" height="200">
-  <rect x="-6" y="0" width="72" height="66" fill="#f5f2eb"/>
-  <g color="#1a1916" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M30 50 q-13-8-13-20 q0-11 13-16 q13 5 13 16 q0 12-13 20 Z"/>
-    <path d="M30 50 v-30" stroke-width="1.6" opacity=".5"/>
-  </g>
-  <text x="30" y="63" font-family="monospace" font-size="5" fill="#1a1916" opacity=".55" text-anchor="middle">seed</text>
-</svg>
