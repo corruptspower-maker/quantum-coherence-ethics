@@ -239,12 +239,11 @@
   <script>
     QCE.require(QCE.FLAGS.LIBRARY_ENTERED, '/');
 
-    // Bonsai image swap — each level has its own desk image.
-    // Level 0 = dead bonsai (default). Levels 1-7 = one more leaf each.
-    // Full bloom (level 8+) opens the community from the book.
-    // Images: images/desk-level-N.webp — fall back to base image if not found.
+    // Bonsai image swap — driven by TRIPLE, the condition, not by how far you
+      // have read. It falls if left alone. 0 = bare. 8 = full bloom.
+      // Images: images/desk-level-N.webp — fall back to base image if not found.
     (function () {
-      var level = QCE.OUGHT.get();
+      var level = QCE.TRIPLE.get();
       if (level > 0) {
         var img = document.getElementById('desk-img');
         var candidate = 'images/desk-level-' + level + '.webp';
@@ -297,6 +296,7 @@
         // All four selected — correct. Enter the loop.
         QCE.set(QCE.FLAGS.GARDEN_ENTERED);
         QCE.OUGHT.set(1);
+          QCE.TRIPLE.add(1);
         window.location.replace('index.html');
       } else {
         wrongScr.classList.add('open');

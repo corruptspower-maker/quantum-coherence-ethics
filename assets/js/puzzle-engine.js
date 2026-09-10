@@ -150,6 +150,7 @@ var PUZZLE = (function () {
 
       if (typeof cfg.level === 'number' && QCE.OUGHT.get() < cfg.level) {
         QCE.OUGHT.set(cfg.level);
+        QCE.TRIPLE.add(1);
       }
       window.location.replace(cfg.back || '../../desk.html');
     });
